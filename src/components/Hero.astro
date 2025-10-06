@@ -35,10 +35,10 @@ import siteData from '../../content/site.json';
       </p>
       
       <!-- Amenities List -->
-      <div class="pt-4 sm:pt-8 relative">
-        <!-- Mobile: Effet nuages flottants - 3 lignes -->
-        <div class="sm:hidden relative h-24 -mx-6" style="width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw;">
-          <!-- Ligne 1: Flottement gauche → droite -->
+      <div class="pt-6 sm:pt-8 relative">
+        <!-- Mobile: Effet nuages flottants - 3 lignes bien espacées -->
+        <div class="sm:hidden relative h-40 -mx-6" style="width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw;">
+          <!-- Ligne 1: Flottement gauche → droite (tout en haut) -->
           <div class="absolute top-0 left-0 flex gap-3 animate-float-cloud-1">
             {[...siteData.AMENITIES, ...siteData.AMENITIES, ...siteData.AMENITIES, ...siteData.AMENITIES, ...siteData.AMENITIES].map((amenity, idx) => (
               <div class="flex-shrink-0 flex items-center space-x-1.5 bg-white/15 backdrop-blur-sm px-3 py-1.5 rounded-full border border-white/30 shadow-lg">
@@ -50,8 +50,8 @@ import siteData from '../../content/site.json';
             ))}
           </div>
           
-          <!-- Ligne 2: Flottement droite → gauche (milieu) -->
-          <div class="absolute top-8 right-0 flex gap-3 animate-float-cloud-2">
+          <!-- Ligne 2: Flottement droite → gauche (milieu - bien espacée) -->
+          <div class="absolute top-14 right-0 flex gap-3 animate-float-cloud-2">
             {[...siteData.AMENITIES, ...siteData.AMENITIES, ...siteData.AMENITIES, ...siteData.AMENITIES, ...siteData.AMENITIES].map((amenity, idx) => (
               <div class="flex-shrink-0 flex items-center space-x-1.5 bg-white/10 backdrop-blur-sm px-3 py-1.5 rounded-full border border-white/25 shadow-lg">
                 <svg class="w-3 h-3 text-[#C2A983] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
@@ -62,8 +62,8 @@ import siteData from '../../content/site.json';
             ))}
           </div>
           
-          <!-- Ligne 3: Flottement gauche → droite (bas, lent) -->
-          <div class="absolute top-16 left-0 flex gap-3 animate-float-cloud-3">
+          <!-- Ligne 3: Flottement gauche → droite (bas - bien espacée) -->
+          <div class="absolute top-28 left-0 flex gap-3 animate-float-cloud-3">
             {[...siteData.AMENITIES, ...siteData.AMENITIES, ...siteData.AMENITIES, ...siteData.AMENITIES, ...siteData.AMENITIES].map((amenity, idx) => (
               <div class="flex-shrink-0 flex items-center space-x-1.5 bg-white/12 backdrop-blur-sm px-3 py-1.5 rounded-full border border-white/20 shadow-lg">
                 <svg class="w-3 h-3 text-[#C2A983] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
@@ -185,14 +185,14 @@ import siteData from '../../content/site.json';
   }
 
   .animate-float-cloud-1 {
-    animation: float-cloud-1 40s linear infinite;
+    animation: float-cloud-1 80s ease-in-out infinite;
   }
 
   .animate-float-cloud-2 {
-    animation: float-cloud-2 35s linear infinite;
+    animation: float-cloud-2 100s ease-in-out infinite;
   }
 
   .animate-float-cloud-3 {
-    animation: float-cloud-3 50s linear infinite;
+    animation: float-cloud-3 120s ease-in-out infinite;
   }
 </style>
