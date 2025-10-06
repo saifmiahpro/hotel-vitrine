@@ -1,5 +1,15 @@
 @import "tailwindcss";
 
+/* Hide scrollbar for horizontal scroll (amenities on mobile) */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
 /* Custom fonts */
 .font-playfair {
   font-family: 'Playfair Display', serif;

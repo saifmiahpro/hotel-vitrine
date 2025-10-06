@@ -107,6 +107,11 @@
     };
     saveCookieConsent(consent);
     hideBanner();
+    
+    // Trigger immediate reload of maps
+    setTimeout(() => {
+      window.dispatchEvent(new CustomEvent('cookieConsentChanged', { detail: consent }));
+    }, 100);
   }
 
   // Reject all cookies (keep only essential)

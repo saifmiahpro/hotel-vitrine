@@ -167,20 +167,29 @@ import siteData from '../../content/site.json';
 
   // Google Maps consent management
   function checkMapConsent() {
-    const getCookieConsent = (window as any).getCookieConsent;
-    const consent = getCookieConsent ? getCookieConsent() : null;
-    const mapIframe = document.getElementById('google-maps-iframe') as HTMLIFrameElement;
-    const mapPlaceholder = document.getElementById('map-placeholder');
-    
-    if (consent && consent.maps) {
-      // Load map
-      if (mapIframe && !mapIframe.src) {
-        mapIframe.src = mapIframe.getAttribute('data-src') || '';
+    try {
+      // Direct localStorage check (more reliable)
+      const consentData = localStorage.getItem('hotel-cookie-consent');
+      const consent = consentData ? JSON.parse(consentData) : null;
+      
+      const mapIframe = document.getElementById('google-maps-iframe') as HTMLIFrameElement;
+      const mapPlaceholder = document.getElementById('map-placeholder');
+      
+      if (consent && consent.maps) {
+        // Load map
+        if (mapIframe && !mapIframe.src) {
+          const mapUrl = mapIframe.getAttribute('data-src');
+          if (mapUrl) {
+            mapIframe.src = mapUrl;
+          }
+        }
+        mapPlaceholder?.classList.add('hidden');
+      } else {
+        // Show placeholder
+        mapPlaceholder?.classList.remove('hidden');
       }
-      mapPlaceholder?.classList.add('hidden');
-    } else {
-      // Show placeholder
-      mapPlaceholder?.classList.remove('hidden');
+    } catch (err) {
+      console.error('Error checking map consent:', err);
     }
   }
 
@@ -193,10 +202,19 @@ import siteData from '../../content/site.json';
       timestamp: Date.now()
     };
     localStorage.setItem('hotel-cookie-consent', JSON.stringify(consent));
-    checkMapConsent();
+    
+    // Immediate check
+    setTimeout(() => {
+      checkMapConsent();
+    }, 100);
   });
 
   // Check on load and when consent changes
-  document.addEventListener('DOMContentLoaded', checkMapConsent);
-  window.addEventListener('cookieConsentChanged', checkMapConsent);
+  document.addEventListener('DOMContentLoaded', () => {
+    setTimeout(checkMapConsent, 100);
+  });
+  
+  window.addEventListener('cookieConsentChanged', () => {
+    setTimeout(checkMapConsent, 100);
+  });
 </script>
