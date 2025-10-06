@@ -2,7 +2,7 @@
 // Cookie Consent Banner - RGPD Compliant
 ---
 
-<div id="cookie-banner" class="fixed bottom-0 left-0 right-0 z-[200] bg-white border-t border-black/[0.08] shadow-2xl transform translate-y-full transition-transform duration-500">
+<div id="cookie-banner" class="fixed bottom-0 left-0 right-0 z-[200] bg-white border-t border-black/[0.08] shadow-2xl transform translate-y-full transition-transform duration-500" style="display: none;">
   <div class="container mx-auto px-4 py-6 sm:py-8">
     <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4 lg:gap-8">
       <!-- Message -->
@@ -42,107 +42,115 @@
   </div>
 </div>
 
-<script>
-  // Cookie consent management
-  const COOKIE_CONSENT_KEY = 'hotel-cookie-consent';
-  const COOKIE_EXPIRY_DAYS = 365;
+<script is:inline>
+  // Cookie consent management - FIXED VERSION
+  (function() {
+    console.log('🍪 Cookie banner script loaded');
+    
+    const COOKIE_CONSENT_KEY = 'hotel-cookie-consent';
 
-  interface CookieConsent {
-    analytics: boolean;
-    maps: boolean;
-    fonts: boolean;
-    timestamp: number;
-  }
+    // Check if consent already given
+    function getCookieConsent() {
+      const consent = localStorage.getItem(COOKIE_CONSENT_KEY);
+      if (consent) {
+        try {
+          return JSON.parse(consent);
+        } catch {
+          return null;
+        }
+      }
+      return null;
+    }
 
-  // Check if consent already given
-  function getCookieConsent(): CookieConsent | null {
-    const consent = localStorage.getItem(COOKIE_CONSENT_KEY);
-    if (consent) {
-      try {
-        return JSON.parse(consent);
-      } catch {
-        return null;
+    // Save consent
+    function saveCookieConsent(consent) {
+      console.log('💾 Saving consent:', consent);
+      localStorage.setItem(COOKIE_CONSENT_KEY, JSON.stringify(consent));
+      
+      // Dispatch event for other components
+      window.dispatchEvent(new CustomEvent('cookieConsentChanged', { detail: consent }));
+    }
+
+    // Show banner
+    function showBanner() {
+      console.log('👀 Showing cookie banner');
+      const banner = document.getElementById('cookie-banner');
+      if (banner) {
+        banner.style.display = 'block';
+        setTimeout(() => {
+          banner.classList.remove('translate-y-full');
+        }, 100);
       }
     }
-    return null;
-  }
 
-  // Save consent
-  function saveCookieConsent(consent: CookieConsent) {
-    localStorage.setItem(COOKIE_CONSENT_KEY, JSON.stringify(consent));
-    
-    // Dispatch event for other components
-    window.dispatchEvent(new CustomEvent('cookieConsentChanged', { detail: consent }));
-  }
-
-  // Show banner
-  function showBanner() {
-    const banner = document.getElementById('cookie-banner');
-    if (banner) {
-      // Remove the translate to make it visible
-      setTimeout(() => {
-        banner.classList.remove('translate-y-full');
-      }, 300);
+    // Hide banner
+    function hideBanner() {
+      console.log('🙈 Hiding cookie banner');
+      const banner = document.getElementById('cookie-banner');
+      if (banner) {
+        banner.classList.add('translate-y-full');
+        setTimeout(() => {
+          banner.style.display = 'none';
+        }, 500);
+      }
     }
-  }
 
-  // Hide banner
-  function hideBanner() {
-    const banner = document.getElementById('cookie-banner');
-    if (banner) {
-      banner.classList.add('translate-y-full');
+    // Accept all cookies
+    function acceptAll() {
+      const consent = {
+        analytics: true,
+        maps: true,
+        fonts: true,
+        timestamp: Date.now()
+      };
+      saveCookieConsent(consent);
+      hideBanner();
     }
-  }
 
-  // Accept all cookies
-  function acceptAll() {
-    const consent: CookieConsent = {
-      analytics: true,
-      maps: true,
-      fonts: true,
-      timestamp: Date.now()
-    };
-    saveCookieConsent(consent);
-    hideBanner();
-    
-    // Trigger immediate reload of maps
-    setTimeout(() => {
-      window.dispatchEvent(new CustomEvent('cookieConsentChanged', { detail: consent }));
-    }, 100);
-  }
-
-  // Reject all cookies (keep only essential)
-  function rejectAll() {
-    const consent: CookieConsent = {
-      analytics: false,
-      maps: false,
-      fonts: false,
-      timestamp: Date.now()
-    };
-    saveCookieConsent(consent);
-    hideBanner();
-    
-    // Reload to disable maps
-    window.location.reload();
-  }
-
-  // Initialize
-  document.addEventListener('DOMContentLoaded', () => {
-    const consent = getCookieConsent();
-    
-    // Show banner if no consent yet
-    if (!consent) {
-      showBanner();
+    // Reject all cookies (keep only essential)
+    function rejectAll() {
+      const consent = {
+        analytics: false,
+        maps: false,
+        fonts: false,
+        timestamp: Date.now()
+      };
+      saveCookieConsent(consent);
+      hideBanner();
     }
-    
-    // Attach event listeners
-    const acceptBtn = document.getElementById('cookie-accept');
-    const rejectBtn = document.getElementById('cookie-reject');
-    
-    acceptBtn?.addEventListener('click', acceptAll);
-    rejectBtn?.addEventListener('click', rejectAll);
-  });
 
-  // Export for use in other components
-  (window as any).getCookieConsent = getCookieConsent;
+    // Initialize - wait for DOM
+    function init() {
+      console.log('🚀 Initializing cookie banner');
+      const consent = getCookieConsent();
+      console.log('📝 Current consent:', consent);
+      
+      // Show banner if no consent yet
+      if (!consent) {
+        console.log('✨ No consent found, showing banner');
+        showBanner();
+      } else {
+        console.log('✅ Consent already given, banner hidden');
+      }
+      
+      // Attach event listeners
+      const acceptBtn = document.getElementById('cookie-accept');
+      const rejectBtn = document.getElementById('cookie-reject');
+      
+      if (acceptBtn) acceptBtn.addEventListener('click', acceptAll);
+      if (rejectBtn) rejectBtn.addEventListener('click', rejectAll);
+      
+      console.log('🔗 Event listeners attached');
+    }
+
+    // Run when DOM is ready
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
+    }
+
+    // Export for use in other components
+    window.getCookieConsent = getCookieConsent;
+  })();
 </script>
