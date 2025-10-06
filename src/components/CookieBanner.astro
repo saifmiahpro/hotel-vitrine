@@ -2,7 +2,7 @@
 // Cookie Consent Banner - RGPD Compliant
 ---
 
-<div id="cookie-banner" class="fixed bottom-0 left-0 right-0 z-[200] bg-white border-t border-black/[0.08] shadow-2xl transform translate-y-full transition-transform duration-300 hidden">
+<div id="cookie-banner" class="fixed bottom-0 left-0 right-0 z-[200] bg-white border-t border-black/[0.08] shadow-2xl transform translate-y-full transition-transform duration-500">
   <div class="container mx-auto px-4 py-6 sm:py-8">
     <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4 lg:gap-8">
       <!-- Message -->
@@ -79,10 +79,10 @@
   function showBanner() {
     const banner = document.getElementById('cookie-banner');
     if (banner) {
-      banner.classList.remove('hidden');
+      // Remove the translate to make it visible
       setTimeout(() => {
         banner.classList.remove('translate-y-full');
-      }, 100);
+      }, 300);
     }
   }
 
@@ -91,9 +91,6 @@
     const banner = document.getElementById('cookie-banner');
     if (banner) {
       banner.classList.add('translate-y-full');
-      setTimeout(() => {
-        banner.classList.add('hidden');
-      }, 300);
     }
   }
 
