@@ -1,0 +1,129 @@
+---
+import Base from '../layouts/Base.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import siteData from '../../content/site.json';
+---
+
+<Base title={`Politique de confidentialité - ${siteData.HOTEL_NAME}`}>
+  <Header />
+  <main class="py-32 bg-[#F7F6F3]">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+      <h1 class="font-playfair text-4xl sm:text-5xl font-bold text-[#1C1C1C] mb-8">
+        Politique de confidentialité
+      </h1>
+      <div class="w-24 h-1 bg-[#C2A983] mb-12"></div>
+      
+      <div class="prose prose-lg max-w-none space-y-8">
+        <section class="bg-white p-6 rounded-lg shadow-sm">
+          <h2 class="font-playfair text-2xl font-semibold text-[#1C1C1C] mb-4">1. Introduction</h2>
+          <p class="text-[#1C1C1C]/70 leading-relaxed">
+            {siteData.HOTEL_NAME} (ci-après "nous", "notre") s'engage à protéger votre vie privée et vos données personnelles. 
+            Cette politique de confidentialité explique comment nous collectons, utilisons et protégeons vos informations personnelles.
+          </p>
+          <p class="text-[#1C1C1C]/70 leading-relaxed mt-4">
+            <strong>Responsable du traitement :</strong> {siteData.HOTEL_NAME}<br />
+            <strong>Adresse :</strong> {siteData.ADDRESS}<br />
+            <strong>Contact :</strong> {siteData.EMAIL}
+          </p>
+        </section>
+
+        <section class="bg-white p-6 rounded-lg shadow-sm">
+          <h2 class="font-playfair text-2xl font-semibold text-[#1C1C1C] mb-4">2. Données collectées</h2>
+          <p class="text-[#1C1C1C]/70 leading-relaxed mb-4">
+            Nous collectons les données personnelles suivantes :
+          </p>
+          <ul class="list-disc pl-6 space-y-2 text-[#1C1C1C]/70">
+            <li><strong>Via le formulaire de contact :</strong> Nom, prénom, adresse email, numéro de téléphone (optionnel), message</li>
+            <li><strong>Cookies techniques :</strong> Préférences de consentement cookies</li>
+            <li><strong>Google Maps :</strong> Si vous acceptez les cookies, Google Maps peut collecter des données d'utilisation</li>
+          </ul>
+        </section>
+
+        <section class="bg-white p-6 rounded-lg shadow-sm">
+          <h2 class="font-playfair text-2xl font-semibold text-[#1C1C1C] mb-4">3. Finalité du traitement</h2>
+          <p class="text-[#1C1C1C]/70 leading-relaxed mb-4">
+            Vos données personnelles sont utilisées pour :
+          </p>
+          <ul class="list-disc pl-6 space-y-2 text-[#1C1C1C]/70">
+            <li>Répondre à vos demandes de renseignements ou de réservation</li>
+            <li>Améliorer nos services</li>
+            <li>Respecter nos obligations légales</li>
+          </ul>
+          <p class="text-[#1C1C1C]/70 leading-relaxed mt-4">
+            <strong>Base légale :</strong> Consentement (formulaire de contact), intérêt légitime (amélioration des services)
+          </p>
+        </section>
+
+        <section class="bg-white p-6 rounded-lg shadow-sm">
+          <h2 class="font-playfair text-2xl font-semibold text-[#1C1C1C] mb-4">4. Durée de conservation</h2>
+          <ul class="list-disc pl-6 space-y-2 text-[#1C1C1C]/70">
+            <li><strong>Données du formulaire :</strong> 3 ans maximum après le dernier contact</li>
+            <li><strong>Cookies de consentement :</strong> 13 mois</li>
+          </ul>
+        </section>
+
+        <section class="bg-white p-6 rounded-lg shadow-sm">
+          <h2 class="font-playfair text-2xl font-semibold text-[#1C1C1C] mb-4">5. Destinataires des données</h2>
+          <p class="text-[#1C1C1C]/70 leading-relaxed">
+            Vos données personnelles sont traitées par notre personnel habilité. Elles ne sont jamais vendues ni louées à des tiers.
+          </p>
+          <p class="text-[#1C1C1C]/70 leading-relaxed mt-4">
+            <strong>Sous-traitants :</strong>
+          </p>
+          <ul class="list-disc pl-6 space-y-2 text-[#1C1C1C]/70 mt-2">
+            <li>Netlify (hébergement du site)</li>
+            <li>Google (Google Maps, Google Fonts) - si cookies acceptés</li>
+          </ul>
+        </section>
+
+        <section class="bg-white p-6 rounded-lg shadow-sm">
+          <h2 class="font-playfair text-2xl font-semibold text-[#1C1C1C] mb-4">6. Vos droits</h2>
+          <p class="text-[#1C1C1C]/70 leading-relaxed mb-4">
+            Conformément au RGPD, vous disposez des droits suivants :
+          </p>
+          <ul class="list-disc pl-6 space-y-2 text-[#1C1C1C]/70">
+            <li><strong>Droit d'accès :</strong> Obtenir la confirmation que vos données sont traitées</li>
+            <li><strong>Droit de rectification :</strong> Corriger vos données inexactes</li>
+            <li><strong>Droit à l'effacement :</strong> Supprimer vos données ("droit à l'oubli")</li>
+            <li><strong>Droit d'opposition :</strong> Vous opposer au traitement de vos données</li>
+            <li><strong>Droit à la portabilité :</strong> Récupérer vos données dans un format structuré</li>
+            <li><strong>Droit de limitation :</strong> Demander la limitation du traitement</li>
+          </ul>
+          <p class="text-[#1C1C1C]/70 leading-relaxed mt-4">
+            Pour exercer vos droits, contactez-nous à : <a href={`mailto:${siteData.EMAIL}`} class="text-[#C2A983] hover:underline">{siteData.EMAIL}</a>
+          </p>
+          <p class="text-[#1C1C1C]/70 leading-relaxed mt-4">
+            Vous disposez également du droit d'introduire une réclamation auprès de la CNIL (Commission Nationale de l'Informatique et des Libertés).
+          </p>
+        </section>
+
+        <section class="bg-white p-6 rounded-lg shadow-sm">
+          <h2 class="font-playfair text-2xl font-semibold text-[#1C1C1C] mb-4">7. Sécurité</h2>
+          <p class="text-[#1C1C1C]/70 leading-relaxed">
+            Nous mettons en œuvre des mesures techniques et organisationnelles appropriées pour protéger vos données personnelles 
+            contre tout accès non autorisé, modification, divulgation ou destruction (HTTPS, pare-feu, accès restreint).
+          </p>
+        </section>
+
+        <section class="bg-white p-6 rounded-lg shadow-sm">
+          <h2 class="font-playfair text-2xl font-semibold text-[#1C1C1C] mb-4">8. Modifications</h2>
+          <p class="text-[#1C1C1C]/70 leading-relaxed">
+            Nous nous réservons le droit de modifier cette politique de confidentialité à tout moment. 
+            La version actualisée sera publiée sur cette page avec la date de mise à jour.
+          </p>
+          <p class="text-[#1C1C1C]/70 leading-relaxed mt-4">
+            <strong>Dernière mise à jour :</strong> 6 octobre 2025
+          </p>
+        </section>
+      </div>
+
+      <div class="mt-12 text-center">
+        <a href="/" class="inline-block px-6 py-3 bg-[#C2A983] text-white font-medium rounded-md hover:bg-[#0E2235] transition-colors">
+          Retour à l'accueil
+        </a>
+      </div>
+    </div>
+  </main>
+  <Footer />
+</Base>

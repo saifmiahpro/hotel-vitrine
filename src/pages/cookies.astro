@@ -1,0 +1,209 @@
+---
+import Base from '../layouts/Base.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import siteData from '../../content/site.json';
+---
+
+<Base title={`Gestion des cookies - ${siteData.HOTEL_NAME}`}>
+  <Header />
+  <main class="py-32 bg-[#F7F6F3]">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+      <h1 class="font-playfair text-4xl sm:text-5xl font-bold text-[#1C1C1C] mb-8">
+        Gestion des cookies
+      </h1>
+      <div class="w-24 h-1 bg-[#C2A983] mb-12"></div>
+      
+      <div class="prose prose-lg max-w-none space-y-8">
+        <section class="bg-white p-6 rounded-lg shadow-sm">
+          <h2 class="font-playfair text-2xl font-semibold text-[#1C1C1C] mb-4">Qu'est-ce qu'un cookie ?</h2>
+          <p class="text-[#1C1C1C]/70 leading-relaxed">
+            Un cookie est un petit fichier texte déposé sur votre appareil (ordinateur, smartphone, tablette) lors de la visite d'un site internet. 
+            Il permet de mémoriser des informations relatives à votre navigation.
+          </p>
+        </section>
+
+        <section class="bg-white p-6 rounded-lg shadow-sm">
+          <h2 class="font-playfair text-2xl font-semibold text-[#1C1C1C] mb-4">Cookies utilisés sur ce site</h2>
+          
+          <div class="space-y-6">
+            <div class="border-l-4 border-[#C2A983] pl-4">
+              <h3 class="font-semibold text-lg text-[#1C1C1C] mb-2">1. Cookies strictement nécessaires</h3>
+              <p class="text-[#1C1C1C]/70 text-sm mb-2">
+                <strong>Nom :</strong> hotel-cookie-consent<br />
+                <strong>Finalité :</strong> Mémoriser vos préférences de cookies<br />
+                <strong>Durée :</strong> 13 mois<br />
+                <strong>Type :</strong> LocalStorage (non transmis aux serveurs)
+              </p>
+              <p class="text-[#1C1C1C]/70 text-sm">
+                ❌ <strong>Pas de consentement requis</strong> - Ces cookies sont essentiels au fonctionnement du site.
+              </p>
+            </div>
+
+            <div class="border-l-4 border-blue-500 pl-4">
+              <h3 class="font-semibold text-lg text-[#1C1C1C] mb-2">2. Google Maps (si activé)</h3>
+              <p class="text-[#1C1C1C]/70 text-sm mb-2">
+                <strong>Fournisseur :</strong> Google LLC<br />
+                <strong>Finalité :</strong> Affichage de la carte interactive et itinéraire<br />
+                <strong>Durée :</strong> Variable selon Google<br />
+                <strong>Données collectées :</strong> Adresse IP, localisation approximative, interactions avec la carte
+              </p>
+              <p class="text-[#1C1C1C]/70 text-sm">
+                ✅ <strong>Consentement requis</strong> - Ces cookies sont déposés uniquement si vous acceptez.
+              </p>
+              <p class="text-[#1C1C1C]/70 text-sm mt-2">
+                <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" class="text-[#C2A983] hover:underline">
+                  Politique de confidentialité Google
+                </a>
+              </p>
+            </div>
+
+            <div class="border-l-4 border-blue-500 pl-4">
+              <h3 class="font-semibold text-lg text-[#1C1C1C] mb-2">3. Google Fonts</h3>
+              <p class="text-[#1C1C1C]/70 text-sm mb-2">
+                <strong>Fournisseur :</strong> Google LLC<br />
+                <strong>Finalité :</strong> Chargement des polices de caractères<br />
+                <strong>Données collectées :</strong> Adresse IP (temporaire pour le téléchargement des polices)
+              </p>
+              <p class="text-[#1C1C1C]/70 text-sm">
+                ✅ <strong>Consentement requis</strong> - Activé par défaut si vous acceptez les cookies.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="bg-white p-6 rounded-lg shadow-sm">
+          <h2 class="font-playfair text-2xl font-semibold text-[#1C1C1C] mb-4">Gérer vos préférences</h2>
+          <p class="text-[#1C1C1C]/70 leading-relaxed mb-6">
+            Vous pouvez à tout moment modifier vos préférences de cookies :
+          </p>
+          
+          <div class="space-y-4" id="cookie-preferences">
+            <div class="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+              <div>
+                <h4 class="font-semibold text-[#1C1C1C]">Cookies strictement nécessaires</h4>
+                <p class="text-sm text-[#1C1C1C]/60">Indispensables au fonctionnement du site</p>
+              </div>
+              <div class="text-sm text-green-600 font-medium">Toujours actifs</div>
+            </div>
+
+            <div class="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+              <div class="flex-1">
+                <h4 class="font-semibold text-[#1C1C1C]">Google Maps</h4>
+                <p class="text-sm text-[#1C1C1C]/60">Carte interactive et itinéraire</p>
+              </div>
+              <label class="relative inline-flex items-center cursor-pointer">
+                <input type="checkbox" id="maps-toggle" class="sr-only peer" />
+                <div class="w-11 h-6 bg-gray-300 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-[#C2A983]/20 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#C2A983]"></div>
+              </label>
+            </div>
+
+            <div class="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+              <div class="flex-1">
+                <h4 class="font-semibold text-[#1C1C1C]">Google Fonts</h4>
+                <p class="text-sm text-[#1C1C1C]/60">Polices de caractères</p>
+              </div>
+              <label class="relative inline-flex items-center cursor-pointer">
+                <input type="checkbox" id="fonts-toggle" class="sr-only peer" />
+                <div class="w-11 h-6 bg-gray-300 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-[#C2A983]/20 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#C2A983]"></div>
+              </label>
+            </div>
+          </div>
+
+          <div class="mt-6 flex gap-4">
+            <button 
+              id="save-preferences" 
+              class="px-6 py-3 bg-[#C2A983] text-white font-medium rounded-md hover:bg-[#0E2235] transition-colors"
+            >
+              Enregistrer mes préférences
+            </button>
+            <button 
+              id="accept-all-cookies" 
+              class="px-6 py-3 bg-gray-200 text-[#1C1C1C] font-medium rounded-md hover:bg-gray-300 transition-colors"
+            >
+              Tout accepter
+            </button>
+          </div>
+
+          <p class="text-sm text-[#1C1C1C]/60 mt-4">
+            💡 Les modifications seront appliquées immédiatement. Certaines fonctionnalités peuvent nécessiter un rechargement de la page.
+          </p>
+        </section>
+
+        <section class="bg-white p-6 rounded-lg shadow-sm">
+          <h2 class="font-playfair text-2xl font-semibold text-[#1C1C1C] mb-4">Gérer via votre navigateur</h2>
+          <p class="text-[#1C1C1C]/70 leading-relaxed mb-4">
+            Vous pouvez également gérer les cookies directement dans votre navigateur :
+          </p>
+          <ul class="list-disc pl-6 space-y-2 text-[#1C1C1C]/70">
+            <li><a href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noopener" class="text-[#C2A983] hover:underline">Google Chrome</a></li>
+            <li><a href="https://support.mozilla.org/fr/kb/activer-desactiver-cookies-preferences" target="_blank" rel="noopener" class="text-[#C2A983] hover:underline">Mozilla Firefox</a></li>
+            <li><a href="https://support.apple.com/fr-fr/guide/safari/sfri11471/mac" target="_blank" rel="noopener" class="text-[#C2A983] hover:underline">Safari</a></li>
+            <li><a href="https://support.microsoft.com/fr-fr/microsoft-edge/supprimer-les-cookies-dans-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09" target="_blank" rel="noopener" class="text-[#C2A983] hover:underline">Microsoft Edge</a></li>
+          </ul>
+        </section>
+      </div>
+
+      <div class="mt-12 text-center">
+        <a href="/" class="inline-block px-6 py-3 bg-[#C2A983] text-white font-medium rounded-md hover:bg-[#0E2235] transition-colors">
+          Retour à l'accueil
+        </a>
+      </div>
+    </div>
+  </main>
+  <Footer />
+</Base>
+
+<script>
+  // Load current preferences
+  function loadPreferences() {
+    const consent = localStorage.getItem('hotel-cookie-consent');
+    if (consent) {
+      const data = JSON.parse(consent);
+      (document.getElementById('maps-toggle') as HTMLInputElement).checked = data.maps;
+      (document.getElementById('fonts-toggle') as HTMLInputElement).checked = data.fonts;
+    } else {
+      // Default: all enabled
+      (document.getElementById('maps-toggle') as HTMLInputElement).checked = true;
+      (document.getElementById('fonts-toggle') as HTMLInputElement).checked = true;
+    }
+  }
+
+  // Save preferences
+  document.getElementById('save-preferences')?.addEventListener('click', () => {
+    const mapsEnabled = (document.getElementById('maps-toggle') as HTMLInputElement).checked;
+    const fontsEnabled = (document.getElementById('fonts-toggle') as HTMLInputElement).checked;
+    
+    const consent = {
+      analytics: false,
+      maps: mapsEnabled,
+      fonts: fontsEnabled,
+      timestamp: Date.now()
+    };
+    
+    localStorage.setItem('hotel-cookie-consent', JSON.stringify(consent));
+    window.dispatchEvent(new CustomEvent('cookieConsentChanged', { detail: consent }));
+    
+    alert('Vos préférences ont été enregistrées !');
+    window.location.href = '/';
+  });
+
+  // Accept all
+  document.getElementById('accept-all-cookies')?.addEventListener('click', () => {
+    const consent = {
+      analytics: false,
+      maps: true,
+      fonts: true,
+      timestamp: Date.now()
+    };
+    
+    localStorage.setItem('hotel-cookie-consent', JSON.stringify(consent));
+    window.dispatchEvent(new CustomEvent('cookieConsentChanged', { detail: consent }));
+    
+    alert('Tous les cookies ont été acceptés !');
+    window.location.href = '/';
+  });
+
+  // Load on page load
+  document.addEventListener('DOMContentLoaded', loadPreferences);
+</script>

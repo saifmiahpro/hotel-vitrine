@@ -91,9 +91,31 @@ import siteData from '../../content/site.json';
       
       <!-- Map -->
       <div class="space-y-6">
-        <div class="bg-white p-2 rounded-lg shadow-sm border border-black/[0.05] overflow-hidden">
+        <div id="map-container" class="bg-white p-2 rounded-lg shadow-sm border border-black/[0.05] overflow-hidden relative min-h-[450px]">
+          <!-- Map placeholder (shown if cookies not accepted) -->
+          <div id="map-placeholder" class="absolute inset-0 flex items-center justify-center bg-gray-100 rounded-lg hidden">
+            <div class="text-center p-6 max-w-md">
+              <svg class="w-16 h-16 mx-auto mb-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+              </svg>
+              <h4 class="font-semibold text-lg text-[#1C1C1C] mb-2">Carte non disponible</h4>
+              <p class="text-sm text-[#1C1C1C]/70 mb-4">
+                Pour afficher la carte Google Maps, veuillez accepter les cookies.
+              </p>
+              <button 
+                id="enable-maps-btn"
+                class="px-6 py-2 bg-[#C2A983] text-white font-medium rounded-md hover:bg-[#0E2235] transition-colors"
+              >
+                Activer la carte
+              </button>
+            </div>
+          </div>
+          
+          <!-- Actual map iframe -->
           <iframe 
-            src={siteData.GOOGLE_MAPS_EMBED_URL}
+            id="google-maps-iframe"
+            data-src={siteData.GOOGLE_MAPS_EMBED_URL}
             width="100%" 
             height="450" 
             style="border:0; border-radius: 0.5rem;" 
@@ -142,4 +164,39 @@ import siteData from '../../content/site.json';
       }
     });
   }
+
+  // Google Maps consent management
+  function checkMapConsent() {
+    const getCookieConsent = (window as any).getCookieConsent;
+    const consent = getCookieConsent ? getCookieConsent() : null;
+    const mapIframe = document.getElementById('google-maps-iframe') as HTMLIFrameElement;
+    const mapPlaceholder = document.getElementById('map-placeholder');
+    
+    if (consent && consent.maps) {
+      // Load map
+      if (mapIframe && !mapIframe.src) {
+        mapIframe.src = mapIframe.getAttribute('data-src') || '';
+      }
+      mapPlaceholder?.classList.add('hidden');
+    } else {
+      // Show placeholder
+      mapPlaceholder?.classList.remove('hidden');
+    }
+  }
+
+  // Enable maps button
+  document.getElementById('enable-maps-btn')?.addEventListener('click', () => {
+    const consent = {
+      analytics: false,
+      maps: true,
+      fonts: true,
+      timestamp: Date.now()
+    };
+    localStorage.setItem('hotel-cookie-consent', JSON.stringify(consent));
+    checkMapConsent();
+  });
+
+  // Check on load and when consent changes
+  document.addEventListener('DOMContentLoaded', checkMapConsent);
+  window.addEventListener('cookieConsentChanged', checkMapConsent);
 </script>

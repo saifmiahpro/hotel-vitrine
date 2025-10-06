@@ -1,0 +1,146 @@
+---
+// Cookie Consent Banner - RGPD Compliant
+---
+
+<div id="cookie-banner" class="fixed bottom-0 left-0 right-0 z-[200] bg-white border-t border-black/[0.08] shadow-2xl transform translate-y-full transition-transform duration-300 hidden">
+  <div class="container mx-auto px-4 py-6 sm:py-8">
+    <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4 lg:gap-8">
+      <!-- Message -->
+      <div class="flex-1">
+        <h3 class="font-semibold text-lg text-[#1C1C1C] mb-2">
+          🍪 Respect de votre vie privée
+        </h3>
+        <p class="text-sm text-[#1C1C1C]/70 leading-relaxed">
+          Nous utilisons des cookies pour améliorer votre expérience (Google Maps, Google Fonts). 
+          En cliquant sur "Accepter", vous consentez à leur utilisation. 
+          <a href="/politique-confidentialite" class="text-[#C2A983] hover:underline">En savoir plus</a>
+        </p>
+      </div>
+      
+      <!-- Actions -->
+      <div class="flex flex-wrap gap-3 w-full lg:w-auto">
+        <button 
+          id="cookie-accept"
+          class="flex-1 lg:flex-none px-6 py-3 bg-[#C2A983] text-white font-medium rounded-md hover:bg-[#0E2235] transition-colors shadow-sm"
+        >
+          Accepter tout
+        </button>
+        <button 
+          id="cookie-reject"
+          class="flex-1 lg:flex-none px-6 py-3 bg-gray-200 text-[#1C1C1C] font-medium rounded-md hover:bg-gray-300 transition-colors"
+        >
+          Refuser
+        </button>
+        <a 
+          href="/cookies"
+          class="flex-1 lg:flex-none px-6 py-3 bg-white border border-black/[0.08] text-[#1C1C1C] font-medium rounded-md hover:bg-gray-50 transition-colors text-center"
+        >
+          Personnaliser
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Cookie consent management
+  const COOKIE_CONSENT_KEY = 'hotel-cookie-consent';
+  const COOKIE_EXPIRY_DAYS = 365;
+
+  interface CookieConsent {
+    analytics: boolean;
+    maps: boolean;
+    fonts: boolean;
+    timestamp: number;
+  }
+
+  // Check if consent already given
+  function getCookieConsent(): CookieConsent | null {
+    const consent = localStorage.getItem(COOKIE_CONSENT_KEY);
+    if (consent) {
+      try {
+        return JSON.parse(consent);
+      } catch {
+        return null;
+      }
+    }
+    return null;
+  }
+
+  // Save consent
+  function saveCookieConsent(consent: CookieConsent) {
+    localStorage.setItem(COOKIE_CONSENT_KEY, JSON.stringify(consent));
+    
+    // Dispatch event for other components
+    window.dispatchEvent(new CustomEvent('cookieConsentChanged', { detail: consent }));
+  }
+
+  // Show banner
+  function showBanner() {
+    const banner = document.getElementById('cookie-banner');
+    if (banner) {
+      banner.classList.remove('hidden');
+      setTimeout(() => {
+        banner.classList.remove('translate-y-full');
+      }, 100);
+    }
+  }
+
+  // Hide banner
+  function hideBanner() {
+    const banner = document.getElementById('cookie-banner');
+    if (banner) {
+      banner.classList.add('translate-y-full');
+      setTimeout(() => {
+        banner.classList.add('hidden');
+      }, 300);
+    }
+  }
+
+  // Accept all cookies
+  function acceptAll() {
+    const consent: CookieConsent = {
+      analytics: true,
+      maps: true,
+      fonts: true,
+      timestamp: Date.now()
+    };
+    saveCookieConsent(consent);
+    hideBanner();
+  }
+
+  // Reject all cookies (keep only essential)
+  function rejectAll() {
+    const consent: CookieConsent = {
+      analytics: false,
+      maps: false,
+      fonts: false,
+      timestamp: Date.now()
+    };
+    saveCookieConsent(consent);
+    hideBanner();
+    
+    // Reload to disable maps
+    window.location.reload();
+  }
+
+  // Initialize
+  document.addEventListener('DOMContentLoaded', () => {
+    const consent = getCookieConsent();
+    
+    // Show banner if no consent yet
+    if (!consent) {
+      showBanner();
+    }
+    
+    // Attach event listeners
+    const acceptBtn = document.getElementById('cookie-accept');
+    const rejectBtn = document.getElementById('cookie-reject');
+    
+    acceptBtn?.addEventListener('click', acceptAll);
+    rejectBtn?.addEventListener('click', rejectAll);
+  });
+
+  // Export for use in other components
+  (window as any).getCookieConsent = getCookieConsent;
+</script>

@@ -1,0 +1,129 @@
+---
+import Base from '../layouts/Base.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import siteData from '../../content/site.json';
+
+const currentYear = new Date().getFullYear();
+---
+
+<Base title={`Mentions légales - ${siteData.HOTEL_NAME}`}>
+  <Header />
+  <main class="py-32 bg-[#F7F6F3]">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+      <h1 class="font-playfair text-4xl sm:text-5xl font-bold text-[#1C1C1C] mb-8">
+        Mentions légales
+      </h1>
+      <div class="w-24 h-1 bg-[#C2A983] mb-12"></div>
+      
+      <div class="prose prose-lg max-w-none space-y-8">
+        <section class="bg-white p-6 rounded-lg shadow-sm">
+          <h2 class="font-playfair text-2xl font-semibold text-[#1C1C1C] mb-4">1. Éditeur du site</h2>
+          <p class="text-[#1C1C1C]/70 leading-relaxed">
+            <strong>Raison sociale :</strong> {siteData.HOTEL_NAME}<br />
+            <strong>Adresse :</strong> {siteData.ADDRESS}<br />
+            <strong>Téléphone :</strong> {siteData.PHONE}<br />
+            <strong>Email :</strong> {siteData.EMAIL}<br />
+            <strong>SIRET :</strong> [À compléter]<br />
+            <strong>RCS :</strong> [À compléter]<br />
+            <strong>Capital social :</strong> [À compléter]
+          </p>
+          <p class="text-[#1C1C1C]/70 leading-relaxed mt-4">
+            <strong>Directeur de la publication :</strong> [Nom du gérant/directeur]<br />
+            <strong>Responsable de la rédaction :</strong> [Nom]
+          </p>
+        </section>
+
+        <section class="bg-white p-6 rounded-lg shadow-sm">
+          <h2 class="font-playfair text-2xl font-semibold text-[#1C1C1C] mb-4">2. Hébergement</h2>
+          <p class="text-[#1C1C1C]/70 leading-relaxed">
+            <strong>Hébergeur :</strong> Netlify, Inc.<br />
+            <strong>Adresse :</strong> 44 Montgomery Street, Suite 300, San Francisco, CA 94104, USA<br />
+            <strong>Site web :</strong> <a href="https://www.netlify.com" target="_blank" rel="noopener" class="text-[#C2A983] hover:underline">www.netlify.com</a>
+          </p>
+        </section>
+
+        <section class="bg-white p-6 rounded-lg shadow-sm">
+          <h2 class="font-playfair text-2xl font-semibold text-[#1C1C1C] mb-4">3. Propriété intellectuelle</h2>
+          <p class="text-[#1C1C1C]/70 leading-relaxed">
+            L'ensemble du contenu de ce site (textes, images, vidéos, logos, etc.) est la propriété exclusive de {siteData.HOTEL_NAME} 
+            ou fait l'objet d'une autorisation d'utilisation.
+          </p>
+          <p class="text-[#1C1C1C]/70 leading-relaxed mt-4">
+            Toute reproduction, représentation, modification, publication ou adaptation de tout ou partie des éléments du site, 
+            quel que soit le moyen ou le procédé utilisé, est interdite, sauf autorisation écrite préalable de {siteData.HOTEL_NAME}.
+          </p>
+        </section>
+
+        <section class="bg-white p-6 rounded-lg shadow-sm">
+          <h2 class="font-playfair text-2xl font-semibold text-[#1C1C1C] mb-4">4. Données personnelles</h2>
+          <p class="text-[#1C1C1C]/70 leading-relaxed">
+            Conformément au Règlement Général sur la Protection des Données (RGPD) et à la loi Informatique et Libertés, 
+            vous disposez d'un droit d'accès, de rectification, de suppression et d'opposition aux données personnelles vous concernant.
+          </p>
+          <p class="text-[#1C1C1C]/70 leading-relaxed mt-4">
+            Pour exercer ces droits, vous pouvez nous contacter à : <a href={`mailto:${siteData.EMAIL}`} class="text-[#C2A983] hover:underline">{siteData.EMAIL}</a>
+          </p>
+          <p class="text-[#1C1C1C]/70 leading-relaxed mt-4">
+            Pour plus d'informations, consultez notre <a href="/politique-confidentialite" class="text-[#C2A983] hover:underline">Politique de confidentialité</a>.
+          </p>
+        </section>
+
+        <section class="bg-white p-6 rounded-lg shadow-sm">
+          <h2 class="font-playfair text-2xl font-semibold text-[#1C1C1C] mb-4">5. Cookies</h2>
+          <p class="text-[#1C1C1C]/70 leading-relaxed">
+            Ce site utilise des cookies pour améliorer votre expérience de navigation. 
+            Pour en savoir plus, consultez notre <a href="/cookies" class="text-[#C2A983] hover:underline">page de gestion des cookies</a>.
+          </p>
+        </section>
+
+        <section class="bg-white p-6 rounded-lg shadow-sm">
+          <h2 class="font-playfair text-2xl font-semibold text-[#1C1C1C] mb-4">6. Limitation de responsabilité</h2>
+          <p class="text-[#1C1C1C]/70 leading-relaxed">
+            {siteData.HOTEL_NAME} s'efforce d'assurer au mieux l'exactitude et la mise à jour des informations diffusées sur ce site. 
+            Toutefois, {siteData.HOTEL_NAME} ne peut garantir l'exactitude, la précision ou l'exhaustivité des informations mises à disposition.
+          </p>
+          <p class="text-[#1C1C1C]/70 leading-relaxed mt-4">
+            En conséquence, {siteData.HOTEL_NAME} décline toute responsabilité pour toute imprécision, inexactitude ou omission 
+            portant sur des informations disponibles sur le site.
+          </p>
+        </section>
+
+        <section class="bg-white p-6 rounded-lg shadow-sm">
+          <h2 class="font-playfair text-2xl font-semibold text-[#1C1C1C] mb-4">7. Liens hypertextes</h2>
+          <p class="text-[#1C1C1C]/70 leading-relaxed">
+            Le site peut contenir des liens hypertextes vers d'autres sites. {siteData.HOTEL_NAME} n'exerce aucun contrôle sur ces sites 
+            et décline toute responsabilité quant à leur contenu.
+          </p>
+        </section>
+
+        <section class="bg-white p-6 rounded-lg shadow-sm">
+          <h2 class="font-playfair text-2xl font-semibold text-[#1C1C1C] mb-4">8. Droit applicable et juridiction</h2>
+          <p class="text-[#1C1C1C]/70 leading-relaxed">
+            Les présentes mentions légales sont régies par le droit français. En cas de litige et à défaut d'accord amiable, 
+            le litige sera porté devant les tribunaux français conformément aux règles de compétence en vigueur.
+          </p>
+        </section>
+
+        <section class="bg-white p-6 rounded-lg shadow-sm">
+          <h2 class="font-playfair text-2xl font-semibold text-[#1C1C1C] mb-4">9. Crédits</h2>
+          <p class="text-[#1C1C1C]/70 leading-relaxed">
+            <strong>Conception et développement :</strong> Site développé avec Astro + TailwindCSS<br />
+            <strong>Photos :</strong> [Source des photos]<br />
+            <strong>Polices :</strong> Playfair Display et Inter (Google Fonts)
+          </p>
+        </section>
+      </div>
+
+      <div class="mt-12 text-center">
+        <p class="text-sm text-[#1C1C1C]/60 mb-6">
+          Dernière mise à jour : {currentYear}
+        </p>
+        <a href="/" class="inline-block px-6 py-3 bg-[#C2A983] text-white font-medium rounded-md hover:bg-[#0E2235] transition-colors">
+          Retour à l'accueil
+        </a>
+      </div>
+    </div>
+  </main>
+  <Footer />
+</Base>
