@@ -77,6 +77,7 @@ import siteData from '../../content/site.json';
               <p class="text-[#1C1C1C]/70 mb-3">{siteData.ADDRESS}</p>
               <button 
                 id="copy-address-btn"
+                data-address={siteData.ADDRESS}
                 class="text-sm text-[#C2A983] hover:text-[#0E2235] font-medium transition-colors flex items-center space-x-2"
               >
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -139,82 +140,4 @@ import siteData from '../../content/site.json';
   </div>
 </section>
 
-<script>
-  // Copy address to clipboard
-  const copyBtn = document.getElementById('copy-address-btn');
-  if (copyBtn) {
-    copyBtn.addEventListener('click', async () => {
-      try {
-        const address = "{siteData.ADDRESS}";
-        await navigator.clipboard.writeText(address);
-        
-        const originalText = copyBtn.innerHTML;
-        copyBtn.innerHTML = `
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-          </svg>
-          <span>Copié !</span>
-        `;
-        
-        setTimeout(() => {
-          copyBtn.innerHTML = originalText;
-        }, 2000);
-      } catch (err) {
-        console.error('Failed to copy:', err);
-      }
-    });
-  }
-
-  // Google Maps consent management
-  function checkMapConsent() {
-    try {
-      // Direct localStorage check (more reliable)
-      const consentData = localStorage.getItem('hotel-cookie-consent');
-      const consent = consentData ? JSON.parse(consentData) : null;
-      
-      const mapIframe = document.getElementById('google-maps-iframe') as HTMLIFrameElement;
-      const mapPlaceholder = document.getElementById('map-placeholder');
-      
-      if (consent && consent.maps) {
-        // Load map
-        if (mapIframe && !mapIframe.src) {
-          const mapUrl = mapIframe.getAttribute('data-src');
-          if (mapUrl) {
-            mapIframe.src = mapUrl;
-          }
-        }
-        mapPlaceholder?.classList.add('hidden');
-      } else {
-        // Show placeholder
-        mapPlaceholder?.classList.remove('hidden');
-      }
-    } catch (err) {
-      console.error('Error checking map consent:', err);
-    }
-  }
-
-  // Enable maps button
-  document.getElementById('enable-maps-btn')?.addEventListener('click', () => {
-    const consent = {
-      analytics: false,
-      maps: true,
-      fonts: true,
-      timestamp: Date.now()
-    };
-    localStorage.setItem('hotel-cookie-consent', JSON.stringify(consent));
-    
-    // Immediate check
-    setTimeout(() => {
-      checkMapConsent();
-    }, 100);
-  });
-
-  // Check on load and when consent changes
-  document.addEventListener('DOMContentLoaded', () => {
-    setTimeout(checkMapConsent, 100);
-  });
-  
-  window.addEventListener('cookieConsentChanged', () => {
-    setTimeout(checkMapConsent, 100);
-  });
-</script>
+<script is:inline src="/access.js"></script>
