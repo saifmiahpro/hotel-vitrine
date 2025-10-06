@@ -1,0 +1,48 @@
+{
+    "HOTEL_NAME": "Hôtel Le Séjour",
+    "CITY": "Toulouse",
+    "TAGLINE": "Le confort discret au cœur de la Ville Rose",
+    "INTRO_PARAGRAPH": "Au centre de Toulouse, l’Hôtel Le Séjour conjugue élégance contemporaine et douceur toulousaine. Briques roses, art de vivre et service attentionné composent un cadre apaisant pour vos escapades comme pour vos voyages d’affaires.",
+    "AMENITIES": [
+      "Emplacement central (Capitole)",
+      "Wi-Fi haut débit gratuit",
+      "Petit-déjeuner continental",
+      "Service de conciergerie 24/7",
+      "Climatisation",
+      "Coffre-fort en chambre"
+    ],
+    "ROOM_TYPES": [
+      {
+        "name": "Classique",
+        "shortDesc": "Design épuré, literie premium et coin bureau fonctionnel. L’essentiel revisité avec raffinement.",
+        "priceFrom": 99,
+        "gallery": ["room-classic-1.jpg", "room-classic-2.jpg"]
+      },
+      {
+        "name": "Deluxe",
+        "shortDesc": "Plus d’espace, coin salon confortable et vue sur cour intérieure. L’équilibre parfait entre intimité et volume.",
+        "priceFrom": 149,
+        "gallery": ["room-deluxe-1.jpg", "room-deluxe-2.jpg"]
+      },
+      {
+        "name": "Suite",
+        "shortDesc": "Vue sur les toits de la ville, salon séparé et baignoire sur pied. Le luxe discret à son apogée.",
+        "priceFrom": 229,
+        "gallery": ["room-suite-1.jpg", "room-suite-2.jpg"]
+      }
+    ],
+    "CHECKIN_INFO": "À partir de 15:00",
+    "CHECKOUT_INFO": "Jusqu’à 11:00",
+    "PARKING_INFO": "Parking privé sécurisé (sur réservation, 20€/nuit).",
+    "PUBLIC_TRANSPORT_INFO": "Métro ligne A (Capitole) et ligne B (Jeanne-d’Arc) à quelques minutes. Gare Toulouse-Matabiau à ~15 minutes.",
+    "ADDRESS": "12, Rue du Taur, 31000 Toulouse",
+    "GOOGLE_MAPS_EMBED_URL": "https://www.google.com/maps?q=Place+du+Capitole,+Toulouse&output=embed",
+    "PHONE": "+33 5 61 23 45 67",
+    "EMAIL": "contact@hotel-lesejour.com",
+    "RESERVATION_URL": "#contact",
+    "SEO": {
+      "title": "Hôtel Le Séjour – Toulouse | Hôtel de charme au cœur de la Ville Rose",
+      "description": "Découvrez l’Hôtel Le Séjour à Toulouse : élégance contemporaine, chambres confortables et service personnalisé, à deux pas du Capitole.",
+      "ogImage": "/images/og.jpg"
+    }
+  }

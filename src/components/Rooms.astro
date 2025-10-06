@@ -1,0 +1,74 @@
+---
+import siteData from '../../content/site.json';
+---
+
+<section id="chambres" class="py-20 sm:py-24 lg:py-32 bg-white">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Section Header -->
+    <div class="max-w-3xl mx-auto text-center mb-16">
+      <h2 class="font-playfair text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1C1C1C] mb-4">
+        Nos Chambres
+      </h2>
+      <div class="w-24 h-1 bg-[#C2A983] mx-auto mb-6"></div>
+      <p class="text-lg text-[#1C1C1C]/70">
+        Chaque chambre est une invitation au repos, conçue avec soin pour votre confort.
+      </p>
+    </div>
+    
+    <!-- Rooms Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+      {siteData.ROOM_TYPES.map((room, index) => (
+        <article class="group bg-[#F7F6F3] rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+          <!-- Room Image -->
+          <div class="relative h-64 overflow-hidden">
+            <img 
+              src={`/images/${room.gallery[0]}`}
+              alt={`Chambre ${room.name} - ${siteData.HOTEL_NAME}`}
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+              loading="lazy"
+            />
+            <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300"></div>
+          </div>
+          
+          <!-- Room Info -->
+          <div class="p-6 space-y-4">
+            <h3 class="font-playfair text-2xl font-semibold text-[#1C1C1C]">
+              {room.name}
+            </h3>
+            
+            <p class="text-[#1C1C1C]/70 leading-relaxed">
+              {room.shortDesc}
+            </p>
+            
+            <div class="pt-4 border-t border-black/[0.08]">
+              <p class="text-sm text-[#1C1C1C]/60 mb-2">À partir de</p>
+              <p class="font-playfair text-3xl font-bold text-[#C2A983]">
+                {room.priceFrom}€
+                <span class="text-base font-normal text-[#1C1C1C]/60">/nuit</span>
+              </p>
+            </div>
+            
+            <button 
+              data-room-index={index}
+              class="room-gallery-trigger w-full mt-4 px-6 py-3 bg-[#0E2235] text-white font-medium rounded-md hover:bg-[#C2A983] transition-all duration-300 shadow-sm hover:shadow-md"
+            >
+              Voir la chambre
+            </button>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  import { openLightbox } from './Lightbox.ts';
+  
+  // Attach click handlers to room gallery triggers
+  document.querySelectorAll('.room-gallery-trigger').forEach(button => {
+    button.addEventListener('click', (e) => {
+      const roomIndex = parseInt((e.currentTarget as HTMLElement).getAttribute('data-room-index') || '0');
+      openLightbox(roomIndex);
+    });
+  });
+</script>
