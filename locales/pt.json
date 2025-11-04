@@ -1,0 +1,151 @@
+{
+  "HOTEL_NAME": "Hôtel Anatole France",
+  "CITY": "Toulouse",
+  "ADDRESS": "46 place Anatole France, 31000 Toulouse",
+  "PHONE": "0561231996",
+  "EMAIL": "hotelanatolefrance@orange.fr",
+  "RESERVATION_URL": "#contact",
+  "GOOGLE_MAPS_EMBED_URL": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2889.4848!2d1.4437!3d43.6045!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12aebb6fec7552ff%3A0x406f69c2f411030!2s46%20place%20Anatole%20France%2C%2031000%20Toulouse!5e0!3m2!1spt!2sfr!4v1234567890",
+  "TAGLINE": "No coração de Toulouse, a poucos passos da emblemática Praça do Capitólio",
+  "INTRO_PARAGRAPH": "Quer viaje por lazer, negócios ou estudo, o nosso hotel goza de uma localização imbatível no centro de Toulouse, a menos de cinco minutos a pé da Praça do Capitólio. Totalmente renovado em janeiro de 2025, dispõe de 18 quartos que combinam conforto moderno com uma atmosfera íntima. Terá acesso direto ao centro animado, cheio de restaurantes, lojas e espaços culturais como o Museu Saint‑Raymond, a Basílica de Saint‑Sernin e as prestigiadas universidades e grandes écoles nas proximidades.",
+  "AMENITIES": [
+    "Wi‑Fi",
+    "Localização central (Capitólio)",
+    "Toalhas e roupa de cama",
+    "Secretária",
+    "Televisão"
+  ],
+  "ROOM_TYPES": [
+    {
+      "name": "Quarto Duplo Superior",
+      "shortDesc": "Cama king‑size e espaço generoso. Casa de banho privativa ampla com duche, além de televisão, secretária e guarda‑roupa.",
+      "priceFrom": 89,
+      "gallery": [
+        "chambre-superieure/1.jpg",
+        "chambre-superieure/2.jpg",
+        "chambre-superieure/3.jpg"
+      ]
+    },
+    {
+      "name": "Quarto Duplo Standard",
+      "shortDesc": "Cama king‑size. Casa de banho privativa mais compacta com duche. O quarto inclui também televisão e secretária.",
+      "priceFrom": 79,
+      "gallery": [
+        "chambre-standard/1.jpg",
+        "chambre-standard/2.jpg",
+        "chambre-standard/3.jpg",
+        "chambre-standard/4.jpg"
+      ]
+    },
+    {
+      "name": "Quarto Twin com WC Externo Privado",
+      "shortDesc": "Duas camas individuais. O quarto dispõe de televisão e secretária. O WC situa‑se no exterior, mas é de uso exclusivo do quarto.",
+      "priceFrom": 69,
+      "gallery": [
+        "chambre-jumeaux-prives/1.jpg"
+      ]
+    },
+    {
+      "name": "Quarto Twin com WC Externo Partilhado",
+      "shortDesc": "Duas camas individuais. O quarto dispõe de televisão e secretária. O WC situa‑se no exterior e é partilhado.",
+      "priceFrom": 59,
+      "gallery": [
+        "chambre-jumeaux-communs/1.jpg"
+      ]
+    },
+    {
+      "name": "Quarto Duplo com WC Partilhado",
+      "shortDesc": "Cama king‑size. Inclui televisão, secretária e guarda‑roupa. O WC situa‑se no exterior e é partilhado.",
+      "priceFrom": 59,
+      "gallery": [
+        "chambre-double-communes/1.jpg",
+        "chambre-double-communes/2.jpg"
+      ]
+    }
+  ],
+  "CHECKIN_INFO": "Entre as 15:00 e as 22:30",
+  "CHECKOUT_INFO": "Até às 11:00",
+  "PARKING_INFO": "Estacionamentos públicos Capitole e Compans Cafarelli nas proximidades.",
+  "PUBLIC_TRANSPORT_INFO": "De fácil acesso: perto das estações de metro Capitole e Compans‑Caffarelli, da estação ferroviária e a apenas 5 km do aeroporto de Toulouse‑Blagnac.",
+  "TOULOUSE_DESCRIPTION": "A silhueta do centro histórico de Toulouse desenha‑se entre cúpulas e torres de igrejas, campanários e elegantes hôtels particuliers. Atravesse a impressionante Praça do Capitólio e perca‑se pelas ruas de tons quentes e edifícios com inúmeras varandas.",
+  "SEO": {
+    "title": "Hôtel Anatole France – Toulouse | Hotel no coração do Capitólio",
+    "description": "Hôtel Anatole France em Toulouse: totalmente renovado em 2025, 18 quartos confortáveis a poucos passos da Praça do Capitólio. Ideal para lazer, negócios e estudantes.",
+    "ogImage": "/images/og.jpg"
+  },
+  "UI": {
+    "nav": {
+      "home": "Início",
+      "rooms": "Quartos",
+      "access": "Acesso",
+      "contact": "Contacto",
+      "book": "Reservar"
+    },
+    "sections": {
+      "rooms": "Os Nossos Quartos",
+      "roomsSubtitle": "Cada quarto é um convite ao descanso, concebido com cuidado para o seu conforto.",
+      "access": "Informações e Acesso",
+      "contact": "Contacte‑nos",
+      "contactSubtitle": "A nossa equipa está à sua disposição para qualquer pedido de informação ou reserva."
+    },
+    "hero": {
+      "discoverRooms": "Descubra os nossos quartos"
+    },
+    "form": {
+      "name": "Nome completo",
+      "nameLabel": "Nome completo",
+      "email": "Email",
+      "emailLabel": "Email",
+      "phone": "Telefone",
+      "phoneLabel": "Telefone",
+      "subject": "Assunto",
+      "subjectLabel": "Assunto",
+      "message": "A sua mensagem",
+      "messageLabel": "Mensagem",
+      "send": "Enviar",
+      "consent": "Aceito que os meus dados pessoais sejam utilizados para tratar o meu pedido, de acordo com a política de privacidade.",
+      "required": "*",
+      "selectSubject": "Selecione um assunto",
+      "reservation": "Pedido de reserva",
+      "information": "Pedido de informação",
+      "event": "Organização de evento",
+      "other": "Outro"
+    },
+    "info": {
+      "schedule": "Horários",
+      "checkin": "Check‑in",
+      "checkout": "Check‑out",
+      "parking": "Estacionamento",
+      "transport": "Transportes",
+      "directContact": "Contacto direto",
+      "phone": "Telefone",
+      "email": "Email",
+      "followUs": "Siga‑nos",
+      "quickLinks": "Ligações rápidas",
+      "legal": "Legal",
+      "discover": "Descubra Toulouse",
+      "address": "Morada",
+      "copyaddress": "Copiar morada",
+      "mapnotavailable": "Mapa indisponível",
+      "acceptcookies": "Aceite os cookies para visualizar o Google Maps.",
+      "enablemap": "Mostrar mapa",
+      "getdirections": "Como chegar",
+      "quickResponse": "Resposta rápida",
+      "quickResponseText": "Comprometemo‑nos a responder o mais rápido possível, normalmente em 24 horas. Para reservas urgentes, recomendamos uma chamada telefónica."
+    },
+    "room": {
+      "from": "Desde",
+      "perNight": "/noite",
+      "viewRoom": "Ver quarto"
+    },
+    "footer": {
+      "rights": "Todos os direitos reservados",
+      "privacy": "Política de privacidade",
+      "terms": "Aviso legal",
+      "cookies": "Gestão de cookies",
+      "salesConditions": "Condições de venda",
+      "legal": "Legal",
+      "copyright": "©"
+    }
+  }
+}

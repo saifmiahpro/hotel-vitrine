@@ -1,5 +1,7 @@
 ---
-import siteData from '../../content/site.json';
+import { getSiteData, getT } from '../utils/i18n';
+const siteData = getSiteData(Astro.url);
+const t = getT(Astro.url);
 
 const currentYear = new Date().getFullYear();
 ---
@@ -9,9 +11,10 @@ const currentYear = new Date().getFullYear();
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
       <!-- Hotel Info -->
       <div>
-        <h3 class="font-playfair text-2xl font-semibold mb-4">
+        <h3 class="font-playfair text-xl font-semibold mb-4">{t.info.followUs}</h3>
+        <p class="text-white/70 text-sm leading-relaxed mb-4">
           {siteData.HOTEL_NAME}
-        </h3>
+        </p>
         <p class="text-white/70 text-sm leading-relaxed mb-4">
           {siteData.TAGLINE}
         </p>
@@ -22,36 +25,22 @@ const currentYear = new Date().getFullYear();
       
       <!-- Quick Links -->
       <div>
-        <h4 class="font-semibold text-lg mb-4">Liens rapides</h4>
-        <nav class="space-y-2">
-          <a href="#accueil" class="block text-white/70 hover:text-[#C2A983] transition-colors text-sm">
-            Accueil
-          </a>
-          <a href="#chambres" class="block text-white/70 hover:text-[#C2A983] transition-colors text-sm">
-            Nos chambres
-          </a>
-          <a href="#acces" class="block text-white/70 hover:text-[#C2A983] transition-colors text-sm">
-            Accès
-          </a>
-          <a href="#contact" class="block text-white/70 hover:text-[#C2A983] transition-colors text-sm">
-            Contact
-          </a>
+        <h4 class="font-semibold text-lg mb-4">{t.info.quickLinks}</h4>
+        <nav class="flex flex-col space-y-2 text-sm text-white/70">
+          <a href="#accueil" class="hover:text-[#C2A983] transition-colors">{t.nav.home}</a>
+          <a href="#chambres" class="hover:text-[#C2A983] transition-colors">{t.nav.rooms}</a>
+          <a href="#acces" class="hover:text-[#C2A983] transition-colors">{t.nav.access}</a>
+          <a href="#contact" class="hover:text-[#C2A983] transition-colors">{t.nav.contact}</a>
         </nav>
       </div>
       
       <!-- Legal & Contact -->
       <div>
-        <h4 class="font-semibold text-lg mb-4">Informations légales</h4>
-        <nav class="space-y-2 mb-4">
-          <a href="/mentions-legales" class="block text-white/70 hover:text-[#C2A983] transition-colors text-sm">
-            Mentions légales
-          </a>
-          <a href="/politique-confidentialite" class="block text-white/70 hover:text-[#C2A983] transition-colors text-sm">
-            Politique de confidentialité
-          </a>
-          <a href="/cgv" class="block text-white/70 hover:text-[#C2A983] transition-colors text-sm">
-            Conditions générales de vente
-          </a>
+        <h4 class="font-semibold text-lg mb-4">{t.info.legal}</h4>
+        <nav class="flex flex-col space-y-2 mb-4 text-sm text-white/70">
+          <a href="/mentions-legales" class="hover:text-[#C2A983] transition-colors">{t.footer.terms}</a>
+          <a href="/politique-confidentialite" class="hover:text-[#C2A983] transition-colors">{t.footer.privacy}</a>
+          <a href="/cookies" class="hover:text-[#C2A983] transition-colors">{t.footer.cookies}</a>
         </nav>
         <div class="space-y-1">
           <p class="text-white/70 text-sm">
@@ -71,7 +60,7 @@ const currentYear = new Date().getFullYear();
     <!-- Bottom Bar -->
     <div class="border-t border-white/10 pt-8 flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
       <p class="text-white/60 text-sm text-center sm:text-left">
-        © {currentYear} {siteData.HOTEL_NAME}. Tous droits réservés.
+        {t.footer.copyright} {currentYear} {siteData.HOTEL_NAME}. {t.footer.rights}.
       </p>
       
       <!-- Social Media (optional - uncomment if needed) -->

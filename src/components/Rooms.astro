@@ -1,5 +1,7 @@
 ---
-import siteData from '../../content/site.json';
+import { getSiteData, getT } from '../utils/i18n';
+const siteData = getSiteData(Astro.url);
+const t = getT(Astro.url);
 ---
 
 <section id="chambres" class="py-16 sm:py-20 lg:py-32 bg-white">
@@ -7,20 +9,23 @@ import siteData from '../../content/site.json';
     <!-- Section Header -->
     <div class="max-w-3xl mx-auto text-center mb-12 sm:mb-16">
       <h2 class="font-playfair text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1C1C1C] mb-4">
-        Nos Chambres
+        {t.sections.rooms}
       </h2>
       <div class="w-24 h-1 bg-[#C2A983] mx-auto mb-6"></div>
       <p class="text-base sm:text-lg text-[#1C1C1C]/70 px-4">
-        Chaque chambre est une invitation au repos, conçue avec soin pour votre confort.
+        {t.sections.roomsSubtitle}
       </p>
     </div>
     
     <!-- Rooms Grid -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
       {siteData.ROOM_TYPES.map((room, index) => (
-        <article class="group bg-[#F7F6F3] rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+        <article class="group bg-[#FAF8F5] rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex flex-col">
           <!-- Room Image -->
-          <div class="relative h-64 overflow-hidden">
+          <div 
+            class="relative h-64 overflow-hidden flex-shrink-0 cursor-pointer room-image-trigger"
+            data-room-index={index}
+          >
             <img 
               src={`/images/${room.gallery[0]}`}
               alt={`Chambre ${room.name} - ${siteData.HOTEL_NAME}`}
@@ -28,32 +33,39 @@ import siteData from '../../content/site.json';
               loading="lazy"
             />
             <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300"></div>
+            <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div class="bg-white/90 backdrop-blur-sm p-3 rounded-full">
+                <svg class="w-8 h-8 text-[#1C1C1C]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"></path>
+                </svg>
+              </div>
+            </div>
           </div>
           
           <!-- Room Info -->
-          <div class="p-6 space-y-4">
-            <h3 class="font-playfair text-2xl font-semibold text-[#1C1C1C]">
+          <div class="p-6 flex flex-col flex-grow">
+            <h3 class="font-playfair text-2xl font-semibold text-[#1C1C1C] mb-4">
               {room.name}
             </h3>
             
-            <p class="text-[#1C1C1C]/70 leading-relaxed">
+            <p class="text-[#1C1C1C]/70 leading-relaxed mb-4 flex-grow">
               {room.shortDesc}
             </p>
             
-            <div class="pt-4 border-t border-black/[0.08]">
-              <p class="text-sm text-[#1C1C1C]/60 mb-2">À partir de</p>
-              <p class="font-playfair text-3xl font-bold text-[#C2A983]">
+            <div class="pt-4 border-t border-black/[0.08] mt-auto">
+              <p class="text-sm text-[#1C1C1C]/60 mb-2">{t.room.from}</p>
+              <p class="font-playfair text-3xl font-bold text-[#C2A983] mb-4">
                 {room.priceFrom}€
-                <span class="text-base font-normal text-[#1C1C1C]/60">/nuit</span>
+                <span class="text-base font-normal text-[#1C1C1C]/60">{t.room.perNight}</span>
               </p>
+              
+              <button 
+                data-room-index={index}
+                class="room-gallery-trigger w-full px-6 py-3 bg-[#0E2235] text-white font-medium rounded-md hover:bg-[#C2A983] transition-all duration-300 shadow-sm hover:shadow-md"
+              >
+                {t.room.viewRoom}
+              </button>
             </div>
-            
-            <button 
-              data-room-index={index}
-              class="room-gallery-trigger w-full mt-4 px-6 py-3 bg-[#0E2235] text-white font-medium rounded-md hover:bg-[#C2A983] transition-all duration-300 shadow-sm hover:shadow-md"
-            >
-              Voir la chambre
-            </button>
           </div>
         </article>
       ))}
@@ -64,9 +76,17 @@ import siteData from '../../content/site.json';
 <script>
   import { openLightbox } from './Lightbox.ts';
   
-  // Attach click handlers to room gallery triggers
+  // Attach click handlers to room gallery triggers (buttons)
   document.querySelectorAll('.room-gallery-trigger').forEach(button => {
     button.addEventListener('click', (e) => {
+      const roomIndex = parseInt((e.currentTarget as HTMLElement).getAttribute('data-room-index') || '0');
+      openLightbox(roomIndex);
+    });
+  });
+  
+  // Attach click handlers to room images
+  document.querySelectorAll('.room-image-trigger').forEach(imageDiv => {
+    imageDiv.addEventListener('click', (e) => {
       const roomIndex = parseInt((e.currentTarget as HTMLElement).getAttribute('data-room-index') || '0');
       openLightbox(roomIndex);
     });

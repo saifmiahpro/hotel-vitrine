@@ -1,5 +1,7 @@
 ---
-import siteData from '../../content/site.json';
+import { getSiteData, getT } from '../utils/i18n';
+const siteData = getSiteData(Astro.url);
+const t = getT(Astro.url);
 ---
 
 <section id="contact" class="py-16 sm:py-20 lg:py-32 bg-white">
@@ -7,17 +9,17 @@ import siteData from '../../content/site.json';
     <!-- Section Header -->
     <div class="max-w-3xl mx-auto text-center mb-12 sm:mb-16">
       <h2 class="font-playfair text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1C1C1C] mb-4">
-        Contactez-nous
+        {t.sections.contact}
       </h2>
       <div class="w-24 h-1 bg-[#C2A983] mx-auto mb-6"></div>
       <p class="text-base sm:text-lg text-[#1C1C1C]/70 px-4">
-        Notre équipe est à votre disposition pour toute demande d'information ou de réservation.
+        {t.sections.contactSubtitle}
       </p>
     </div>
     
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 max-w-6xl mx-auto">
       <!-- Contact Form -->
-      <div class="bg-[#F7F6F3] p-6 sm:p-8 rounded-lg shadow-sm">
+      <div class="bg-[#FAF8F5] p-6 sm:p-8 rounded-lg shadow-sm">
         <form 
           name="contact" 
           method="POST" 
@@ -38,7 +40,7 @@ import siteData from '../../content/site.json';
           <!-- Name -->
           <div>
             <label for="name" class="block text-sm font-medium text-[#1C1C1C] mb-2">
-              Nom complet <span class="text-red-500">*</span>
+              {t.form.nameLabel} <span class="text-red-500">{t.form.required}</span>
             </label>
             <input 
               type="text" 
@@ -46,14 +48,14 @@ import siteData from '../../content/site.json';
               name="name" 
               required
               class="w-full px-4 py-3 bg-white border border-black/[0.08] rounded-md focus:outline-none focus:ring-2 focus:ring-[#C2A983] focus:border-transparent transition-all"
-              placeholder="Jean Dupont"
+              placeholder={t.form.name}
             />
           </div>
           
           <!-- Email -->
           <div>
             <label for="email" class="block text-sm font-medium text-[#1C1C1C] mb-2">
-              Email <span class="text-red-500">*</span>
+              {t.form.emailLabel} <span class="text-red-500">{t.form.required}</span>
             </label>
             <input 
               type="email" 
@@ -68,7 +70,7 @@ import siteData from '../../content/site.json';
           <!-- Phone -->
           <div>
             <label for="phone" class="block text-sm font-medium text-[#1C1C1C] mb-2">
-              Téléphone
+              {t.form.phoneLabel}
             </label>
             <input 
               type="tel" 
@@ -82,7 +84,7 @@ import siteData from '../../content/site.json';
           <!-- Subject -->
           <div>
             <label for="subject" class="block text-sm font-medium text-[#1C1C1C] mb-2">
-              Objet <span class="text-red-500">*</span>
+              {t.form.subjectLabel} <span class="text-red-500">{t.form.required}</span>
             </label>
             <select 
               id="subject" 
@@ -90,18 +92,18 @@ import siteData from '../../content/site.json';
               required
               class="w-full px-4 py-3 bg-white border border-black/[0.08] rounded-md focus:outline-none focus:ring-2 focus:ring-[#C2A983] focus:border-transparent transition-all"
             >
-              <option value="">Sélectionnez un objet</option>
-              <option value="reservation">Demande de réservation</option>
-              <option value="info">Demande d'information</option>
-              <option value="event">Organisation d'événement</option>
-              <option value="other">Autre</option>
+              <option value="">{t.form.selectSubject}</option>
+              <option value="reservation">{t.form.reservation}</option>
+              <option value="info">{t.form.information}</option>
+              <option value="event">{t.form.event}</option>
+              <option value="other">{t.form.other}</option>
             </select>
           </div>
           
           <!-- Message -->
           <div>
             <label for="message" class="block text-sm font-medium text-[#1C1C1C] mb-2">
-              Message <span class="text-red-500">*</span>
+              {t.form.messageLabel} <span class="text-red-500">{t.form.required}</span>
             </label>
             <textarea 
               id="message" 
@@ -109,7 +111,7 @@ import siteData from '../../content/site.json';
               rows="5" 
               required
               class="w-full px-4 py-3 bg-white border border-black/[0.08] rounded-md focus:outline-none focus:ring-2 focus:ring-[#C2A983] focus:border-transparent transition-all resize-none"
-              placeholder="Votre message..."
+              placeholder={t.form.message}
             ></textarea>
           </div>
           
@@ -123,7 +125,7 @@ import siteData from '../../content/site.json';
               class="mt-1 w-4 h-4 text-[#C2A983] border-black/[0.08] rounded focus:ring-[#C2A983]"
             />
             <label for="consent" class="text-sm text-[#1C1C1C]/70">
-              J'accepte que mes données personnelles soient utilisées pour traiter ma demande conformément à la politique de confidentialité. <span class="text-red-500">*</span>
+              {t.form.consent} <span class="text-red-500">{t.form.required}</span>
             </label>
           </div>
           
@@ -132,7 +134,7 @@ import siteData from '../../content/site.json';
             type="submit"
             class="w-full px-6 py-4 bg-[#C2A983] text-white font-medium rounded-md hover:bg-[#0E2235] transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
           >
-            Envoyer le message
+            {t.form.send}
           </button>
         </form>
       </div>
@@ -142,13 +144,13 @@ import siteData from '../../content/site.json';
         <!-- Direct Contact -->
         <div class="space-y-6">
           <h3 class="font-playfair text-2xl font-semibold text-[#1C1C1C]">
-            Contact direct
+            {t.info.directContact}
           </h3>
           
           <!-- Phone -->
           <a 
             href={`tel:${siteData.PHONE.replace(/\s/g, '')}`}
-            class="flex items-start space-x-4 p-4 bg-[#F7F6F3] rounded-lg hover:bg-[#C2A983]/10 transition-colors group"
+            class="flex items-start space-x-4 p-4 bg-[#FAF8F5] rounded-lg hover:bg-[#C2A983]/10 transition-colors group"
           >
             <div class="flex-shrink-0 w-12 h-12 bg-[#C2A983]/10 rounded-lg flex items-center justify-center group-hover:bg-[#C2A983] transition-colors">
               <svg class="w-6 h-6 text-[#C2A983] group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -156,7 +158,7 @@ import siteData from '../../content/site.json';
               </svg>
             </div>
             <div>
-              <p class="text-sm text-[#1C1C1C]/60 mb-1">Téléphone</p>
+              <p class="text-sm text-[#1C1C1C]/60 mb-1">{t.info.phone}</p>
               <p class="text-lg font-medium text-[#1C1C1C]">{siteData.PHONE}</p>
             </div>
           </a>
@@ -164,7 +166,7 @@ import siteData from '../../content/site.json';
           <!-- Email -->
           <a 
             href={`mailto:${siteData.EMAIL}`}
-            class="flex items-start space-x-4 p-4 bg-[#F7F6F3] rounded-lg hover:bg-[#C2A983]/10 transition-colors group"
+            class="flex items-start space-x-4 p-4 bg-[#FAF8F5] rounded-lg hover:bg-[#C2A983]/10 transition-colors group"
           >
             <div class="flex-shrink-0 w-12 h-12 bg-[#C2A983]/10 rounded-lg flex items-center justify-center group-hover:bg-[#C2A983] transition-colors">
               <svg class="w-6 h-6 text-[#C2A983] group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -172,7 +174,7 @@ import siteData from '../../content/site.json';
               </svg>
             </div>
             <div>
-              <p class="text-sm text-[#1C1C1C]/60 mb-1">Email</p>
+              <p class="text-sm text-[#1C1C1C]/60 mb-1">{t.info.email}</p>
               <p class="text-lg font-medium text-[#1C1C1C] break-all">{siteData.EMAIL}</p>
             </div>
           </a>
@@ -181,10 +183,10 @@ import siteData from '../../content/site.json';
         <!-- Info Box -->
         <div class="bg-[#0E2235] text-white p-6 rounded-lg">
           <h4 class="font-playfair text-xl font-semibold mb-3">
-            Réponse rapide
+            {t.info.quickResponse}
           </h4>
           <p class="text-white/80 text-sm leading-relaxed">
-            Notre équipe s'engage à vous répondre dans les plus brefs délais, généralement sous 24 heures. Pour une réservation urgente, nous vous conseillons de nous contacter par téléphone.
+            {t.info.quickResponseText}
           </p>
         </div>
         

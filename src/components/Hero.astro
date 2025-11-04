@@ -1,97 +1,139 @@
 ---
-import siteData from '../../content/site.json';
+import { getSiteData } from '../utils/i18n';
+const siteData = getSiteData(Astro.url);
 ---
 
-<section id="accueil" class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
-  <!-- Hero Image with Overlay -->
-  <div class="absolute inset-0 z-0">
-    <img 
-      src="/images/hero.jpg" 
-      alt={`${siteData.HOTEL_NAME} - ${siteData.CITY}`}
-      class="w-full h-full object-cover"
-    />
-    <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/50"></div>
+<section id="accueil" class="relative min-h-screen flex items-center overflow-hidden pt-20">
+  <div class="absolute inset-0 bg-gradient-to-br from-[#f8f9fa] via-white to-[#f1f3f5]"></div>
+  
+  <div class="hidden lg:block absolute top-0 left-0 w-[45%] h-full">
+    <div class="relative w-full h-full" style="clip-path: polygon(0 0, 100% 0, 75% 100%, 0 100%);">
+      <img 
+        src="/images/hero.jpg" 
+        alt={`${siteData.HOTEL_NAME} - ${siteData.CITY}`}
+        class="w-full h-full object-cover"
+        loading="eager"
+        fetchpriority="high"
+      />
+      <div class="absolute inset-0 bg-gradient-to-br from-[#0E2235]/45 via-[#0E2235]/30 to-[#0E2235]/20"></div>
+      
+      <div class="absolute inset-0 flex items-center justify-center px-8">
+        <div class="text-center animate-fade-in">
+          <h1 class="font-playfair text-4xl xl:text-5xl font-bold leading-tight text-white drop-shadow-xl">
+            {siteData.HOTEL_NAME}
+          </h1>
+          <p class="text-2xl xl:text-3xl font-light text-[#C2A983] mt-3 drop-shadow-lg">
+            {siteData.CITY}
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="absolute top-0 right-0 w-1 h-full bg-gradient-to-b from-[#C2A983] via-[#C2A983]/50 to-transparent" style="transform: translateX(-25%) rotate(8deg); transform-origin: top;"></div>
   </div>
   
-  <!-- Content -->
-  <div class="relative z-10 container mx-auto px-6 sm:px-8 lg:px-8 text-center text-white">
-    <div class="max-w-4xl mx-auto space-y-4 sm:space-y-6 animate-fade-in">
-      <!-- Title -->
-      <h1 class="font-playfair text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
-        {siteData.HOTEL_NAME}
-        <span class="block text-lg sm:text-3xl md:text-4xl font-normal mt-2 text-[#C2A983]">
-          {siteData.CITY}
-        </span>
-      </h1>
-      
-      <!-- Tagline -->
-      <p class="text-lg sm:text-2xl md:text-3xl font-light leading-relaxed px-4">
-        {siteData.TAGLINE}
-      </p>
-      
-      <!-- Introduction Paragraph - Visible partout, texte plus petit sur mobile -->
-      <p class="text-xs sm:text-lg max-w-2xl mx-auto leading-relaxed opacity-90 sm:opacity-95 px-4">
-        {siteData.INTRO_PARAGRAPH}
-      </p>
-      
-      <!-- Amenities List - 2 lignes défilantes -->
-      <div class="pt-4 sm:pt-8 relative">
-        <!-- Mobile: 2 lignes défilantes (100vw, boucle infinie) -->
-        <div class="sm:hidden flex flex-col gap-2 overflow-hidden -mx-6" style="width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw;">
-          <!-- Ligne 1: gauche → droite (badges dupliqués pour boucle sans coupure) -->
-          <div class="flex gap-2 animate-scroll-right-mobile w-max">
-            {[...siteData.AMENITIES.slice(0, 3), ...siteData.AMENITIES.slice(0, 3)].map((amenity, idx) => (
-              <div class="flex-shrink-0 flex items-center space-x-1.5 bg-white/10 backdrop-blur-sm px-2.5 py-1.5 rounded-full border border-white/20 text-xs">
-                <svg class="w-3 h-3 text-[#C2A983] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                </svg>
-                <span class="font-medium whitespace-nowrap">{amenity}</span>
-              </div>
-            ))}
-          </div>
-          
-          <!-- Ligne 2: droite → gauche (badges dupliqués pour boucle sans coupure) -->
-          <div class="flex gap-2 animate-scroll-left-mobile w-max">
-            {[...siteData.AMENITIES.slice(3, 6), ...siteData.AMENITIES.slice(3, 6)].map((amenity, idx) => (
-              <div class="flex-shrink-0 flex items-center space-x-1.5 bg-white/10 backdrop-blur-sm px-2.5 py-1.5 rounded-full border border-white/20 text-xs">
-                <svg class="w-3 h-3 text-[#C2A983] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                </svg>
-                <span class="font-medium whitespace-nowrap">{amenity}</span>
-              </div>
-            ))}
-          </div>
-        </div>
+  <div class="lg:hidden absolute inset-0 z-0 bg-gradient-to-br from-[#f8f9fa] via-white to-[#f1f3f5]"></div>
+  
+  <div class="lg:hidden absolute inset-0 z-0">
+    <div class="absolute inset-0">
+      <div class="relative w-full h-[calc(60vh+60px)]" style="clip-path: polygon(0 0, 100% 0, 100% 96%, 0 100%);">
+        <img 
+          src="/images/hero.jpg" 
+          alt={`${siteData.HOTEL_NAME} - ${siteData.CITY}`}
+          class="w-full h-full object-cover"
+          loading="eager"
+          fetchpriority="high"
+        />
+        <div class="absolute inset-0 bg-gradient-to-b from-[#0E2235]/50 via-[#0E2235]/30 to-[#0E2235]/65"></div>
         
-        <!-- Desktop: Normal flex wrap -->
-        <div class="hidden sm:flex flex-wrap justify-center gap-4 px-4 max-w-3xl mx-auto">
-          {siteData.AMENITIES.map((amenity) => (
-            <div class="flex items-center space-x-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full border border-white/20">
-              <svg class="w-4 h-4 text-[#C2A983] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+        <div class="absolute top-28 left-0 right-0 text-center px-6 animate-fade-in">
+          <div class="text-center">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-white/10 backdrop-blur-md rounded-full border border-white/30 mb-4">
+              <svg class="w-3.5 h-3.5 text-[#C2A983]" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
               </svg>
-              <span class="text-sm font-medium">{amenity}</span>
+              <span class="text-sm font-medium text-white tracking-wide">{siteData.CITY}</span>
             </div>
-          ))}
+            
+            <h1 class="font-playfair text-4xl sm:text-5xl font-bold leading-tight text-white" style="text-shadow: 0 4px 20px rgba(0,0,0,0.5), 0 0 40px rgba(0,0,0,0.3);">
+              {siteData.HOTEL_NAME}
+            </h1>
+          </div>
         </div>
       </div>
       
-      <!-- CTA Button -->
-      <div class="pt-4 sm:pt-8 pb-16 sm:pb-0">
-        <a 
-          href="#chambres" 
-          class="inline-block px-8 py-3 bg-[#C2A983] text-white text-sm sm:text-base font-semibold rounded-md hover:bg-white hover:text-[#1C1C1C] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
-        >
-          Découvrir nos chambres
-        </a>
+      <div class="absolute w-full h-[2px] bg-gradient-to-r from-transparent via-[#C2A983] to-transparent" style="top: 57vh;"></div>
+    </div>
+  </div>
+  
+  <div class="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 w-full">
+    <div class="lg:hidden pt-[30vh] max-w-lg mx-auto">
+      <div class="space-y-4 animate-fade-in">
+        <div class="grid grid-cols-2 gap-2.5 px-6">
+          {siteData.AMENITIES.map((amenity) => (
+            <div class="flex items-center gap-2 bg-white/10 backdrop-blur-md rounded-lg px-3 border border-white/20 h-[40px]">
+              <div class="w-1 h-4 bg-[#C2A983] rounded-full flex-shrink-0"></div>
+              <span class="text-xs text-white font-medium leading-tight">{amenity}</span>
+            </div>
+          ))}
+        </div>
+        
+        <div class="text-center">
+          <a 
+            href="#chambres" 
+            class="inline-flex items-center gap-3 px-10 py-4 bg-[#0E2235] text-white text-base font-semibold rounded-xl hover:bg-[#C2A983] transition-all duration-300 shadow-2xl hover:shadow-3xl transform hover:-translate-y-0.5"
+          >
+            <span>{siteData.UI.hero.discoverRooms}</span>
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+            </svg>
+          </a>
+        </div>
+        
+        <div class="text-center px-4 pt-2 pb-12">
+          <p class="text-base text-[#1C1C1C]/70 leading-relaxed">
+            {siteData.INTRO_PARAGRAPH}
+          </p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="hidden lg:block text-left ml-[48%] pl-8 max-w-xl">
+      <div class="space-y-4 animate-fade-in">
+        <p class="text-base xl:text-lg text-[#1C1C1C]/80 leading-relaxed">
+          {siteData.TAGLINE}
+        </p>
+        
+        <p class="text-sm text-[#1C1C1C]/70 leading-relaxed">
+          {siteData.INTRO_PARAGRAPH}
+        </p>
+        
+        <div class="grid grid-cols-2 gap-x-3 gap-y-1.5 pt-3">
+          {siteData.AMENITIES.map((amenity) => (
+            <div class="flex items-center gap-2 text-xs text-[#1C1C1C]/70">
+              <svg class="w-3 h-3 text-[#C2A983] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              <span class="font-medium">{amenity}</span>
+            </div>
+          ))}
+        </div>
+        
+        <div class="pt-3 pb-20">
+          <a 
+            href="#chambres" 
+            class="inline-block px-8 py-2.5 bg-[#0E2235] text-white text-sm font-semibold rounded-lg hover:bg-[#C2A983] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+          >
+            {siteData.UI.hero.discoverRooms}
+          </a>
+        </div>
       </div>
     </div>
   </div>
   
-  <!-- Scroll Indicator -->
-  <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10 animate-bounce">
-    <a href="#chambres" class="text-white/80 hover:text-white transition-colors">
-      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+  <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-10 animate-bounce hidden lg:block">
+    <a href="#chambres" class="flex flex-col items-center gap-1 text-[#0E2235]/50 hover:text-[#C2A983] transition-colors">
+      <span class="text-xs font-medium">Défiler</span>
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
       </svg>
     </a>
@@ -112,32 +154,5 @@ import siteData from '../../content/site.json';
   
   .animate-fade-in {
     animation: fade-in 1s ease-out;
-  }
-
-  /* Infinite scroll animations for mobile badges - seamless loop */
-  @keyframes scroll-right-mobile {
-    0% {
-      transform: translateX(-50%);
-    }
-    100% {
-      transform: translateX(0);
-    }
-  }
-
-  @keyframes scroll-left-mobile {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-50%);
-    }
-  }
-
-  .animate-scroll-right-mobile {
-    animation: scroll-right-mobile 25s linear infinite;
-  }
-
-  .animate-scroll-left-mobile {
-    animation: scroll-left-mobile 30s linear infinite;
   }
 </style>

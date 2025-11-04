@@ -1,0 +1,135 @@
+{
+  "HOTEL_NAME": "Hôtel Anatole France",
+  "CITY": "Toulouse",
+  "TAGLINE": "Au cœur de Toulouse, à deux pas de la célèbre place du Capitole",
+  "INTRO_PARAGRAPH": "Que vous soyez en visite touristique, en voyage d'affaires ou en séjour étudiant, l'Hôtel bénéficie d'un emplacement idéal au cœur de Toulouse, à moins de cinq minutes à pied de la place du Capitole. Entièrement rénové en janvier 2025, il propose 18 chambres alliant confort moderne et atmosphère intimiste. Vous profiterez d'un accès direct au centre-ville animé, regorgeant de restaurants, de boutiques et de sites culturels, tels que le musée Saint-Raymond, la basilique Saint-Sernin ou encore les prestigieuses universités et grandes écoles toulousaines situées à proximité.",
+  "AMENITIES": [
+    "Wifi",
+    "Emplacement central (Capitole)",
+    "Serviettes et linge de maison",
+    "Bureau",
+    "Télévision"
+  ],
+  "ROOM_TYPES": [
+    {
+      "name": "Chambre Double Supérieure",
+      "shortDesc": "Grand lit double et espace généreux. Cette chambre dispose d'une salle de bain privative spacieuse avec douche, ainsi que d'une télévision, d'un bureau et d'une armoire.",
+      "priceFrom": 89,
+      "gallery": ["chambre-superieure/1.jpg", "chambre-superieure/2.jpg", "chambre-superieure/3.jpg"]
+    },
+    {
+      "name": "Chambre Double Standard",
+      "shortDesc": "Grand lit double. Salle de bain privative plus compacte, équipée d'une douche. La chambre comprend également une télévision et un bureau.",
+      "priceFrom": 79,
+      "gallery": ["chambre-standard/1.jpg", "chambre-standard/2.jpg", "chambre-standard/3.jpg", "chambre-standard/4.jpg"]
+    },
+    {
+      "name": "Chambre Lits Jumeaux avec Toilettes Extérieures Privées",
+      "shortDesc": "Deux lits simples. La chambre dispose d'une télévision et d'un bureau. Pour deux chambres les toilettes sont situées à l'extérieur mais restent privées pour la chambre.",
+      "priceFrom": 69,
+      "gallery": ["chambre-jumeaux-prives/1.jpg"]
+    },
+    {
+      "name": "Chambre Lits Jumeaux avec Toilettes Extérieures Communes",
+      "shortDesc": "Deux lits simples. La chambre dispose d'une télévision et d'un bureau. Les toilettes sont situées à l'extérieur et partagées.",
+      "priceFrom": 59,
+      "gallery": ["chambre-jumeaux-communs/1.jpg"]
+    },
+    {
+      "name": "Chambre Double avec Toilettes Communes",
+      "shortDesc": "Grand lit double. Télévision, bureau et armoire inclus. Les toilettes sont situées à l'extérieur et partagées.",
+      "priceFrom": 59,
+      "gallery": ["chambre-double-communes/1.jpg", "chambre-double-communes/2.jpg"]
+    }
+  ],
+  "CHECKIN_INFO": "Entre 15h et 22h30",
+  "CHECKOUT_INFO": "Jusqu'à 11h",
+  "PARKING_INFO": "Parking public du Capitole et de Compans Cafarelli à proximité.",
+  "PUBLIC_TRANSPORT_INFO": "Facilement accessible, l'établissement se trouve près des stations de métro Capitole et Compans-Caffarelli, de la gare, et à seulement 5 km de l'aéroport Toulouse-Blagnac.",
+  "ADDRESS": "46 place Anatole France, 31000 Toulouse",
+  "GOOGLE_MAPS_EMBED_URL": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2889.4848!2d1.4437!3d43.6045!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12aebb6fec7552ff%3A0x406f69c2f411030!2s46%20place%20Anatole%20France%2C%2031000%20Toulouse!5e0!3m2!1sfr!2sfr!4v1234567890",
+  "PHONE": "0561231996",
+  "EMAIL": "hotelanatolefrance@orange.fr",
+  "RESERVATION_URL": "#contact",
+  "TOULOUSE_DESCRIPTION": "Le paysage de la vieille ville de Toulouse se caractérise par les dômes et les tourelles de ses églises, des tours et d'imposantes maisons de ville. Traversez l'impressionnante place du Capitole et déambulez dans des rues aux tons chauds et aux bâtiments arborant de nombreux balcons.",
+  "SEO": {
+    "title": "Hôtel Anatole France – Toulouse | Hôtel au cœur du Capitole",
+    "description": "Hôtel Anatole France à Toulouse : entièrement rénové en 2025, 18 chambres confortables, à deux pas de la place du Capitole. Idéal pour tourisme, affaires et étudiants.",
+    "ogImage": "/images/og.jpg"
+  },
+  "UI": {
+    "nav": {
+      "home": "Accueil",
+      "rooms": "Chambres",
+      "access": "Accès",
+      "contact": "Contact",
+      "book": "Réserver"
+    },
+    "sections": {
+      "rooms": "Nos Chambres",
+      "roomsSubtitle": "Chaque chambre est une invitation au repos, conçue avec soin pour votre confort.",
+      "access": "Informations & Accès",
+      "contact": "Contactez-nous",
+      "contactSubtitle": "Notre équipe est à votre disposition pour toute demande d'information ou de réservation."
+    },
+    "hero": {
+      "discoverRooms": "Découvrir nos chambres"
+    },
+    "form": {
+      "name": "Nom complet",
+      "nameLabel": "Nom complet",
+      "email": "Email",
+      "emailLabel": "Email",
+      "phone": "Téléphone",
+      "phoneLabel": "Téléphone",
+      "subject": "Objet",
+      "subjectLabel": "Objet",
+      "message": "Votre message",
+      "messageLabel": "Message",
+      "send": "Envoyer",
+      "consent": "J'accepte que mes données personnelles soient utilisées pour traiter ma demande conformément à la politique de confidentialité.",
+      "required": "*",
+      "selectSubject": "Sélectionnez un objet",
+      "reservation": "Demande de réservation",
+      "information": "Demande d'information",
+      "event": "Organisation d'événement",
+      "other": "Autre"
+    },
+    "info": {
+      "schedule": "Horaires",
+      "checkin": "Arrivée",
+      "checkout": "Départ",
+      "parking": "Parking",
+      "transport": "Transports",
+      "directContact": "Contact direct",
+      "phone": "Téléphone",
+      "email": "Email",
+      "followUs": "Suivez-nous",
+      "quickLinks": "Liens rapides",
+      "legal": "Légal",
+      "discover": "Découvrez Toulouse",
+      "address": "Adresse",
+      "copyaddress": "Copier l'adresse",
+      "mapnotavailable": "Carte non disponible",
+      "acceptcookies": "Veuillez accepter les cookies pour afficher la carte Google Maps.",
+      "enablemap": "Afficher la carte",
+      "getdirections": "Obtenir l'itinéraire",
+      "quickResponse": "Réponse rapide",
+      "quickResponseText": "Notre équipe s'engage à vous répondre dans les plus brefs délais, généralement sous 24 heures. Pour une réservation urgente, nous vous conseillons de nous contacter par téléphone."
+    },
+    "room": {
+      "from": "À partir de",
+      "perNight": "/nuit",
+      "viewRoom": "Voir la chambre"
+    },
+    "footer": {
+      "rights": "Tous droits réservés",
+      "privacy": "Politique de confidentialité",
+      "terms": "Mentions légales",
+      "cookies": "Gestion des cookies",
+      "salesConditions": "CGV",
+      "legal": "Légal",
+      "copyright": "©"
+    }
+  }
+}

@@ -1,0 +1,151 @@
+{
+  "HOTEL_NAME": "Hôtel Anatole France",
+  "CITY": "Toulouse",
+  "ADDRESS": "46 place Anatole France, 31000 Toulouse",
+  "PHONE": "0561231996",
+  "EMAIL": "hotelanatolefrance@orange.fr",
+  "RESERVATION_URL": "#contact",
+  "GOOGLE_MAPS_EMBED_URL": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2889.4848!2d1.4437!3d43.6045!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12aebb6fec7552ff%3A0x406f69c2f411030!2s46%20place%20Anatole%20France%2C%2031000%20Toulouse!5e0!3m2!1sit!2sfr!4v1234567890",
+  "TAGLINE": "Nel cuore di Tolosa, a pochi passi dall'iconica Plaza del Capitolio",
+  "INTRO_PARAGRAPH": "Che tu viaggi per turismo, lavoro o studio, il nostro hotel gode di una posizione imbattibile nel centro di Tolosa, a meno di cinque minuti a piedi da Plaza del Capitolio. Completamente ristrutturato a gennaio 2025, offre 18 camere che coniugano comfort moderno e atmosfera intima. Avrai accesso diretto al vivace centro storico, ricco di ristoranti, boutique e luoghi culturali come il Museo Saint‑Raymond, la Basilica di Saint‑Sernin e le prestigiose università e grandes écoles nelle vicinanze.",
+  "AMENITIES": [
+    "Wi‑Fi",
+    "Posizione centrale (Capitolio)",
+    "Asciugamani e biancheria",
+    "Scrivania",
+    "Televisione"
+  ],
+  "ROOM_TYPES": [
+    {
+      "name": "Camera Doppia Superior",
+      "shortDesc": "Letto king‑size e ampi spazi. Bagno privato grande con doccia, oltre a TV, scrivania e armadio.",
+      "priceFrom": 89,
+      "gallery": [
+        "chambre-superieure/1.jpg",
+        "chambre-superieure/2.jpg",
+        "chambre-superieure/3.jpg"
+      ]
+    },
+    {
+      "name": "Camera Doppia Standard",
+      "shortDesc": "Letto king‑size. Bagno privato più compatto con doccia. La camera include anche TV e scrivania.",
+      "priceFrom": 79,
+      "gallery": [
+        "chambre-standard/1.jpg",
+        "chambre-standard/2.jpg",
+        "chambre-standard/3.jpg",
+        "chambre-standard/4.jpg"
+      ]
+    },
+    {
+      "name": "Camera Twin con Servizi Esterni Privati",
+      "shortDesc": "Due letti singoli. TV e scrivania. I servizi igienici sono esterni ma ad uso esclusivo della camera.",
+      "priceFrom": 69,
+      "gallery": [
+        "chambre-jumeaux-prives/1.jpg"
+      ]
+    },
+    {
+      "name": "Camera Twin con Servizi Esterni Condivisi",
+      "shortDesc": "Due letti singoli. TV e scrivania. I servizi igienici sono esterni e condivisi.",
+      "priceFrom": 59,
+      "gallery": [
+        "chambre-jumeaux-communs/1.jpg"
+      ]
+    },
+    {
+      "name": "Camera Doppia con Servizi Condivisi",
+      "shortDesc": "Letto king‑size. TV, scrivania e armadio inclusi. I servizi igienici sono esterni e condivisi.",
+      "priceFrom": 59,
+      "gallery": [
+        "chambre-double-communes/1.jpg",
+        "chambre-double-communes/2.jpg"
+      ]
+    }
+  ],
+  "CHECKIN_INFO": "Dalle 15:00 alle 22:30",
+  "CHECKOUT_INFO": "Entro le 11:00",
+  "PARKING_INFO": "Parcheggi pubblici Capitole e Compans Cafarelli nelle vicinanze.",
+  "PUBLIC_TRANSPORT_INFO": "Facilmente raggiungibile: vicino alle stazioni metro Capitole e Compans‑Caffarelli, alla stazione ferroviaria e a soli 5 km dall'aeroporto di Tolosa‑Blagnac.",
+  "TOULOUSE_DESCRIPTION": "Lo skyline del centro storico di Tolosa alterna cupole e torrette di chiese, campanili e nobili hôtels particuliers. Attraversa la scenografica Plaza del Capitolio e perditi tra le strade dai toni caldi e i palazzi con numerosi balconi.",
+  "SEO": {
+    "title": "Hôtel Anatole France – Tolosa | Hotel nel cuore del Capitolio",
+    "description": "Hôtel Anatole France a Tolosa: ristrutturato nel 2025, 18 camere confortevoli a due passi da Plaza del Capitolio. Ideale per turismo, affari e studenti.",
+    "ogImage": "/images/og.jpg"
+  },
+  "UI": {
+    "nav": {
+      "home": "Home",
+      "rooms": "Camere",
+      "access": "Come arrivare",
+      "contact": "Contatti",
+      "book": "Prenota"
+    },
+    "sections": {
+      "rooms": "Le Nostre Camere",
+      "roomsSubtitle": "Ogni camera è un invito al riposo, progettata con cura per il vostro comfort.",
+      "access": "Informazioni e Accesso",
+      "contact": "Contattaci",
+      "contactSubtitle": "Il nostro team è a vostra disposizione per qualsiasi informazione o prenotazione."
+    },
+    "hero": {
+      "discoverRooms": "Scopri le nostre camere"
+    },
+    "form": {
+      "name": "Nome e cognome",
+      "nameLabel": "Nome e cognome",
+      "email": "Email",
+      "emailLabel": "Email",
+      "phone": "Telefono",
+      "phoneLabel": "Telefono",
+      "subject": "Oggetto",
+      "subjectLabel": "Oggetto",
+      "message": "Il tuo messaggio",
+      "messageLabel": "Messaggio",
+      "send": "Invia",
+      "consent": "Accetto che i miei dati personali vengano utilizzati per evadere la richiesta in conformità con l'informativa privacy.",
+      "required": "*",
+      "selectSubject": "Seleziona un oggetto",
+      "reservation": "Richiesta di prenotazione",
+      "information": "Richiesta di informazioni",
+      "event": "Organizzazione evento",
+      "other": "Altro"
+    },
+    "info": {
+      "schedule": "Orari",
+      "checkin": "Check‑in",
+      "checkout": "Check‑out",
+      "parking": "Parcheggio",
+      "transport": "Trasporti",
+      "directContact": "Contatto diretto",
+      "phone": "Telefono",
+      "email": "Email",
+      "followUs": "Seguici",
+      "quickLinks": "Link rapidi",
+      "legal": "Legale",
+      "discover": "Scopri Tolosa",
+      "address": "Indirizzo",
+      "copyaddress": "Copia indirizzo",
+      "mapnotavailable": "Mappa non disponibile",
+      "acceptcookies": "Accetta i cookie per visualizzare Google Maps.",
+      "enablemap": "Mostra mappa",
+      "getdirections": "Indicazioni stradali",
+      "quickResponse": "Risposta rapida",
+      "quickResponseText": "Rispondiamo il prima possibile, di norma entro 24 ore. Per urgenze ti consigliamo di chiamarci."
+    },
+    "room": {
+      "from": "Da",
+      "perNight": "/notte",
+      "viewRoom": "Vedi camera"
+    },
+    "footer": {
+      "rights": "Tutti i diritti riservati",
+      "privacy": "Informativa privacy",
+      "terms": "Note legali",
+      "cookies": "Gestione cookie",
+      "salesConditions": "Condizioni di vendita",
+      "legal": "Legale",
+      "copyright": "©"
+    }
+  }
+}

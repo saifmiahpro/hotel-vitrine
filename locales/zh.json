@@ -1,0 +1,151 @@
+{
+  "HOTEL_NAME": "Hôtel Anatole France",
+  "CITY": "Toulouse",
+  "ADDRESS": "46 place Anatole France, 31000 Toulouse",
+  "PHONE": "0561231996",
+  "EMAIL": "hotelanatolefrance@orange.fr",
+  "RESERVATION_URL": "#contact",
+  "GOOGLE_MAPS_EMBED_URL": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2889.4848!2d1.4437!3d43.6045!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12aebb6fec7552ff%3A0x406f69c2f411030!2s46%20place%20Anatole%20France%2C%2031000%20Toulouse!5e0!3m2!1szh-CN!2sfr!4v1234567890",
+  "TAGLINE": "图卢兹市中心，距标志性的国会广场仅数步之遥",
+  "INTRO_PARAGRAPH": "无论是旅游、商务还是留学，我们的酒店都坐落于图卢兹的黄金地段，步行5分钟即可到达国会广场。酒店于2025年1月全面翻新，提供18间客房，将现代舒适与私密氛围完美融合。周边餐厅、商店和文化景点林立，如圣雷蒙博物馆、圣瑟宁大教堂，以及多所知名高校，出行便利。",
+  "AMENITIES": [
+    "Wi‑Fi",
+    "中心位置（国会广场）",
+    "毛巾与床品",
+    "书桌",
+    "电视"
+  ],
+  "ROOM_TYPES": [
+    {
+      "name": "高级大床房",
+      "shortDesc": "特大号床与宽敞空间。配备带淋浴的宽大独立卫浴，以及电视、书桌与衣柜。",
+      "priceFrom": 89,
+      "gallery": [
+        "chambre-superieure/1.jpg",
+        "chambre-superieure/2.jpg",
+        "chambre-superieure/3.jpg"
+      ]
+    },
+    {
+      "name": "标准大床房",
+      "shortDesc": "特大号床。更为紧凑的独立卫浴（淋浴）。客房同时配有电视与书桌。",
+      "priceFrom": 79,
+      "gallery": [
+        "chambre-standard/1.jpg",
+        "chambre-standard/2.jpg",
+        "chambre-standard/3.jpg",
+        "chambre-standard/4.jpg"
+      ]
+    },
+    {
+      "name": "双床房（专用外部卫生间）",
+      "shortDesc": "两张单人床。配有电视与书桌。卫生间位于客房外，但为本房专用。",
+      "priceFrom": 69,
+      "gallery": [
+        "chambre-jumeaux-prives/1.jpg"
+      ]
+    },
+    {
+      "name": "双床房（共享外部卫生间）",
+      "shortDesc": "两张单人床。配有电视与书桌。卫生间位于客房外，为公共共享。",
+      "priceFrom": 59,
+      "gallery": [
+        "chambre-jumeaux-communs/1.jpg"
+      ]
+    },
+    {
+      "name": "大床房（共享卫生间）",
+      "shortDesc": "特大号床。配备电视、书桌与衣柜。卫生间位于客房外，为公共共享。",
+      "priceFrom": 59,
+      "gallery": [
+        "chambre-double-communes/1.jpg",
+        "chambre-double-communes/2.jpg"
+      ]
+    }
+  ],
+  "CHECKIN_INFO": "入住时间：15:00–22:30",
+  "CHECKOUT_INFO": "退房时间：11:00前",
+  "PARKING_INFO": "附近设有公共停车场：Capitole 与 Compans Cafarelli。",
+  "PUBLIC_TRANSPORT_INFO": "交通便捷：临近 Capitole 与 Compans‑Caffarelli 地铁站、火车站，距图卢兹‑布拉尼亚克机场约5公里。",
+  "TOULOUSE_DESCRIPTION": "图卢兹老城的天际线由教堂圆顶与尖塔、钟楼和典雅的历史宅邸勾勒而成。穿过气势恢宏的国会广场，漫步于色调温暖、阳台林立的街巷。",
+  "SEO": {
+    "title": "Hôtel Anatole France – 图卢兹 | 国会广场核心区酒店",
+    "description": "图卢兹 Hôtel Anatole France：2025年全面翻新，18间舒适客房，距国会广场仅数步。适合旅游、商务与留学人群。",
+    "ogImage": "/images/og.jpg"
+  },
+  "UI": {
+    "nav": {
+      "home": "首页",
+      "rooms": "客房",
+      "access": "交通",
+      "contact": "联系",
+      "book": "立即预订"
+    },
+    "sections": {
+      "rooms": "我们的客房",
+      "roomsSubtitle": "每间客房都为舒适而生，细节之处尽显用心。",
+      "access": "信息与交通",
+      "contact": "联系我们",
+      "contactSubtitle": "如需咨询或预订，欢迎随时与我们联系。"
+    },
+    "hero": {
+      "discoverRooms": "查看我们的客房"
+    },
+    "form": {
+      "name": "姓名",
+      "nameLabel": "姓名",
+      "email": "邮箱",
+      "emailLabel": "邮箱",
+      "phone": "电话",
+      "phoneLabel": "电话",
+      "subject": "主题",
+      "subjectLabel": "主题",
+      "message": "您的留言",
+      "messageLabel": "留言",
+      "send": "发送",
+      "consent": "我同意按照隐私政策使用我的个人信息以处理本次请求。",
+      "required": "*",
+      "selectSubject": "请选择主题",
+      "reservation": "预订请求",
+      "information": "信息咨询",
+      "event": "活动策划",
+      "other": "其他"
+    },
+    "info": {
+      "schedule": "时间",
+      "checkin": "入住",
+      "checkout": "退房",
+      "parking": "停车",
+      "transport": "交通",
+      "directContact": "直联方式",
+      "phone": "电话",
+      "email": "邮箱",
+      "followUs": "关注我们",
+      "quickLinks": "快速链接",
+      "legal": "法律信息",
+      "discover": "探索图卢兹",
+      "address": "地址",
+      "copyaddress": "复制地址",
+      "mapnotavailable": "地图不可用",
+      "acceptcookies": "请同意使用 Cookie 以显示 Google 地图。",
+      "enablemap": "显示地图",
+      "getdirections": "获取路线",
+      "quickResponse": "快速回复",
+      "quickResponseText": "我们通常在24小时内回复。紧急预订建议致电联系我们。"
+    },
+    "room": {
+      "from": "起价",
+      "perNight": "/晚",
+      "viewRoom": "查看客房"
+    },
+    "footer": {
+      "rights": "版权所有",
+      "privacy": "隐私政策",
+      "terms": "法律声明",
+      "cookies": "Cookie 设置",
+      "salesConditions": "销售条款",
+      "legal": "法律信息",
+      "copyright": "©"
+    }
+  }
+}

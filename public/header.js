@@ -9,7 +9,7 @@
     
     if (mobileMenuButton && mobileMenu) {
       mobileMenuButton.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
+        mobileMenu.classList.toggle('open');
         console.log('🍔 Menu toggled');
       });
       
@@ -17,8 +17,15 @@
       const mobileLinks = mobileMenu.querySelectorAll('a');
       mobileLinks.forEach(link => {
         link.addEventListener('click', () => {
-          mobileMenu.classList.add('hidden');
+          mobileMenu.classList.remove('open');
         });
+      });
+      
+      // Close menu when clicking outside
+      document.addEventListener('click', (e) => {
+        if (!mobileMenu.contains(e.target) && !mobileMenuButton.contains(e.target)) {
+          mobileMenu.classList.remove('open');
+        }
       });
     }
   }

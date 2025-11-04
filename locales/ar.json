@@ -1,0 +1,151 @@
+{
+  "HOTEL_NAME": "Hôtel Anatole France",
+  "CITY": "Toulouse",
+  "ADDRESS": "46 place Anatole France, 31000 Toulouse",
+  "PHONE": "0561231996",
+  "EMAIL": "hotelanatolefrance@orange.fr",
+  "RESERVATION_URL": "#contact",
+  "GOOGLE_MAPS_EMBED_URL": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2889.4848!2d1.4437!3d43.6045!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12aebb6fec7552ff%3A0x406f69c2f411030!2s46%20place%20Anatole%20France%2C%2031000%20Toulouse!5e0!3m2!1sar!2sfr!4v1234567890",
+  "TAGLINE": "في قلب تولوز، على بُعد خطوات قليلة من ساحة الكابيتول الشهيرة",
+  "INTRO_PARAGRAPH": "سواء كنتَ مسافرًا للسياحة أو العمل أو الدراسة، يتمتع فندقنا بموقع لا يُضاهى في مركز مدينة تولوز، على بُعد أقل من خمس دقائق سيرًا من ساحة الكابيتول. بعد تجديد شامل في يناير 2025، يضم الفندق 18 غرفة تجمع بين الراحة العصرية وأجواء دافئة وحميمة. ستكون على مقربة مباشرة من قلب المدينة النابض بالمطاعم والمتاجر والمعالم الثقافية مثل متحف سان-ريمون وكاتدرائية سان-سيرنان، إلى جانب الجامعات والمدارس العريقة القريبة.",
+  "AMENITIES": [
+    "Wi-Fi",
+    "موقع مركزي (الكابيتول)",
+    "مناشف وبياضات",
+    "مكتب",
+    "تلفاز"
+  ],
+  "ROOM_TYPES": [
+    {
+      "name": "غرفة مزدوجة سوبيريور",
+      "shortDesc": "سرير كينغ ومساحة رحبة. حمّام خاص واسع مزوّد بدش، بالإضافة إلى تلفاز ومكتب وخزانة.",
+      "priceFrom": 89,
+      "gallery": [
+        "chambre-superieure/1.jpg",
+        "chambre-superieure/2.jpg",
+        "chambre-superieure/3.jpg"
+      ]
+    },
+    {
+      "name": "غرفة مزدوجة ستاندرد",
+      "shortDesc": "سرير كينغ. حمّام خاص أكثر إحكامًا مع دش. تتضمن الغرفة أيضًا تلفازًا ومكتبًا.",
+      "priceFrom": 79,
+      "gallery": [
+        "chambre-standard/1.jpg",
+        "chambre-standard/2.jpg",
+        "chambre-standard/3.jpg",
+        "chambre-standard/4.jpg"
+      ]
+    },
+    {
+      "name": "غرفة توأم بدورة مياه خارجية خاصة",
+      "shortDesc": "سريران منفصلان. تحتوي الغرفة على تلفاز ومكتب. دورة المياه خارج الغرفة ولكنها مخصّصة للاستخدام الخاص بهذه الغرفة.",
+      "priceFrom": 69,
+      "gallery": [
+        "chambre-jumeaux-prives/1.jpg"
+      ]
+    },
+    {
+      "name": "غرفة توأم بدورة مياه خارجية مشتركة",
+      "shortDesc": "سريران منفصلان. تحتوي الغرفة على تلفاز ومكتب. دورة المياه خارج الغرفة ومشتركة.",
+      "priceFrom": 59,
+      "gallery": [
+        "chambre-jumeaux-communs/1.jpg"
+      ]
+    },
+    {
+      "name": "غرفة مزدوجة بدورة مياه مشتركة",
+      "shortDesc": "سرير كينغ. تشمل تلفازًا ومكتبًا وخزانة. دورة المياه خارج الغرفة ومشتركة.",
+      "priceFrom": 59,
+      "gallery": [
+        "chambre-double-communes/1.jpg",
+        "chambre-double-communes/2.jpg"
+      ]
+    }
+  ],
+  "CHECKIN_INFO": "بين 15:00 و22:30",
+  "CHECKOUT_INFO": "حتى 11:00",
+  "PARKING_INFO": "مواقف عامة قريبة: Capitole وCompans Cafarelli.",
+  "PUBLIC_TRANSPORT_INFO": "سهولة وصول ممتازة: قريب من محطتَي مترو Capitole وCompans-Caffarelli ومحطة القطار، وعلى بُعد 5 كم فقط من مطار تولوز-بلانيـاك.",
+  "TOULOUSE_DESCRIPTION": "يتّسم أفق البلدة القديمة في تولوز بقباب الكنائس وأبراجها وبمنازلها التاريخية المهيبة. اعبر ساحة الكابيتول المذهلة وتمشَّ في شوارع دافئة الألوان تتزيّن بشرفات عديدة.",
+  "SEO": {
+    "title": "Hôtel Anatole France – تولوز | فندق في قلب الكابيتول",
+    "description": "Hôtel Anatole France في تولوز: مجدَّد بالكامل عام 2025، يضم 18 غرفة مريحة على بُعد خطوات من ساحة الكابيتول. مثالي للسياحة والأعمال والطلاب.",
+    "ogImage": "/images/og.jpg"
+  },
+  "UI": {
+    "nav": {
+      "home": "الرئيسية",
+      "rooms": "الغرف",
+      "access": "الوصول",
+      "contact": "اتصل بنا",
+      "book": "احجز الآن"
+    },
+    "sections": {
+      "rooms": "غرفنا",
+      "roomsSubtitle": "كل غرفة دعوةٌ للاسترخاء، صُمّمت بعناية من أجل راحتك.",
+      "access": "معلومات ووصول",
+      "contact": "اتصل بنا",
+      "contactSubtitle": "فريقنا على استعداد للإجابة عن استفساراتك واستلام طلبات الحجز."
+    },
+    "hero": {
+      "discoverRooms": "اكتشف غرفنا"
+    },
+    "form": {
+      "name": "الاسم الكامل",
+      "nameLabel": "الاسم الكامل",
+      "email": "البريد الإلكتروني",
+      "emailLabel": "البريد الإلكتروني",
+      "phone": "الهاتف",
+      "phoneLabel": "الهاتف",
+      "subject": "الموضوع",
+      "subjectLabel": "الموضوع",
+      "message": "رسالتك",
+      "messageLabel": "رسالة",
+      "send": "إرسال",
+      "consent": "أوافق على استخدام بياناتي الشخصية لمعالجة طلبي وفقًا لسياسة الخصوصية.",
+      "required": "*",
+      "selectSubject": "اختر موضوعًا",
+      "reservation": "طلب حجز",
+      "information": "طلب معلومات",
+      "event": "تنظيم فعالية",
+      "other": "أخرى"
+    },
+    "info": {
+      "schedule": "المواعيد",
+      "checkin": "تسجيل الوصول",
+      "checkout": "تسجيل المغادرة",
+      "parking": "مواقف",
+      "transport": "النقل",
+      "directContact": "تواصل مباشر",
+      "phone": "هاتف",
+      "email": "بريد",
+      "followUs": "تابعنا",
+      "quickLinks": "روابط سريعة",
+      "legal": "قانوني",
+      "discover": "اكتشف تولوز",
+      "address": "العنوان",
+      "copyaddress": "نسخ العنوان",
+      "mapnotavailable": "الخريطة غير متاحة",
+      "acceptcookies": "يُرجى قبول ملفات تعريف الارتباط لعرض خرائط Google.",
+      "enablemap": "عرض الخريطة",
+      "getdirections": "كيفية الوصول",
+      "quickResponse": "استجابة سريعة",
+      "quickResponseText": "نلتزم بالرد بأسرع وقت ممكن، عادة خلال 24 ساعة. للحجوزات العاجلة، يُفضّل الاتصال هاتفيًا."
+    },
+    "room": {
+      "from": "ابتداءً من",
+      "perNight": "/ليلة",
+      "viewRoom": "عرض الغرفة"
+    },
+    "footer": {
+      "rights": "جميع الحقوق محفوظة",
+      "privacy": "سياسة الخصوصية",
+      "terms": "إشعار قانوني",
+      "cookies": "إدارة ملفات الارتباط",
+      "salesConditions": "شروط البيع",
+      "legal": "قانوني",
+      "copyright": "©"
+    }
+  }
+}

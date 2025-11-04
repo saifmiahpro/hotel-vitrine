@@ -1,6 +1,8 @@
 ---
 import '../styles/global.css';
-import siteData from '../../content/site.json';
+import { getSiteData, getCurrentLang } from '../utils/i18n';
+const siteData = getSiteData(Astro.url);
+const currentLang = getCurrentLang(Astro.url);
 
 interface Props {
   title?: string;
@@ -18,7 +20,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
 <!DOCTYPE html>
-<html lang="fr" class="scroll-smooth">
+<html lang={currentLang} class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -48,8 +50,39 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  
+  <!-- Structured Data (Schema.org) for SEO -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Hotel",
+    "name": siteData.HOTEL_NAME,
+    "image": new URL(ogImage, Astro.site).toString(),
+    "description": siteData.INTRO_PARAGRAPH,
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": siteData.ADDRESS.split(',')[0],
+      "addressLocality": siteData.CITY,
+      "postalCode": "31000",
+      "addressCountry": "FR"
+    },
+    "telephone": siteData.PHONE,
+    "email": siteData.EMAIL,
+    "checkinTime": "15:00",
+    "checkoutTime": "11:00",
+    "priceRange": "€€",
+    "starRating": {
+      "@type": "Rating",
+      "ratingValue": "3"
+    },
+    "amenityFeature": siteData.AMENITIES.map(amenity => ({
+      "@type": "LocationFeatureSpecification",
+      "name": amenity
+    })),
+    "url": Astro.site,
+    "sameAs": []
+  })} />
 </head>
-<body class="bg-[#F7F6F3] text-[#1C1C1C] font-inter antialiased">
+<body class="bg-[#FAF8F5] text-[#1C1C1C] font-inter antialiased">
   <slot />
 </body>
 </html>

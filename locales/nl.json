@@ -1,0 +1,151 @@
+{
+  "HOTEL_NAME": "Hôtel Anatole France",
+  "CITY": "Toulouse",
+  "ADDRESS": "46 place Anatole France, 31000 Toulouse",
+  "PHONE": "0561231996",
+  "EMAIL": "hotelanatolefrance@orange.fr",
+  "RESERVATION_URL": "#contact",
+  "GOOGLE_MAPS_EMBED_URL": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2889.4848!2d1.4437!3d43.6045!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12aebb6fec7552ff%3A0x406f69c2f411030!2s46%20place%20Anatole%20France%2C%2031000%20Toulouse!5e0!3m2!1snl!2sfr!4v1234567890",
+  "TAGLINE": "In het hart van Toulouse, op enkele stappen van het iconische Capitole-plein",
+  "INTRO_PARAGRAPH": "Of je nu voor vakantie, zaken of studie reist: ons hotel ligt ongeëvenaard centraal, op minder dan vijf minuten lopen van Place du Capitole. Na een volledige renovatie in januari 2025 bieden we 18 kamers die modern comfort combineren met een intieme sfeer. Je staat zó in het levendige centrum vol restaurants, boetieks en culturele hoogtepunten zoals het Musée Saint‑Raymond, de basiliek Saint‑Sernin en de prestigieuze universiteiten in de buurt.",
+  "AMENITIES": [
+    "Wi‑Fi",
+    "Centrale ligging (Capitole)",
+    "Handdoeken & beddengoed",
+    "Bureau",
+    "Televisie"
+  ],
+  "ROOM_TYPES": [
+    {
+      "name": "Superior Tweepersoonskamer",
+      "shortDesc": "King‑size bed en royale ruimte. Ruime privébadkamer met douche, plus tv, bureau en kledingkast.",
+      "priceFrom": 89,
+      "gallery": [
+        "chambre-superieure/1.jpg",
+        "chambre-superieure/2.jpg",
+        "chambre-superieure/3.jpg"
+      ]
+    },
+    {
+      "name": "Standaard Tweepersoonskamer",
+      "shortDesc": "King‑size bed. Compactere privébadkamer met douche. De kamer heeft ook tv en bureau.",
+      "priceFrom": 79,
+      "gallery": [
+        "chambre-standard/1.jpg",
+        "chambre-standard/2.jpg",
+        "chambre-standard/3.jpg",
+        "chambre-standard/4.jpg"
+      ]
+    },
+    {
+      "name": "Tweepersoonskamer met Twee Bedden en Privé Extern Toilet",
+      "shortDesc": "Twee eenpersoonsbedden. De kamer heeft een tv en een bureau. Het toilet bevindt zich buiten de kamer, maar is uitsluitend voor dit kamertype bestemd.",
+      "priceFrom": 69,
+      "gallery": [
+        "chambre-jumeaux-prives/1.jpg"
+      ]
+    },
+    {
+      "name": "Tweepersoonskamer met Twee Bedden en Gedeeld Extern Toilet",
+      "shortDesc": "Twee eenpersoonsbedden. De kamer heeft een tv en een bureau. Het toilet bevindt zich buiten de kamer en wordt gedeeld.",
+      "priceFrom": 59,
+      "gallery": [
+        "chambre-jumeaux-communs/1.jpg"
+      ]
+    },
+    {
+      "name": "Tweepersoonskamer met Gedeeld Toilet",
+      "shortDesc": "King‑size bed. Inclusief tv, bureau en kledingkast. Het toilet bevindt zich buiten de kamer en wordt gedeeld.",
+      "priceFrom": 59,
+      "gallery": [
+        "chambre-double-communes/1.jpg",
+        "chambre-double-communes/2.jpg"
+      ]
+    }
+  ],
+  "CHECKIN_INFO": "Tussen 15:00 en 22:30 uur",
+  "CHECKOUT_INFO": "Tot 11:00 uur",
+  "PARKING_INFO": "Openbare parkeergarages Capitole en Compans Cafarelli in de buurt.",
+  "PUBLIC_TRANSPORT_INFO": "Gemakkelijk bereikbaar: vlakbij de metrostations Capitole en Compans‑Caffarelli, het treinstation en slechts 5 km van luchthaven Toulouse‑Blagnac.",
+  "TOULOUSE_DESCRIPTION": "De skyline van de oude binnenstad van Toulouse wordt gekenmerkt door koepels en torentjes van kerken, torens en statige herenhuizen. Steek het indrukwekkende Place du Capitole over en dwaal door warme, roodtintige straatjes met vele balkons.",
+  "SEO": {
+    "title": "Hôtel Anatole France – Toulouse | Hotel in het hart van het Capitole",
+    "description": "Hôtel Anatole France in Toulouse: volledig gerenoveerd in 2025, 18 comfortabele kamers op enkele stappen van Place du Capitole. Ideaal voor toeristen, zakelijke reizigers en studenten.",
+    "ogImage": "/images/og.jpg"
+  },
+  "UI": {
+    "nav": {
+      "home": "Home",
+      "rooms": "Kamers",
+      "access": "Bereikbaarheid",
+      "contact": "Contact",
+      "book": "Boek nu"
+    },
+    "sections": {
+      "rooms": "Onze Kamers",
+      "roomsSubtitle": "Elke kamer nodigt uit tot rust, zorgvuldig ontworpen voor uw comfort.",
+      "access": "Informatie & Toegang",
+      "contact": "Neem contact op",
+      "contactSubtitle": "Ons team staat tot uw beschikking voor vragen of reserveringen."
+    },
+    "hero": {
+      "discoverRooms": "Ontdek onze kamers"
+    },
+    "form": {
+      "name": "Volledige naam",
+      "nameLabel": "Volledige naam",
+      "email": "E‑mail",
+      "emailLabel": "E‑mail",
+      "phone": "Telefoon",
+      "phoneLabel": "Telefoon",
+      "subject": "Onderwerp",
+      "subjectLabel": "Onderwerp",
+      "message": "Je bericht",
+      "messageLabel": "Bericht",
+      "send": "Versturen",
+      "consent": "Ik ga ermee akkoord dat mijn persoonsgegevens worden gebruikt om mijn aanvraag te verwerken volgens het privacybeleid.",
+      "required": "*",
+      "selectSubject": "Kies een onderwerp",
+      "reservation": "Reserveringsaanvraag",
+      "information": "Informatieaanvraag",
+      "event": "Evenementorganisatie",
+      "other": "Overig"
+    },
+    "info": {
+      "schedule": "Tijden",
+      "checkin": "Check‑in",
+      "checkout": "Check‑out",
+      "parking": "Parkeren",
+      "transport": "Vervoer",
+      "directContact": "Direct contact",
+      "phone": "Telefoon",
+      "email": "E‑mail",
+      "followUs": "Volg ons",
+      "quickLinks": "Snelle links",
+      "legal": "Juridisch",
+      "discover": "Ontdek Toulouse",
+      "address": "Adres",
+      "copyaddress": "Adres kopiëren",
+      "mapnotavailable": "Kaart niet beschikbaar",
+      "acceptcookies": "Accepteer cookies om Google Maps weer te geven.",
+      "enablemap": "Kaart tonen",
+      "getdirections": "Routebeschrijving",
+      "quickResponse": "Snelle reactie",
+      "quickResponseText": "We reageren zo snel mogelijk, doorgaans binnen 24 uur. Voor urgente reserveringen raden we aan om te bellen."
+    },
+    "room": {
+      "from": "Vanaf",
+      "perNight": "/nacht",
+      "viewRoom": "Bekijk kamer"
+    },
+    "footer": {
+      "rights": "Alle rechten voorbehouden",
+      "privacy": "Privacybeleid",
+      "terms": "Juridische kennisgeving",
+      "cookies": "Cookie‑instellingen",
+      "salesConditions": "Verkoopvoorwaarden",
+      "legal": "Juridisch",
+      "copyright": "©"
+    }
+  }
+}

@@ -1,0 +1,151 @@
+{
+  "HOTEL_NAME": "Hôtel Anatole France",
+  "CITY": "Toulouse",
+  "TAGLINE": "En pleno centro de Toulouse, a solo unos pasos de la emblemática Plaza del Capitolio",
+  "INTRO_PARAGRAPH": "Tanto si viajas por turismo como por trabajo o estudios, nuestro hotel goza de una ubicación inmejorable en pleno centro de Toulouse, a menos de cinco minutos a pie de la Plaza del Capitolio. Renovado íntegramente en enero de 2025, ofrece 18 habitaciones que combinan confort moderno y una atmósfera íntima. Disfrutarás de acceso directo al animado centro, lleno de restaurantes, tiendas y espacios culturales como el Museo Saint-Raymond, la basílica de Saint-Sernin y las prestigiosas universidades y grandes écoles cercanas.",
+  "AMENITIES": [
+    "Wi-Fi",
+    "Ubicación céntrica (Capitolio)",
+    "Toallas y ropa de cama",
+    "Escritorio",
+    "Televisión"
+  ],
+  "ROOM_TYPES": [
+    {
+      "name": "Habitación Doble Superior",
+      "shortDesc": "Cama king-size y espacio generoso. Dispone de un amplio baño privado con ducha, además de televisión, escritorio y armario.",
+      "priceFrom": 89,
+      "gallery": [
+        "chambre-superieure/1.jpg",
+        "chambre-superieure/2.jpg",
+        "chambre-superieure/3.jpg"
+      ]
+    },
+    {
+      "name": "Habitación Doble Estándar",
+      "shortDesc": "Cama king-size. Baño privado más compacto con ducha. La habitación incluye también televisión y escritorio.",
+      "priceFrom": 79,
+      "gallery": [
+        "chambre-standard/1.jpg",
+        "chambre-standard/2.jpg",
+        "chambre-standard/3.jpg",
+        "chambre-standard/4.jpg"
+      ]
+    },
+    {
+      "name": "Habitación Twin con Aseo Exterior Privado",
+      "shortDesc": "Dos camas individuales. La habitación cuenta con televisión y escritorio. El aseo está situado en el exterior, pero es de uso privado para la habitación.",
+      "priceFrom": 69,
+      "gallery": [
+        "chambre-jumeaux-prives/1.jpg"
+      ]
+    },
+    {
+      "name": "Habitación Twin con Aseo Exterior Compartido",
+      "shortDesc": "Dos camas individuales. La habitación cuenta con televisión y escritorio. El aseo está situado en el exterior y es compartido.",
+      "priceFrom": 59,
+      "gallery": [
+        "chambre-jumeaux-communs/1.jpg"
+      ]
+    },
+    {
+      "name": "Habitación Doble con Aseo Compartido",
+      "shortDesc": "Cama king-size. Incluye televisión, escritorio y armario. El aseo está situado en el exterior y es compartido.",
+      "priceFrom": 59,
+      "gallery": [
+        "chambre-double-communes/1.jpg",
+        "chambre-double-communes/2.jpg"
+      ]
+    }
+  ],
+  "CHECKIN_INFO": "Entre las 15:00 y las 22:30",
+  "CHECKOUT_INFO": "Hasta las 11:00",
+  "PARKING_INFO": "Aparcamiento público en Capitole y Compans Cafarelli, muy cerca.",
+  "PUBLIC_TRANSPORT_INFO": "Fácil de acceder: estamos junto a las estaciones de metro Capitole y Compans-Caffarelli, cerca de la estación de tren y a solo 5 km del aeropuerto de Toulouse-Blagnac.",
+  "ADDRESS": "46 place Anatole France, 31000 Toulouse",
+  "GOOGLE_MAPS_EMBED_URL": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2889.4848!2d1.4437!3d43.6045!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12aebb6fec7552ff%3A0x406f69c2f411030!2s46%20place%20Anatole%20France%2C%2031000%20Toulouse!5e0!3m2!1ses!2sfr!4v1234567890",
+  "PHONE": "0561231996",
+  "EMAIL": "hotelanatolefrance@orange.fr",
+  "RESERVATION_URL": "#contact",
+  "TOULOUSE_DESCRIPTION": "El perfil del casco antiguo de Toulouse se dibuja entre cúpulas y torrecillas de iglesias, campanarios y señoriales hôtels particuliers. Cruza la impresionante Plaza del Capitolio y piérdete por sus calles de tonos cálidos y edificios con numerosos balcones.",
+  "SEO": {
+    "title": "Hôtel Anatole France – Toulouse | Hotel en el corazón del Capitolio",
+    "description": "Hôtel Anatole France en Toulouse: renovado íntegramente en 2025, 18 habitaciones cómodas, a unos pasos de la Plaza del Capitolio. Ideal para turismo, negocios y estudiantes.",
+    "ogImage": "/images/og.jpg"
+  },
+  "UI": {
+    "nav": {
+      "home": "Inicio",
+      "rooms": "Habitaciones",
+      "access": "Acceso",
+      "contact": "Contacto",
+      "book": "Reservar"
+    },
+    "sections": {
+      "rooms": "Nuestras Habitaciones",
+      "roomsSubtitle": "Cada habitación es una invitación al descanso, diseñada con esmero para tu comodidad.",
+      "access": "Información y Acceso",
+      "contact": "Contáctanos",
+      "contactSubtitle": "Nuestro equipo está a tu disposición para cualquier consulta o solicitud de reserva."
+    },
+    "hero": {
+      "discoverRooms": "Descubre nuestras habitaciones"
+    },
+    "form": {
+      "name": "Nombre completo",
+      "nameLabel": "Nombre completo",
+      "email": "Correo electrónico",
+      "emailLabel": "Correo electrónico",
+      "phone": "Teléfono",
+      "phoneLabel": "Teléfono",
+      "subject": "Asunto",
+      "subjectLabel": "Asunto",
+      "message": "Tu mensaje",
+      "messageLabel": "Mensaje",
+      "send": "Enviar",
+      "consent": "Acepto que mis datos personales se utilicen para tramitar mi solicitud de acuerdo con la política de privacidad.",
+      "required": "*",
+      "selectSubject": "Selecciona un asunto",
+      "reservation": "Solicitud de reserva",
+      "information": "Solicitud de información",
+      "event": "Organización de evento",
+      "other": "Otro"
+    },
+    "info": {
+      "schedule": "Horarios",
+      "checkin": "Entrada",
+      "checkout": "Salida",
+      "parking": "Aparcamiento",
+      "transport": "Transporte",
+      "directContact": "Contacto directo",
+      "phone": "Teléfono",
+      "email": "Correo",
+      "followUs": "Síguenos",
+      "quickLinks": "Enlaces rápidos",
+      "legal": "Legal",
+      "discover": "Descubre Toulouse",
+      "address": "Dirección",
+      "copyaddress": "Copiar dirección",
+      "mapnotavailable": "Mapa no disponible",
+      "acceptcookies": "Por favor, acepta las cookies para mostrar Google Maps.",
+      "enablemap": "Mostrar mapa",
+      "getdirections": "Cómo llegar",
+      "quickResponse": "Respuesta rápida",
+      "quickResponseText": "Nos comprometemos a responderte lo antes posible, normalmente en menos de 24 horas. Para reservas urgentes, te recomendamos llamarnos por teléfono."
+    },
+    "room": {
+      "from": "Desde",
+      "perNight": "/noche",
+      "viewRoom": "Ver habitación"
+    },
+    "footer": {
+      "rights": "Todos los derechos reservados",
+      "privacy": "Política de privacidad",
+      "terms": "Aviso legal",
+      "cookies": "Gestión de cookies",
+      "salesConditions": "Condiciones de venta",
+      "legal": "Legal",
+      "copyright": "©"
+    }
+  }
+}

@@ -4,7 +4,42 @@
  */
 
 // @ts-ignore
-import siteData from '../../content/site.json' assert { type: 'json' };
+import localeFr from '../../locales/fr.json' assert { type: 'json' };
+// @ts-ignore
+import localeEn from '../../locales/en.json' assert { type: 'json' };
+// @ts-ignore
+import localeEs from '../../locales/es.json' assert { type: 'json' };
+// @ts-ignore
+import localeDe from '../../locales/de.json' assert { type: 'json' };
+// @ts-ignore
+import localeIt from '../../locales/it.json' assert { type: 'json' };
+// @ts-ignore
+import localeJa from '../../locales/ja.json' assert { type: 'json' };
+// @ts-ignore
+import localeNl from '../../locales/nl.json' assert { type: 'json' };
+// @ts-ignore
+import localePt from '../../locales/pt.json' assert { type: 'json' };
+// @ts-ignore
+import localeZh from '../../locales/zh.json' assert { type: 'json' };
+// @ts-ignore
+import localeAr from '../../locales/ar.json' assert { type: 'json' };
+// @ts-ignore
+import localeRu from '../../locales/ru.json' assert { type: 'json' };
+
+// Detect current language from URL
+const locales = { fr: localeFr, en: localeEn, es: localeEs, de: localeDe, it: localeIt, ja: localeJa, nl: localeNl, pt: localePt, zh: localeZh, ar: localeAr, ru: localeRu };
+const currentLang = window.location.pathname.startsWith('/ru') ? 'ru'
+                  : window.location.pathname.startsWith('/ar') ? 'ar'
+                  : window.location.pathname.startsWith('/zh') ? 'zh'
+                  : window.location.pathname.startsWith('/pt') ? 'pt'
+                  : window.location.pathname.startsWith('/nl') ? 'nl'
+                  : window.location.pathname.startsWith('/ja') ? 'ja'
+                  : window.location.pathname.startsWith('/it') ? 'it'
+                  : window.location.pathname.startsWith('/de') ? 'de'
+                  : window.location.pathname.startsWith('/es') ? 'es'
+                  : window.location.pathname.startsWith('/en') ? 'en'
+                  : 'fr';
+const siteData = locales[currentLang];
 
 interface LightboxState {
   isOpen: boolean;
@@ -22,6 +57,7 @@ let lightboxElement: HTMLDivElement | null = null;
 let lightboxImage: HTMLImageElement | null = null;
 let lightboxTitle: HTMLHeadingElement | null = null;
 let lightboxCounter: HTMLSpanElement | null = null;
+let lightboxThumbnails: HTMLDivElement | null = null;
 let startX = 0;
 
 /**
@@ -78,11 +114,16 @@ function createLightbox(): void {
           id="lightbox-image" 
           src="" 
           alt="" 
-          class="max-h-[80vh] w-auto object-contain rounded-lg shadow-2xl"
+          class="max-h-[70vh] w-auto object-contain rounded-lg shadow-2xl"
         />
         <div class="mt-6 text-center text-white space-y-2">
           <h3 id="lightbox-title" class="font-playfair text-2xl font-semibold"></h3>
           <p id="lightbox-counter" class="text-sm text-white/70"></p>
+        </div>
+        
+        <!-- Thumbnails -->
+        <div id="lightbox-thumbnails" class="mt-4 flex gap-2 overflow-x-auto max-w-full px-4 pb-2">
+          <!-- Thumbnails will be inserted here dynamically -->
         </div>
       </div>
     </div>
@@ -95,6 +136,7 @@ function createLightbox(): void {
   lightboxImage = lightbox.querySelector('#lightbox-image');
   lightboxTitle = lightbox.querySelector('#lightbox-title');
   lightboxCounter = lightbox.querySelector('#lightbox-counter');
+  lightboxThumbnails = lightbox.querySelector('#lightbox-thumbnails');
 
   // Attach event listeners
   lightbox.querySelector('#lightbox-close')?.addEventListener('click', closeLightbox);
@@ -169,7 +211,7 @@ function showNextImage(): void {
 }
 
 /**
- * Update lightbox content (image, title, counter)
+ * Update lightbox content (image, title, counter, thumbnails)
  */
 function updateLightboxContent(): void {
   const room = siteData.ROOM_TYPES[state.currentRoomIndex];
@@ -181,11 +223,42 @@ function updateLightboxContent(): void {
   }
   
   if (lightboxTitle) {
-    lightboxTitle.textContent = `Chambre ${room.name}`;
+    lightboxTitle.textContent = room.name;
   }
   
   if (lightboxCounter) {
     lightboxCounter.textContent = `${state.currentImageIndex + 1} / ${room.gallery.length}`;
+  }
+  
+  // Generate thumbnails
+  if (lightboxThumbnails && room.gallery.length > 1) {
+    lightboxThumbnails.innerHTML = room.gallery.map((img, index) => {
+      const isActive = index === state.currentImageIndex;
+      return `
+        <button 
+          class="thumbnail-btn flex-shrink-0 w-16 h-16 sm:w-20 sm:h-20 rounded-md overflow-hidden border-2 transition-all ${
+            isActive ? 'border-[#C2A983] opacity-100' : 'border-white/30 opacity-60 hover:opacity-100'
+          }"
+          data-index="${index}"
+          aria-label="Voir image ${index + 1}"
+        >
+          <img 
+            src="/images/${img}" 
+            alt="Thumbnail ${index + 1}" 
+            class="w-full h-full object-cover"
+          />
+        </button>
+      `;
+    }).join('');
+    
+    // Attach click handlers to thumbnails
+    lightboxThumbnails.querySelectorAll('.thumbnail-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const index = parseInt((e.currentTarget as HTMLElement).getAttribute('data-index') || '0');
+        state.currentImageIndex = index;
+        updateLightboxContent();
+      });
+    });
   }
 }
 

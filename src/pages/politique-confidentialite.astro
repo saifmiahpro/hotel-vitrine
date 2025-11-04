@@ -2,12 +2,14 @@
 import Base from '../layouts/Base.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import siteData from '../../content/site.json';
+import { getSiteData } from '../utils/i18n';
+
+const siteData = getSiteData(Astro.url);
 ---
 
 <Base title={`Politique de confidentialité - ${siteData.HOTEL_NAME}`}>
   <Header />
-  <main class="py-32 bg-[#F7F6F3]">
+  <main class="py-32 bg-[#FAF8F5]">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
       <h1 class="font-playfair text-4xl sm:text-5xl font-bold text-[#1C1C1C] mb-8">
         Politique de confidentialité

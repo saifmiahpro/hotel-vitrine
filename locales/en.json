@@ -1,0 +1,135 @@
+{
+  "HOTEL_NAME": "Hôtel Anatole France",
+  "CITY": "Toulouse",
+  "TAGLINE": "In the heart of Toulouse, steps away from the famous Capitole square",
+  "INTRO_PARAGRAPH": "Whether you're visiting for tourism, business, or as a student, the Hotel benefits from an ideal location in the heart of Toulouse, less than five minutes' walk from Place du Capitole. Fully renovated in January 2025, it offers 18 rooms combining modern comfort with an intimate atmosphere. You'll enjoy direct access to the lively city center, full of restaurants, shops, and cultural sites such as the Saint-Raymond Museum, the Saint-Sernin Basilica, and the prestigious universities and schools nearby.",
+  "AMENITIES": [
+    "Wifi",
+    "Central location (Capitole)",
+    "Towels and linens",
+    "Desk",
+    "Television"
+  ],
+  "ROOM_TYPES": [
+    {
+      "name": "Superior Double Room",
+      "shortDesc": "King-size bed and generous space. This room features a spacious private bathroom with shower, as well as a television, desk, and wardrobe.",
+      "priceFrom": 89,
+      "gallery": ["chambre-superieure/1.jpg", "chambre-superieure/2.jpg", "chambre-superieure/3.jpg"]
+    },
+    {
+      "name": "Standard Double Room",
+      "shortDesc": "King-size bed. More compact private bathroom with shower. The room also includes a television and desk.",
+      "priceFrom": 79,
+      "gallery": ["chambre-standard/1.jpg", "chambre-standard/2.jpg", "chambre-standard/3.jpg", "chambre-standard/4.jpg"]
+    },
+    {
+      "name": "Twin Room with Private External Toilet",
+      "shortDesc": "Two single beds. The room has a television and desk. The toilet is located outside but remains private for the room.",
+      "priceFrom": 69,
+      "gallery": ["chambre-jumeaux-prives/1.jpg"]
+    },
+    {
+      "name": "Twin Room with Shared External Toilet",
+      "shortDesc": "Two single beds. The room has a television and desk. The toilet is located outside and shared.",
+      "priceFrom": 59,
+      "gallery": ["chambre-jumeaux-communs/1.jpg"]
+    },
+    {
+      "name": "Double Room with Shared Toilet",
+      "shortDesc": "King-size bed. Television, desk and wardrobe included. The toilet is located outside and shared.",
+      "priceFrom": 59,
+      "gallery": ["chambre-double-communes/1.jpg", "chambre-double-communes/2.jpg"]
+    }
+  ],
+  "CHECKIN_INFO": "Between 3:00 PM and 10:30 PM",
+  "CHECKOUT_INFO": "Until 11:00 AM",
+  "PARKING_INFO": "Public parking at Capitole and Compans Cafarelli nearby.",
+  "PUBLIC_TRANSPORT_INFO": "Easily accessible, the establishment is near the Capitole and Compans-Caffarelli metro stations, the train station, and only 5 km from Toulouse-Blagnac airport.",
+  "ADDRESS": "46 place Anatole France, 31000 Toulouse",
+  "GOOGLE_MAPS_EMBED_URL": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2889.4848!2d1.4437!3d43.6045!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12aebb6fec7552ff%3A0x406f69c2f411030!2s46%20place%20Anatole%20France%2C%2031000%20Toulouse!5e0!3m2!1sen!2sfr!4v1234567890",
+  "PHONE": "0561231996",
+  "EMAIL": "hotelanatolefrance@orange.fr",
+  "RESERVATION_URL": "#contact",
+  "TOULOUSE_DESCRIPTION": "The landscape of Toulouse's old town is characterized by the domes and turrets of its churches, towers and impressive townhouses. Cross the impressive Place du Capitole and wander through warm-toned streets with buildings featuring numerous balconies.",
+  "SEO": {
+    "title": "Hôtel Anatole France – Toulouse | Hotel in the Heart of Capitole",
+    "description": "Hôtel Anatole France in Toulouse: fully renovated in 2025, 18 comfortable rooms, steps from Place du Capitole. Ideal for tourism, business and students.",
+    "ogImage": "/images/og.jpg"
+  },
+  "UI": {
+    "nav": {
+      "home": "Home",
+      "rooms": "Rooms",
+      "access": "Access",
+      "contact": "Contact",
+      "book": "Book Now"
+    },
+    "sections": {
+      "rooms": "Our Rooms",
+      "roomsSubtitle": "Each room is an invitation to rest, carefully designed for your comfort.",
+      "access": "Information & Access",
+      "contact": "Contact Us",
+      "contactSubtitle": "Our team is at your disposal for any information or booking request."
+    },
+    "hero": {
+      "discoverRooms": "Discover our rooms"
+    },
+    "form": {
+      "name": "Full name",
+      "nameLabel": "Full name",
+      "email": "Email",
+      "emailLabel": "Email",
+      "phone": "Phone",
+      "phoneLabel": "Phone",
+      "subject": "Subject",
+      "subjectLabel": "Subject",
+      "message": "Your message",
+      "messageLabel": "Message",
+      "send": "Send",
+      "consent": "I accept that my personal data will be used to process my request in accordance with the privacy policy.",
+      "required": "*",
+      "selectSubject": "Select a subject",
+      "reservation": "Reservation request",
+      "information": "Information request",
+      "event": "Event organization",
+      "other": "Other"
+    },
+    "info": {
+      "schedule": "Schedule",
+      "checkin": "Check-in",
+      "checkout": "Check-out",
+      "parking": "Parking",
+      "transport": "Transportation",
+      "directContact": "Direct contact",
+      "phone": "Phone",
+      "email": "Email",
+      "followUs": "Follow us",
+      "quickLinks": "Quick links",
+      "legal": "Legal",
+      "discover": "Discover Toulouse",
+      "address": "Address",
+      "copyaddress": "Copy address",
+      "mapnotavailable": "Map not available",
+      "acceptcookies": "Please accept cookies to display Google Maps.",
+      "enablemap": "Show map",
+      "getdirections": "Get directions",
+      "quickResponse": "Quick response",
+      "quickResponseText": "Our team is committed to responding to you as soon as possible, usually within 24 hours. For urgent reservations, we recommend contacting us by phone."
+    },
+    "room": {
+      "from": "From",
+      "perNight": "/night",
+      "viewRoom": "View room"
+    },
+    "footer": {
+      "rights": "All rights reserved",
+      "privacy": "Privacy Policy",
+      "terms": "Legal Notice",
+      "cookies": "Cookie Settings",
+      "salesConditions": "Terms of Sale",
+      "legal": "Legal",
+      "copyright": "©"
+    }
+  }
+}

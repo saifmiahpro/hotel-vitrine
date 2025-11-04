@@ -1,0 +1,151 @@
+{
+  "HOTEL_NAME": "Hôtel Anatole France",
+  "CITY": "Toulouse",
+  "ADDRESS": "46 place Anatole France, 31000 Toulouse",
+  "PHONE": "0561231996",
+  "EMAIL": "hotelanatolefrance@orange.fr",
+  "RESERVATION_URL": "#contact",
+  "GOOGLE_MAPS_EMBED_URL": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2889.4848!2d1.4437!3d43.6045!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12aebb6fec7552ff%3A0x406f69c2f411030!2s46%20place%20Anatole%20France%2C%2031000%20Toulouse!5e0!3m2!1sja!2sfr!4v1234567890",
+  "TAGLINE": "トゥールーズ中心部、象徴的なカピトル広場から徒歩数分",
+  "INTRO_PARAGRAPH": "観光・ビジネス・留学いずれのご滞在でも、当ホテルはトゥールーズ中心部という抜群のロケーションに位置し、カピトル広場まで徒歩5分以内です。2025年1月に全館改装を行い、モダンな快適さと落ち着いた雰囲気を兼ね備えた全18室をご用意。周辺にはサン＝レイモン博物館、サン＝セルナン大聖堂などの文化施設や、数多くのレストラン・ショップ、名門大学が集まる活気あるエリアが広がります。",
+  "AMENITIES": [
+    "Wi‑Fi",
+    "中心ロケーション（カピトル）",
+    "タオル・リネン",
+    "デスク",
+    "テレビ"
+  ],
+  "ROOM_TYPES": [
+    {
+      "name": "スーペリア・ダブルルーム",
+      "shortDesc": "キングサイズベッドとゆとりある空間。シャワー付きの広々とした専用バスルーム、テレビ、デスク、ワードローブを備えています。",
+      "priceFrom": 89,
+      "gallery": [
+        "chambre-superieure/1.jpg",
+        "chambre-superieure/2.jpg",
+        "chambre-superieure/3.jpg"
+      ]
+    },
+    {
+      "name": "スタンダード・ダブルルーム",
+      "shortDesc": "キングサイズベッド。シャワー付きのややコンパクトな専用バスルーム。テレビとデスクも備えています。",
+      "priceFrom": 79,
+      "gallery": [
+        "chambre-standard/1.jpg",
+        "chambre-standard/2.jpg",
+        "chambre-standard/3.jpg",
+        "chambre-standard/4.jpg"
+      ]
+    },
+    {
+      "name": "ツインルーム（専用外部トイレ）",
+      "shortDesc": "シングルベッド2台。テレビとデスクを備えています。トイレは客室外にありますが、当室専用です。",
+      "priceFrom": 69,
+      "gallery": [
+        "chambre-jumeaux-prives/1.jpg"
+      ]
+    },
+    {
+      "name": "ツインルーム（共用外部トイレ）",
+      "shortDesc": "シングルベッド2台。テレビとデスクを備えています。トイレは客室外にあり、共用となります。",
+      "priceFrom": 59,
+      "gallery": [
+        "chambre-jumeaux-communs/1.jpg"
+      ]
+    },
+    {
+      "name": "ダブルルーム（共用トイレ）",
+      "shortDesc": "キングサイズベッド。テレビ、デスク、ワードローブ完備。トイレは客室外にあり共用です。",
+      "priceFrom": 59,
+      "gallery": [
+        "chambre-double-communes/1.jpg",
+        "chambre-double-communes/2.jpg"
+      ]
+    }
+  ],
+  "CHECKIN_INFO": "15:00～22:30",
+  "CHECKOUT_INFO": "11:00まで",
+  "PARKING_INFO": "近隣に公共駐車場（Capitole、Compans Cafarelli）がございます。",
+  "PUBLIC_TRANSPORT_INFO": "メトロのCapitole駅・Compans‑Caffarelli駅、鉄道駅が至近。トゥールーズ＝ブラニャック空港からは約5kmです。",
+  "TOULOUSE_DESCRIPTION": "旧市街の街並みは、教会のドームや小塔、鐘楼、趣ある邸宅が織りなす独特の景観が魅力。壮麗なカピトル広場を抜け、温かみのある色合いの建物と数多くのバルコニーが並ぶ路地散策をお楽しみください。",
+  "SEO": {
+    "title": "Hôtel Anatole France – トゥールーズ | カピトル中心のホテル",
+    "description": "トゥールーズのHôtel Anatole France：2025年全面改装。カピトル広場至近、全18室の快適な客室。観光・ビジネス・留学に最適。",
+    "ogImage": "/images/og.jpg"
+  },
+  "UI": {
+    "nav": {
+      "home": "ホーム",
+      "rooms": "客室",
+      "access": "アクセス",
+      "contact": "お問い合わせ",
+      "book": "予約する"
+    },
+    "sections": {
+      "rooms": "客室のご案内",
+      "roomsSubtitle": "快適性を追求し、細部まで配慮した客室で心ゆくまでお寛ぎください。",
+      "access": "情報・アクセス",
+      "contact": "お問い合わせ",
+      "contactSubtitle": "ご質問やご予約はお気軽にご連絡ください。"
+    },
+    "hero": {
+      "discoverRooms": "客室を見る"
+    },
+    "form": {
+      "name": "氏名",
+      "nameLabel": "氏名",
+      "email": "メールアドレス",
+      "emailLabel": "メールアドレス",
+      "phone": "電話番号",
+      "phoneLabel": "電話番号",
+      "subject": "件名",
+      "subjectLabel": "件名",
+      "message": "メッセージ",
+      "messageLabel": "メッセージ",
+      "send": "送信",
+      "consent": "個人情報はプライバシーポリシーに基づき、お問い合わせ対応のために利用します。",
+      "required": "*",
+      "selectSubject": "件名を選択",
+      "reservation": "宿泊予約のご依頼",
+      "information": "情報のご依頼",
+      "event": "イベント手配",
+      "other": "その他"
+    },
+    "info": {
+      "schedule": "営業時間",
+      "checkin": "チェックイン",
+      "checkout": "チェックアウト",
+      "parking": "駐車場",
+      "transport": "交通",
+      "directContact": "直通連絡先",
+      "phone": "電話",
+      "email": "メール",
+      "followUs": "フォローする",
+      "quickLinks": "クイックリンク",
+      "legal": "法的情報",
+      "discover": "トゥールーズの魅力",
+      "address": "住所",
+      "copyaddress": "住所をコピー",
+      "mapnotavailable": "地図を表示できません",
+      "acceptcookies": "Google マップ表示にはCookieの同意が必要です。",
+      "enablemap": "地図を表示",
+      "getdirections": "アクセス方法",
+      "quickResponse": "迅速なご返信",
+      "quickResponseText": "通常24時間以内にご返信いたします。お急ぎのご予約はお電話にてご連絡ください。"
+    },
+    "room": {
+      "from": "料金",
+      "perNight": "/泊",
+      "viewRoom": "客室詳細"
+    },
+    "footer": {
+      "rights": "All rights reserved",
+      "privacy": "プライバシーポリシー",
+      "terms": "リーガルノーティス",
+      "cookies": "クッキー設定",
+      "salesConditions": "販売条件",
+      "legal": "法的情報",
+      "copyright": "©"
+    }
+  }
+}

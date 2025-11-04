@@ -1,8 +1,10 @@
 ---
-import siteData from '../../content/site.json';
+import { getSiteData, getT } from '../utils/i18n';
+const siteData = getSiteData(Astro.url);
+const t = getT(Astro.url);
 ---
 
-<header class="fixed top-0 left-0 right-0 z-50 bg-[#F7F6F3]/95 backdrop-blur-sm border-b border-black/[0.08] transition-all duration-300" id="header">
+<header class="fixed top-0 left-0 right-0 z-50 bg-[#FAF8F5]/95 backdrop-blur-sm border-b border-black/[0.08] transition-all duration-300" id="header">
   <div class="container mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-20">
       <!-- Logo -->
@@ -12,15 +14,114 @@ import siteData from '../../content/site.json';
       
       <!-- Desktop Navigation -->
       <nav class="hidden md:flex items-center space-x-8">
-        <a href="#accueil" class="text-sm font-medium hover:text-[#C2A983] transition-colors">Accueil</a>
-        <a href="#chambres" class="text-sm font-medium hover:text-[#C2A983] transition-colors">Chambres</a>
-        <a href="#acces" class="text-sm font-medium hover:text-[#C2A983] transition-colors">Accès</a>
-        <a href="#contact" class="text-sm font-medium hover:text-[#C2A983] transition-colors">Contact</a>
+        <a href="#accueil" class="text-sm font-medium hover:text-[#C2A983] transition-colors">{t.nav.home}</a>
+        <a href="#chambres" class="text-sm font-medium hover:text-[#C2A983] transition-colors">{t.nav.rooms}</a>
+        <a href="#acces" class="text-sm font-medium hover:text-[#C2A983] transition-colors">{t.nav.access}</a>
+        <a href="#contact" class="text-sm font-medium hover:text-[#C2A983] transition-colors">{t.nav.contact}</a>
+        
+        <!-- Language Selector -->
+        <div class="relative" id="lang-selector">
+          <button 
+            id="lang-button"
+            class="flex items-center gap-2 px-3 py-2 rounded-md hover:bg-[#C2A983]/10 transition-colors"
+            aria-label="Changer de langue"
+          >
+            <span id="current-flag" class="text-xl">🇫🇷</span>
+            <svg class="w-4 h-4 text-[#1C1C1C]/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          
+          <!-- Dropdown -->
+          <div 
+            id="lang-dropdown"
+            class="hidden absolute right-0 mt-2 w-36 bg-white rounded-lg shadow-lg border border-black/[0.08] overflow-hidden z-50"
+          >
+            <button 
+              data-lang="fr" 
+              class="lang-option w-full flex items-center gap-3 px-4 py-2.5 text-sm hover:bg-[#C2A983]/10 transition-colors text-left"
+            >
+              <span class="text-xl">🇫🇷</span>
+              <span class="font-medium">Français</span>
+            </button>
+            <button 
+              data-lang="en" 
+              class="lang-option w-full flex items-center gap-3 px-4 py-2.5 text-sm hover:bg-[#C2A983]/10 transition-colors text-left"
+            >
+              <span class="text-xl">🇬🇧</span>
+              <span class="font-medium">English</span>
+            </button>
+            <button 
+              data-lang="es" 
+              class="lang-option w-full flex items-center gap-3 px-4 py-2.5 text-sm hover:bg-[#C2A983]/10 transition-colors text-left"
+            >
+              <span class="text-xl">🇪🇸</span>
+              <span class="font-medium">Español</span>
+            </button>
+            <button 
+              data-lang="de" 
+              class="lang-option w-full flex items-center gap-3 px-4 py-2.5 text-sm hover:bg-[#C2A983]/10 transition-colors text-left"
+            >
+              <span class="text-xl">🇩🇪</span>
+              <span class="font-medium">Deutsch</span>
+            </button>
+            <button 
+              data-lang="it" 
+              class="lang-option w-full flex items-center gap-3 px-4 py-2.5 text-sm hover:bg-[#C2A983]/10 transition-colors text-left"
+            >
+              <span class="text-xl">🇮🇹</span>
+              <span class="font-medium">Italiano</span>
+            </button>
+            <button 
+              data-lang="ja" 
+              class="lang-option w-full flex items-center gap-3 px-4 py-2.5 text-sm hover:bg-[#C2A983]/10 transition-colors text-left"
+            >
+              <span class="text-xl">🇯🇵</span>
+              <span class="font-medium">日本語</span>
+            </button>
+            <button 
+              data-lang="nl" 
+              class="lang-option w-full flex items-center gap-3 px-4 py-2.5 text-sm hover:bg-[#C2A983]/10 transition-colors text-left"
+            >
+              <span class="text-xl">🇳🇱</span>
+              <span class="font-medium">Nederlands</span>
+            </button>
+            <button 
+              data-lang="pt" 
+              class="lang-option w-full flex items-center gap-3 px-4 py-2.5 text-sm hover:bg-[#C2A983]/10 transition-colors text-left"
+            >
+              <span class="text-xl">🇵🇹</span>
+              <span class="font-medium">Português</span>
+            </button>
+            <button 
+              data-lang="zh" 
+              class="lang-option w-full flex items-center gap-3 px-4 py-2.5 text-sm hover:bg-[#C2A983]/10 transition-colors text-left"
+            >
+              <span class="text-xl">🇨🇳</span>
+              <span class="font-medium">中文</span>
+            </button>
+            <button 
+              data-lang="ar" 
+              class="lang-option w-full flex items-center gap-3 px-4 py-2.5 text-sm hover:bg-[#C2A983]/10 transition-colors text-left"
+            >
+              <span class="text-xl">🇸🇦</span>
+              <span class="font-medium">العربية</span>
+            </button>
+            <button 
+              data-lang="ru" 
+              class="lang-option w-full flex items-center gap-3 px-4 py-2.5 text-sm hover:bg-[#C2A983]/10 transition-colors text-left"
+            >
+              <span class="text-xl">🇷🇺</span>
+              <span class="font-medium">Русский</span>
+            </button>
+          </div>
+        </div>
+        
         <a 
           href={siteData.RESERVATION_URL} 
           class="px-6 py-2.5 bg-[#C2A983] text-white text-sm font-medium rounded-md hover:bg-[#0E2235] transition-all duration-300 shadow-sm hover:shadow-md"
         >
-          Réserver
+          {t.nav.book}
         </a>
       </nav>
       
@@ -38,20 +139,118 @@ import siteData from '../../content/site.json';
   </div>
   
   <!-- Mobile Navigation -->
-  <nav id="mobile-menu" class="md:hidden hidden bg-white border-t border-black/[0.08]">
-    <div class="container mx-auto px-4 py-4 space-y-3">
-      <a href="#accueil" class="block py-2 text-sm font-medium hover:text-[#C2A983] transition-colors">Accueil</a>
-      <a href="#chambres" class="block py-2 text-sm font-medium hover:text-[#C2A983] transition-colors">Chambres</a>
-      <a href="#acces" class="block py-2 text-sm font-medium hover:text-[#C2A983] transition-colors">Accès</a>
-      <a href="#contact" class="block py-2 text-sm font-medium hover:text-[#C2A983] transition-colors">Contact</a>
+  <nav id="mobile-menu" class="md:hidden bg-white border-t border-black/[0.08] transition-all duration-300 ease-in-out max-h-0 opacity-0 overflow-hidden">
+    <div class="container mx-auto px-4 py-3 space-y-2 max-h-[80vh] overflow-y-auto">
+      <a href="#accueil" class="block py-2 text-sm font-medium hover:text-[#C2A983] transition-colors">{t.nav.home}</a>
+      <a href="#chambres" class="block py-2 text-sm font-medium hover:text-[#C2A983] transition-colors">{t.nav.rooms}</a>
+      <a href="#acces" class="block py-2 text-sm font-medium hover:text-[#C2A983] transition-colors">{t.nav.access}</a>
+      <a href="#contact" class="block py-2 text-sm font-medium hover:text-[#C2A983] transition-colors">{t.nav.contact}</a>
+      
+      <!-- Language Selector Mobile -->
+      <div class="pt-1 border-t border-black/[0.08]">
+        <p class="text-xs text-[#1C1C1C]/60 mb-1.5 px-2">Language / Langue / Idioma / Sprache</p>
+        <div class="grid grid-cols-3 gap-0.5">
+          <button 
+            data-lang="fr" 
+            class="lang-option-mobile flex flex-col items-center justify-center gap-0.5 px-1 py-1.5 rounded-md bg-[#C2A983]/10 text-sm font-medium hover:bg-[#C2A983]/20 transition-colors"
+          >
+            <span class="text-base">🇫🇷</span>
+            <span class="text-[9px]">FR</span>
+          </button>
+          <button 
+            data-lang="en" 
+            class="lang-option-mobile flex flex-col items-center justify-center gap-0.5 px-1 py-1.5 rounded-md bg-[#1C1C1C]/5 text-sm font-medium hover:bg-[#1C1C1C]/10 transition-colors"
+          >
+            <span class="text-base">🇬🇧</span>
+            <span class="text-[9px]">EN</span>
+          </button>
+          <button 
+            data-lang="es" 
+            class="lang-option-mobile flex flex-col items-center justify-center gap-0.5 px-1 py-1.5 rounded-md bg-[#1C1C1C]/5 text-sm font-medium hover:bg-[#1C1C1C]/10 transition-colors"
+          >
+            <span class="text-base">🇪🇸</span>
+            <span class="text-[9px]">ES</span>
+          </button>
+          <button 
+            data-lang="de" 
+            class="lang-option-mobile flex flex-col items-center justify-center gap-0.5 px-1 py-1.5 rounded-md bg-[#1C1C1C]/5 text-sm font-medium hover:bg-[#1C1C1C]/10 transition-colors"
+          >
+            <span class="text-base">🇩🇪</span>
+            <span class="text-[9px]">DE</span>
+          </button>
+          <button 
+            data-lang="it" 
+            class="lang-option-mobile flex flex-col items-center justify-center gap-0.5 px-1 py-1.5 rounded-md bg-[#1C1C1C]/5 text-sm font-medium hover:bg-[#1C1C1C]/10 transition-colors"
+          >
+            <span class="text-base">🇮🇹</span>
+            <span class="text-[9px]">IT</span>
+          </button>
+          <button 
+            data-lang="ja" 
+            class="lang-option-mobile flex flex-col items-center justify-center gap-0.5 px-1 py-1.5 rounded-md bg-[#1C1C1C]/5 text-sm font-medium hover:bg-[#1C1C1C]/10 transition-colors"
+          >
+            <span class="text-base">🇯🇵</span>
+            <span class="text-[9px]">JA</span>
+          </button>
+          <button 
+            data-lang="nl" 
+            class="lang-option-mobile flex flex-col items-center justify-center gap-0.5 px-1 py-1.5 rounded-md bg-[#1C1C1C]/5 text-sm font-medium hover:bg-[#1C1C1C]/10 transition-colors"
+          >
+            <span class="text-base">🇳🇱</span>
+            <span class="text-[9px]">NL</span>
+          </button>
+          <button 
+            data-lang="pt" 
+            class="lang-option-mobile flex flex-col items-center justify-center gap-0.5 px-1 py-1.5 rounded-md bg-[#1C1C1C]/5 text-sm font-medium hover:bg-[#1C1C1C]/10 transition-colors"
+          >
+            <span class="text-base">🇵🇹</span>
+            <span class="text-[9px]">PT</span>
+          </button>
+          <button 
+            data-lang="zh" 
+            class="lang-option-mobile flex flex-col items-center justify-center gap-0.5 px-1 py-1.5 rounded-md bg-[#1C1C1C]/5 text-sm font-medium hover:bg-[#1C1C1C]/10 transition-colors"
+          >
+            <span class="text-base">🇨🇳</span>
+            <span class="text-[9px]">中文</span>
+          </button>
+          <button 
+            data-lang="ar" 
+            class="lang-option-mobile flex flex-col items-center justify-center gap-0.5 px-1 py-1.5 rounded-md bg-[#1C1C1C]/5 text-sm font-medium hover:bg-[#1C1C1C]/10 transition-colors"
+          >
+            <span class="text-base">🇸🇦</span>
+            <span class="text-[9px]">AR</span>
+          </button>
+          <button 
+            data-lang="ru" 
+            class="lang-option-mobile flex flex-col items-center justify-center gap-0.5 px-1 py-1.5 rounded-md bg-[#1C1C1C]/5 text-sm font-medium hover:bg-[#1C1C1C]/10 transition-colors"
+          >
+            <span class="text-base">🇷🇺</span>
+            <span class="text-[9px]">RU</span>
+          </button>
+        </div>
+      </div>
+      
       <a 
         href={siteData.RESERVATION_URL} 
         class="block text-center px-6 py-2.5 bg-[#C2A983] text-white text-sm font-medium rounded-md hover:bg-[#0E2235] transition-colors"
       >
-        Réserver
+        {t.nav.book}
       </a>
     </div>
   </nav>
 </header>
 
+<style>
+  #mobile-menu.open {
+    max-height: 90vh;
+    opacity: 1;
+  }
+  
+  /* Smooth scroll for language grid */
+  #mobile-menu .grid {
+    scroll-behavior: smooth;
+  }
+</style>
+
 <script is:inline src="/header.js"></script>
+<script is:inline src="/lang-switcher.js"></script>
