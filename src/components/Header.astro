@@ -4,7 +4,7 @@ const siteData = getSiteData(Astro.url);
 const t = getT(Astro.url);
 ---
 
-<header class="fixed top-0 left-0 right-0 z-50 bg-[#FAF8F5]/95 backdrop-blur-sm border-b border-black/[0.08] transition-all duration-300" id="header">
+<header class="fixed top-0 left-0 right-0 z-[100] bg-[#FAF8F5]/95 backdrop-blur-sm border-b border-black/[0.08] transition-all duration-300" id="header">
   <div class="container mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-20">
       <!-- Logo -->
@@ -128,10 +128,11 @@ const t = getT(Astro.url);
       <!-- Mobile Menu Button -->
       <button 
         id="mobile-menu-button" 
-        class="md:hidden p-2 text-[#1C1C1C] hover:text-[#C2A983] transition-colors"
+        class="md:hidden relative z-[110] p-2 text-[#1C1C1C] hover:text-[#C2A983] transition-colors touch-manipulation"
         aria-label="Menu"
+        type="button"
       >
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg class="w-6 h-6 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
         </svg>
       </button>
