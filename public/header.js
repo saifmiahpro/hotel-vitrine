@@ -2,16 +2,24 @@
 (function() {
   console.log('📱 Header script loaded');
 
-  // Mobile menu toggle
+  // Mobile menu toggle with iOS compatibility
   function initMobileMenu() {
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
     
     if (mobileMenuButton && mobileMenu) {
-      mobileMenuButton.addEventListener('click', () => {
+      console.log('✅ Menu elements found');
+      
+      // Use both click and touchstart for iOS compatibility
+      const toggleMenu = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
         mobileMenu.classList.toggle('open');
-        console.log('🍔 Menu toggled');
-      });
+        console.log('🍔 Menu toggled, open:', mobileMenu.classList.contains('open'));
+      };
+      
+      mobileMenuButton.addEventListener('click', toggleMenu);
+      mobileMenuButton.addEventListener('touchstart', toggleMenu, { passive: false });
       
       // Close mobile menu when clicking on a link
       const mobileLinks = mobileMenu.querySelectorAll('a');
@@ -27,6 +35,8 @@
           mobileMenu.classList.remove('open');
         }
       });
+    } else {
+      console.error('❌ Menu elements not found');
     }
   }
 

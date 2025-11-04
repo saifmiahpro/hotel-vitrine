@@ -140,7 +140,7 @@ const t = getT(Astro.url);
   </div>
   
   <!-- Mobile Navigation -->
-  <nav id="mobile-menu" class="md:hidden bg-white border-t border-black/[0.08] transition-all duration-300 ease-in-out max-h-0 opacity-0 overflow-hidden">
+  <nav id="mobile-menu" class="md:hidden hidden bg-white border-t border-black/[0.08]">
     <div class="container mx-auto px-4 py-3 space-y-2 max-h-[80vh] overflow-y-auto">
       <a href="#accueil" class="block py-2 text-sm font-medium hover:text-[#C2A983] transition-colors">{t.nav.home}</a>
       <a href="#chambres" class="block py-2 text-sm font-medium hover:text-[#C2A983] transition-colors">{t.nav.rooms}</a>
@@ -243,8 +243,7 @@ const t = getT(Astro.url);
 
 <style>
   #mobile-menu.open {
-    max-height: 90vh;
-    opacity: 1;
+    display: block !important;
   }
   
   /* Smooth scroll for language grid */
