@@ -6,33 +6,70 @@
   <meta name="robots" content="noindex">
   <title>Administration - Hôtel Anatole France</title>
 
-  <!-- Decap CMS -->
-  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
-
-  <!-- Netlify Identity Widget -->
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-
   <style>
     body {
       margin: 0;
+      padding: 0;
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
         'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
         sans-serif;
     }
+
+    /* Loader pour montrer que ça charge */
+    #loading {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      font-size: 18px;
+      color: #333;
+    }
   </style>
 </head>
 <body>
+  <!-- Message de chargement -->
+  <div id="loading">
+    <p>Chargement de l'administration...</p>
+    <p style="font-size: 14px; color: #666;">Si cette page reste blanche, ouvrez la console (F12) pour voir les erreurs.</p>
+  </div>
+
+  <!-- Netlify Identity Widget -->
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+  <!-- Decap CMS -->
+  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+
   <script>
+    console.log('Admin page loaded');
+    console.log('Netlify Identity:', window.netlifyIdentity ? 'Loaded' : 'NOT loaded');
+    console.log('Decap CMS:', window.DecapCMS ? 'Loaded' : window.CMS ? 'Loaded (as CMS)' : 'NOT loaded');
+
     // Gestion de l'authentification Netlify Identity
     if (window.netlifyIdentity) {
       window.netlifyIdentity.on("init", user => {
+        console.log('Netlify Identity initialized, user:', user);
         if (!user) {
           window.netlifyIdentity.on("login", () => {
+            console.log('User logged in, redirecting...');
             document.location.href = "/admin/";
           });
         }
       });
+    } else {
+      console.error('Netlify Identity widget not loaded!');
     }
+
+    // Vérifier que Decap CMS s'initialise
+    window.addEventListener('load', () => {
+      console.log('Window loaded');
+      setTimeout(() => {
+        const loading = document.getElementById('loading');
+        if (loading && loading.style.display !== 'none') {
+          console.error('CMS did not initialize after 2 seconds');
+        }
+      }, 2000);
+    });
   </script>
 </body>
 </html>
