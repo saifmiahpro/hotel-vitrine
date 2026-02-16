@@ -98,13 +98,20 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <!-- Script Netlify Identity -->
     <script is:inline>
       (function() {
+        // Si un token d'invitation/recovery est dans l'URL, rediriger vers /admin/
+        var hash = window.location.hash || "";
+        if (hash.indexOf("invite_token") !== -1 ||
+            hash.indexOf("recovery_token") !== -1 ||
+            hash.indexOf("confirmation_token") !== -1) {
+          // Rediriger vers /admin/ en conservant le hash (token)
+          window.location.href = "/admin/" + hash;
+          return;
+        }
+
+        // Sur les pages normales, juste gérer le login redirect
         var tries = 0;
         function waitForIdentity() {
           if (window.netlifyIdentity) {
-            // Forcer l'initialisation du widget (détection auto des tokens)
-            window.netlifyIdentity.init();
-
-            // Rediriger vers /admin/ après login
             window.netlifyIdentity.on("login", function() {
               document.location.href = "/admin/";
             });
