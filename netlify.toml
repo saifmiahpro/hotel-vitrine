@@ -9,8 +9,9 @@
 # These headers provide strong security defaults for the hotel website
 
 # Special headers for Decap CMS admin interface
+# Note: /admin* matches /admin, /admin/, and /admin/anything
 [[headers]]
-  for = "/admin/*"
+  for = "/admin*"
   [headers.values]
     # HSTS - Force HTTPS
     Strict-Transport-Security = "max-age=63072000; includeSubDomains; preload"
