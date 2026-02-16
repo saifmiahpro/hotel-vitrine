@@ -81,8 +81,24 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     "url": Astro.site,
     "sameAs": []
   })} />
+
+  <!-- Netlify Identity Widget pour l'authentification CMS -->
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body class="bg-[#FAF8F5] text-[#1C1C1C] font-inter antialiased">
   <slot />
+
+  <!-- Script Netlify Identity pour gérer la redirection après connexion -->
+  <script is:inline>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", user => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    }
+  </script>
 </body>
 </html>

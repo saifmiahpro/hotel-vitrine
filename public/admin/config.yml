@@ -1,0 +1,1346 @@
+backend:
+  name: git-gateway
+  branch: main
+
+# Configuration locale pour le développement
+local_backend: true
+
+# Dossier des médias (images)
+media_folder: "public/images"
+public_folder: "/images"
+
+# Collections - une pour chaque langue
+collections:
+  # Français 🇫🇷
+  - name: "content_fr"
+    label: "Contenu Français 🇫🇷"
+    files:
+      - name: "fr"
+        label: "Français"
+        file: "locales/fr.json"
+        fields:
+          - { label: "Nom de l'hôtel", name: "HOTEL_NAME", widget: "string" }
+          - { label: "Ville", name: "CITY", widget: "string" }
+          - { label: "Slogan", name: "TAGLINE", widget: "text" }
+          - { label: "Paragraphe d'introduction", name: "INTRO_PARAGRAPH", widget: "text" }
+          - label: "Équipements"
+            name: "AMENITIES"
+            widget: "list"
+            field: { label: "Équipement", name: "item", widget: "string" }
+
+          # Chambres
+          - label: "Types de chambres"
+            name: "ROOM_TYPES"
+            widget: "list"
+            fields:
+              - { label: "Nom de la chambre", name: "name", widget: "string" }
+              - { label: "Description courte", name: "shortDesc", widget: "text" }
+              - { label: "Prix à partir de (€)", name: "priceFrom", widget: "number" }
+              - label: "Galerie d'images"
+                name: "gallery"
+                widget: "list"
+                field: { label: "Chemin de l'image", name: "item", widget: "string", hint: "Ex: chambre-superieure/1.jpg" }
+
+          # Informations pratiques
+          - { label: "Informations Check-in", name: "CHECKIN_INFO", widget: "string" }
+          - { label: "Informations Check-out", name: "CHECKOUT_INFO", widget: "string" }
+          - { label: "Informations Parking", name: "PARKING_INFO", widget: "text" }
+          - { label: "Informations Transports publics", name: "PUBLIC_TRANSPORT_INFO", widget: "text" }
+          - { label: "Adresse", name: "ADDRESS", widget: "string" }
+          - { label: "URL Google Maps Embed", name: "GOOGLE_MAPS_EMBED_URL", widget: "string" }
+          - { label: "Téléphone", name: "PHONE", widget: "string" }
+          - { label: "Email", name: "EMAIL", widget: "string" }
+          - { label: "URL de réservation", name: "RESERVATION_URL", widget: "string" }
+          - { label: "Description de Toulouse", name: "TOULOUSE_DESCRIPTION", widget: "text" }
+
+          # SEO
+          - label: "SEO"
+            name: "SEO"
+            widget: "object"
+            fields:
+              - { label: "Titre SEO", name: "title", widget: "string" }
+              - { label: "Description SEO", name: "description", widget: "text" }
+              - { label: "Image Open Graph", name: "ogImage", widget: "string" }
+
+          # Textes de l'interface
+          - label: "Textes de l'interface"
+            name: "UI"
+            widget: "object"
+            collapsed: true
+            fields:
+              - label: "Navigation"
+                name: "nav"
+                widget: "object"
+                fields:
+                  - { label: "Accueil", name: "home", widget: "string" }
+                  - { label: "Chambres", name: "rooms", widget: "string" }
+                  - { label: "Accès", name: "access", widget: "string" }
+                  - { label: "Contact", name: "contact", widget: "string" }
+                  - { label: "Réserver", name: "book", widget: "string" }
+
+              - label: "Sections"
+                name: "sections"
+                widget: "object"
+                fields:
+                  - { label: "Nos Chambres", name: "rooms", widget: "string" }
+                  - { label: "Sous-titre Chambres", name: "roomsSubtitle", widget: "text" }
+                  - { label: "Informations & Accès", name: "access", widget: "string" }
+                  - { label: "Contactez-nous", name: "contact", widget: "string" }
+                  - { label: "Sous-titre Contact", name: "contactSubtitle", widget: "text" }
+
+              - label: "Hero"
+                name: "hero"
+                widget: "object"
+                fields:
+                  - { label: "Découvrir nos chambres", name: "discoverRooms", widget: "string" }
+
+              - label: "Formulaire"
+                name: "form"
+                widget: "object"
+                collapsed: true
+                fields:
+                  - { label: "Nom", name: "name", widget: "string" }
+                  - { label: "Label Nom", name: "nameLabel", widget: "string" }
+                  - { label: "Email", name: "email", widget: "string" }
+                  - { label: "Label Email", name: "emailLabel", widget: "string" }
+                  - { label: "Téléphone", name: "phone", widget: "string" }
+                  - { label: "Label Téléphone", name: "phoneLabel", widget: "string" }
+                  - { label: "Objet", name: "subject", widget: "string" }
+                  - { label: "Label Objet", name: "subjectLabel", widget: "string" }
+                  - { label: "Votre message", name: "message", widget: "string" }
+                  - { label: "Label Message", name: "messageLabel", widget: "string" }
+                  - { label: "Envoyer", name: "send", widget: "string" }
+                  - { label: "Consentement", name: "consent", widget: "text" }
+                  - { label: "Requis", name: "required", widget: "string" }
+                  - { label: "Sélectionner objet", name: "selectSubject", widget: "string" }
+                  - { label: "Demande de réservation", name: "reservation", widget: "string" }
+                  - { label: "Demande d'information", name: "information", widget: "string" }
+                  - { label: "Organisation d'événement", name: "event", widget: "string" }
+                  - { label: "Autre", name: "other", widget: "string" }
+
+              - label: "Informations"
+                name: "info"
+                widget: "object"
+                fields:
+                  - { label: "Horaires", name: "schedule", widget: "string" }
+                  - { label: "Arrivée", name: "checkin", widget: "string" }
+                  - { label: "Départ", name: "checkout", widget: "string" }
+                  - { label: "Parking", name: "parking", widget: "string" }
+                  - { label: "Transports publics", name: "publicTransport", widget: "string" }
+
+              - label: "Chambre"
+                name: "room"
+                widget: "object"
+                fields:
+                  - { label: "À partir de", name: "from", widget: "string" }
+                  - { label: "Par nuit", name: "perNight", widget: "string" }
+                  - { label: "Voir la chambre", name: "viewRoom", widget: "string" }
+
+              - label: "Pied de page"
+                name: "footer"
+                widget: "object"
+                fields:
+                  - { label: "Liens rapides", name: "quickLinks", widget: "string" }
+                  - { label: "Mentions légales", name: "legalNotice", widget: "string" }
+                  - { label: "Politique de confidentialité", name: "privacyPolicy", widget: "string" }
+                  - { label: "Cookies", name: "cookies", widget: "string" }
+
+  # English 🇬🇧
+  - name: "content_en"
+    label: "Content English 🇬🇧"
+    files:
+      - name: "en"
+        label: "English"
+        file: "locales/en.json"
+        fields:
+          - { label: "Hotel Name", name: "HOTEL_NAME", widget: "string" }
+          - { label: "City", name: "CITY", widget: "string" }
+          - { label: "Tagline", name: "TAGLINE", widget: "text" }
+          - { label: "Introduction Paragraph", name: "INTRO_PARAGRAPH", widget: "text" }
+          - label: "Amenities"
+            name: "AMENITIES"
+            widget: "list"
+            field: { label: "Amenity", name: "item", widget: "string" }
+          - label: "Room Types"
+            name: "ROOM_TYPES"
+            widget: "list"
+            fields:
+              - { label: "Room Name", name: "name", widget: "string" }
+              - { label: "Short Description", name: "shortDesc", widget: "text" }
+              - { label: "Price From (€)", name: "priceFrom", widget: "number" }
+              - label: "Gallery"
+                name: "gallery"
+                widget: "list"
+                field: { label: "Image Path", name: "item", widget: "string" }
+          - { label: "Check-in Info", name: "CHECKIN_INFO", widget: "string" }
+          - { label: "Check-out Info", name: "CHECKOUT_INFO", widget: "string" }
+          - { label: "Parking Info", name: "PARKING_INFO", widget: "text" }
+          - { label: "Public Transport Info", name: "PUBLIC_TRANSPORT_INFO", widget: "text" }
+          - { label: "Address", name: "ADDRESS", widget: "string" }
+          - { label: "Google Maps Embed URL", name: "GOOGLE_MAPS_EMBED_URL", widget: "string" }
+          - { label: "Phone", name: "PHONE", widget: "string" }
+          - { label: "Email", name: "EMAIL", widget: "string" }
+          - { label: "Reservation URL", name: "RESERVATION_URL", widget: "string" }
+          - { label: "Toulouse Description", name: "TOULOUSE_DESCRIPTION", widget: "text" }
+          - label: "SEO"
+            name: "SEO"
+            widget: "object"
+            fields:
+              - { label: "SEO Title", name: "title", widget: "string" }
+              - { label: "SEO Description", name: "description", widget: "text" }
+              - { label: "OG Image", name: "ogImage", widget: "string" }
+          - label: "UI Texts"
+            name: "UI"
+            widget: "object"
+            collapsed: true
+            fields:
+              - label: "Navigation"
+                name: "nav"
+                widget: "object"
+                fields:
+                  - { label: "Home", name: "home", widget: "string" }
+                  - { label: "Rooms", name: "rooms", widget: "string" }
+                  - { label: "Access", name: "access", widget: "string" }
+                  - { label: "Contact", name: "contact", widget: "string" }
+                  - { label: "Book", name: "book", widget: "string" }
+              - label: "Sections"
+                name: "sections"
+                widget: "object"
+                fields:
+                  - { label: "Our Rooms", name: "rooms", widget: "string" }
+                  - { label: "Rooms Subtitle", name: "roomsSubtitle", widget: "text" }
+                  - { label: "Information & Access", name: "access", widget: "string" }
+                  - { label: "Contact Us", name: "contact", widget: "string" }
+                  - { label: "Contact Subtitle", name: "contactSubtitle", widget: "text" }
+              - label: "Hero"
+                name: "hero"
+                widget: "object"
+                fields:
+                  - { label: "Discover Rooms", name: "discoverRooms", widget: "string" }
+              - label: "Form"
+                name: "form"
+                widget: "object"
+                collapsed: true
+                fields:
+                  - { label: "Name", name: "name", widget: "string" }
+                  - { label: "Name Label", name: "nameLabel", widget: "string" }
+                  - { label: "Email", name: "email", widget: "string" }
+                  - { label: "Email Label", name: "emailLabel", widget: "string" }
+                  - { label: "Phone", name: "phone", widget: "string" }
+                  - { label: "Phone Label", name: "phoneLabel", widget: "string" }
+                  - { label: "Subject", name: "subject", widget: "string" }
+                  - { label: "Subject Label", name: "subjectLabel", widget: "string" }
+                  - { label: "Message", name: "message", widget: "string" }
+                  - { label: "Message Label", name: "messageLabel", widget: "string" }
+                  - { label: "Send", name: "send", widget: "string" }
+                  - { label: "Consent", name: "consent", widget: "text" }
+                  - { label: "Required", name: "required", widget: "string" }
+                  - { label: "Select Subject", name: "selectSubject", widget: "string" }
+                  - { label: "Reservation Request", name: "reservation", widget: "string" }
+                  - { label: "Information Request", name: "information", widget: "string" }
+                  - { label: "Event Organization", name: "event", widget: "string" }
+                  - { label: "Other", name: "other", widget: "string" }
+              - label: "Info"
+                name: "info"
+                widget: "object"
+                fields:
+                  - { label: "Schedule", name: "schedule", widget: "string" }
+                  - { label: "Check-in", name: "checkin", widget: "string" }
+                  - { label: "Check-out", name: "checkout", widget: "string" }
+                  - { label: "Parking", name: "parking", widget: "string" }
+                  - { label: "Public Transport", name: "publicTransport", widget: "string" }
+              - label: "Room"
+                name: "room"
+                widget: "object"
+                fields:
+                  - { label: "From", name: "from", widget: "string" }
+                  - { label: "Per Night", name: "perNight", widget: "string" }
+                  - { label: "View Room", name: "viewRoom", widget: "string" }
+              - label: "Footer"
+                name: "footer"
+                widget: "object"
+                fields:
+                  - { label: "Quick Links", name: "quickLinks", widget: "string" }
+                  - { label: "Legal Notice", name: "legalNotice", widget: "string" }
+                  - { label: "Privacy Policy", name: "privacyPolicy", widget: "string" }
+                  - { label: "Cookies", name: "cookies", widget: "string" }
+
+  # Español 🇪🇸
+  - name: "content_es"
+    label: "Contenido Español 🇪🇸"
+    files:
+      - name: "es"
+        label: "Español"
+        file: "locales/es.json"
+        fields:
+          - { label: "Nombre del Hotel", name: "HOTEL_NAME", widget: "string" }
+          - { label: "Ciudad", name: "CITY", widget: "string" }
+          - { label: "Eslogan", name: "TAGLINE", widget: "text" }
+          - { label: "Párrafo de Introducción", name: "INTRO_PARAGRAPH", widget: "text" }
+          - label: "Servicios"
+            name: "AMENITIES"
+            widget: "list"
+            field: { label: "Servicio", name: "item", widget: "string" }
+          - label: "Tipos de Habitaciones"
+            name: "ROOM_TYPES"
+            widget: "list"
+            fields:
+              - { label: "Nombre de la Habitación", name: "name", widget: "string" }
+              - { label: "Descripción Corta", name: "shortDesc", widget: "text" }
+              - { label: "Precio Desde (€)", name: "priceFrom", widget: "number" }
+              - label: "Galería"
+                name: "gallery"
+                widget: "list"
+                field: { label: "Ruta de Imagen", name: "item", widget: "string" }
+          - { label: "Info Check-in", name: "CHECKIN_INFO", widget: "string" }
+          - { label: "Info Check-out", name: "CHECKOUT_INFO", widget: "string" }
+          - { label: "Info Parking", name: "PARKING_INFO", widget: "text" }
+          - { label: "Info Transporte Público", name: "PUBLIC_TRANSPORT_INFO", widget: "text" }
+          - { label: "Dirección", name: "ADDRESS", widget: "string" }
+          - { label: "URL Google Maps Embed", name: "GOOGLE_MAPS_EMBED_URL", widget: "string" }
+          - { label: "Teléfono", name: "PHONE", widget: "string" }
+          - { label: "Email", name: "EMAIL", widget: "string" }
+          - { label: "URL de Reserva", name: "RESERVATION_URL", widget: "string" }
+          - { label: "Descripción de Toulouse", name: "TOULOUSE_DESCRIPTION", widget: "text" }
+          - label: "SEO"
+            name: "SEO"
+            widget: "object"
+            fields:
+              - { label: "Título SEO", name: "title", widget: "string" }
+              - { label: "Descripción SEO", name: "description", widget: "text" }
+              - { label: "Imagen OG", name: "ogImage", widget: "string" }
+          - label: "Textos UI"
+            name: "UI"
+            widget: "object"
+            collapsed: true
+            fields:
+              - label: "Navegación"
+                name: "nav"
+                widget: "object"
+                fields:
+                  - { label: "Inicio", name: "home", widget: "string" }
+                  - { label: "Habitaciones", name: "rooms", widget: "string" }
+                  - { label: "Acceso", name: "access", widget: "string" }
+                  - { label: "Contacto", name: "contact", widget: "string" }
+                  - { label: "Reservar", name: "book", widget: "string" }
+              - label: "Secciones"
+                name: "sections"
+                widget: "object"
+                fields:
+                  - { label: "Nuestras Habitaciones", name: "rooms", widget: "string" }
+                  - { label: "Subtítulo Habitaciones", name: "roomsSubtitle", widget: "text" }
+                  - { label: "Información y Acceso", name: "access", widget: "string" }
+                  - { label: "Contáctenos", name: "contact", widget: "string" }
+                  - { label: "Subtítulo Contacto", name: "contactSubtitle", widget: "text" }
+              - label: "Hero"
+                name: "hero"
+                widget: "object"
+                fields:
+                  - { label: "Descubrir Habitaciones", name: "discoverRooms", widget: "string" }
+              - label: "Formulario"
+                name: "form"
+                widget: "object"
+                collapsed: true
+                fields:
+                  - { label: "Nombre", name: "name", widget: "string" }
+                  - { label: "Etiqueta Nombre", name: "nameLabel", widget: "string" }
+                  - { label: "Email", name: "email", widget: "string" }
+                  - { label: "Etiqueta Email", name: "emailLabel", widget: "string" }
+                  - { label: "Teléfono", name: "phone", widget: "string" }
+                  - { label: "Etiqueta Teléfono", name: "phoneLabel", widget: "string" }
+                  - { label: "Asunto", name: "subject", widget: "string" }
+                  - { label: "Etiqueta Asunto", name: "subjectLabel", widget: "string" }
+                  - { label: "Mensaje", name: "message", widget: "string" }
+                  - { label: "Etiqueta Mensaje", name: "messageLabel", widget: "string" }
+                  - { label: "Enviar", name: "send", widget: "string" }
+                  - { label: "Consentimiento", name: "consent", widget: "text" }
+                  - { label: "Requerido", name: "required", widget: "string" }
+                  - { label: "Seleccionar Asunto", name: "selectSubject", widget: "string" }
+                  - { label: "Solicitud de Reserva", name: "reservation", widget: "string" }
+                  - { label: "Solicitud de Información", name: "information", widget: "string" }
+                  - { label: "Organización de Evento", name: "event", widget: "string" }
+                  - { label: "Otro", name: "other", widget: "string" }
+              - label: "Info"
+                name: "info"
+                widget: "object"
+                fields:
+                  - { label: "Horario", name: "schedule", widget: "string" }
+                  - { label: "Entrada", name: "checkin", widget: "string" }
+                  - { label: "Salida", name: "checkout", widget: "string" }
+                  - { label: "Parking", name: "parking", widget: "string" }
+                  - { label: "Transporte Público", name: "publicTransport", widget: "string" }
+              - label: "Habitación"
+                name: "room"
+                widget: "object"
+                fields:
+                  - { label: "Desde", name: "from", widget: "string" }
+                  - { label: "Por Noche", name: "perNight", widget: "string" }
+                  - { label: "Ver Habitación", name: "viewRoom", widget: "string" }
+              - label: "Pie de Página"
+                name: "footer"
+                widget: "object"
+                fields:
+                  - { label: "Enlaces Rápidos", name: "quickLinks", widget: "string" }
+                  - { label: "Aviso Legal", name: "legalNotice", widget: "string" }
+                  - { label: "Política de Privacidad", name: "privacyPolicy", widget: "string" }
+                  - { label: "Cookies", name: "cookies", widget: "string" }
+
+  # Deutsch 🇩🇪
+  - name: "content_de"
+    label: "Inhalt Deutsch 🇩🇪"
+    files:
+      - name: "de"
+        label: "Deutsch"
+        file: "locales/de.json"
+        fields:
+          - { label: "Hotelname", name: "HOTEL_NAME", widget: "string" }
+          - { label: "Stadt", name: "CITY", widget: "string" }
+          - { label: "Slogan", name: "TAGLINE", widget: "text" }
+          - { label: "Einleitungsabsatz", name: "INTRO_PARAGRAPH", widget: "text" }
+          - label: "Ausstattung"
+            name: "AMENITIES"
+            widget: "list"
+            field: { label: "Ausstattung", name: "item", widget: "string" }
+          - label: "Zimmertypen"
+            name: "ROOM_TYPES"
+            widget: "list"
+            fields:
+              - { label: "Zimmername", name: "name", widget: "string" }
+              - { label: "Kurzbeschreibung", name: "shortDesc", widget: "text" }
+              - { label: "Preis ab (€)", name: "priceFrom", widget: "number" }
+              - label: "Galerie"
+                name: "gallery"
+                widget: "list"
+                field: { label: "Bildpfad", name: "item", widget: "string" }
+          - { label: "Check-in Info", name: "CHECKIN_INFO", widget: "string" }
+          - { label: "Check-out Info", name: "CHECKOUT_INFO", widget: "string" }
+          - { label: "Parkplatz Info", name: "PARKING_INFO", widget: "text" }
+          - { label: "ÖPNV Info", name: "PUBLIC_TRANSPORT_INFO", widget: "text" }
+          - { label: "Adresse", name: "ADDRESS", widget: "string" }
+          - { label: "Google Maps Embed URL", name: "GOOGLE_MAPS_EMBED_URL", widget: "string" }
+          - { label: "Telefon", name: "PHONE", widget: "string" }
+          - { label: "E-Mail", name: "EMAIL", widget: "string" }
+          - { label: "Buchungs-URL", name: "RESERVATION_URL", widget: "string" }
+          - { label: "Toulouse Beschreibung", name: "TOULOUSE_DESCRIPTION", widget: "text" }
+          - label: "SEO"
+            name: "SEO"
+            widget: "object"
+            fields:
+              - { label: "SEO Titel", name: "title", widget: "string" }
+              - { label: "SEO Beschreibung", name: "description", widget: "text" }
+              - { label: "OG Bild", name: "ogImage", widget: "string" }
+          - label: "UI Texte"
+            name: "UI"
+            widget: "object"
+            collapsed: true
+            fields:
+              - label: "Navigation"
+                name: "nav"
+                widget: "object"
+                fields:
+                  - { label: "Startseite", name: "home", widget: "string" }
+                  - { label: "Zimmer", name: "rooms", widget: "string" }
+                  - { label: "Zugang", name: "access", widget: "string" }
+                  - { label: "Kontakt", name: "contact", widget: "string" }
+                  - { label: "Buchen", name: "book", widget: "string" }
+              - label: "Abschnitte"
+                name: "sections"
+                widget: "object"
+                fields:
+                  - { label: "Unsere Zimmer", name: "rooms", widget: "string" }
+                  - { label: "Zimmer Untertitel", name: "roomsSubtitle", widget: "text" }
+                  - { label: "Informationen & Zugang", name: "access", widget: "string" }
+                  - { label: "Kontaktieren Sie uns", name: "contact", widget: "string" }
+                  - { label: "Kontakt Untertitel", name: "contactSubtitle", widget: "text" }
+              - label: "Hero"
+                name: "hero"
+                widget: "object"
+                fields:
+                  - { label: "Zimmer entdecken", name: "discoverRooms", widget: "string" }
+              - label: "Formular"
+                name: "form"
+                widget: "object"
+                collapsed: true
+                fields:
+                  - { label: "Name", name: "name", widget: "string" }
+                  - { label: "Name Label", name: "nameLabel", widget: "string" }
+                  - { label: "E-Mail", name: "email", widget: "string" }
+                  - { label: "E-Mail Label", name: "emailLabel", widget: "string" }
+                  - { label: "Telefon", name: "phone", widget: "string" }
+                  - { label: "Telefon Label", name: "phoneLabel", widget: "string" }
+                  - { label: "Betreff", name: "subject", widget: "string" }
+                  - { label: "Betreff Label", name: "subjectLabel", widget: "string" }
+                  - { label: "Nachricht", name: "message", widget: "string" }
+                  - { label: "Nachricht Label", name: "messageLabel", widget: "string" }
+                  - { label: "Senden", name: "send", widget: "string" }
+                  - { label: "Zustimmung", name: "consent", widget: "text" }
+                  - { label: "Erforderlich", name: "required", widget: "string" }
+                  - { label: "Betreff auswählen", name: "selectSubject", widget: "string" }
+                  - { label: "Buchungsanfrage", name: "reservation", widget: "string" }
+                  - { label: "Informationsanfrage", name: "information", widget: "string" }
+                  - { label: "Veranstaltungsorganisation", name: "event", widget: "string" }
+                  - { label: "Andere", name: "other", widget: "string" }
+              - label: "Info"
+                name: "info"
+                widget: "object"
+                fields:
+                  - { label: "Zeitplan", name: "schedule", widget: "string" }
+                  - { label: "Check-in", name: "checkin", widget: "string" }
+                  - { label: "Check-out", name: "checkout", widget: "string" }
+                  - { label: "Parkplatz", name: "parking", widget: "string" }
+                  - { label: "ÖPNV", name: "publicTransport", widget: "string" }
+              - label: "Zimmer"
+                name: "room"
+                widget: "object"
+                fields:
+                  - { label: "Ab", name: "from", widget: "string" }
+                  - { label: "Pro Nacht", name: "perNight", widget: "string" }
+                  - { label: "Zimmer ansehen", name: "viewRoom", widget: "string" }
+              - label: "Fußzeile"
+                name: "footer"
+                widget: "object"
+                fields:
+                  - { label: "Schnelllinks", name: "quickLinks", widget: "string" }
+                  - { label: "Rechtliche Hinweise", name: "legalNotice", widget: "string" }
+                  - { label: "Datenschutz", name: "privacyPolicy", widget: "string" }
+                  - { label: "Cookies", name: "cookies", widget: "string" }
+
+  # Italiano 🇮🇹
+  - name: "content_it"
+    label: "Contenuto Italiano 🇮🇹"
+    files:
+      - name: "it"
+        label: "Italiano"
+        file: "locales/it.json"
+        fields:
+          - { label: "Nome dell'Hotel", name: "HOTEL_NAME", widget: "string" }
+          - { label: "Città", name: "CITY", widget: "string" }
+          - { label: "Slogan", name: "TAGLINE", widget: "text" }
+          - { label: "Paragrafo Introduttivo", name: "INTRO_PARAGRAPH", widget: "text" }
+          - label: "Servizi"
+            name: "AMENITIES"
+            widget: "list"
+            field: { label: "Servizio", name: "item", widget: "string" }
+          - label: "Tipi di Camere"
+            name: "ROOM_TYPES"
+            widget: "list"
+            fields:
+              - { label: "Nome della Camera", name: "name", widget: "string" }
+              - { label: "Breve Descrizione", name: "shortDesc", widget: "text" }
+              - { label: "Prezzo da (€)", name: "priceFrom", widget: "number" }
+              - label: "Galleria"
+                name: "gallery"
+                widget: "list"
+                field: { label: "Percorso Immagine", name: "item", widget: "string" }
+          - { label: "Info Check-in", name: "CHECKIN_INFO", widget: "string" }
+          - { label: "Info Check-out", name: "CHECKOUT_INFO", widget: "string" }
+          - { label: "Info Parcheggio", name: "PARKING_INFO", widget: "text" }
+          - { label: "Info Trasporto Pubblico", name: "PUBLIC_TRANSPORT_INFO", widget: "text" }
+          - { label: "Indirizzo", name: "ADDRESS", widget: "string" }
+          - { label: "URL Google Maps Embed", name: "GOOGLE_MAPS_EMBED_URL", widget: "string" }
+          - { label: "Telefono", name: "PHONE", widget: "string" }
+          - { label: "Email", name: "EMAIL", widget: "string" }
+          - { label: "URL Prenotazione", name: "RESERVATION_URL", widget: "string" }
+          - { label: "Descrizione di Tolosa", name: "TOULOUSE_DESCRIPTION", widget: "text" }
+          - label: "SEO"
+            name: "SEO"
+            widget: "object"
+            fields:
+              - { label: "Titolo SEO", name: "title", widget: "string" }
+              - { label: "Descrizione SEO", name: "description", widget: "text" }
+              - { label: "Immagine OG", name: "ogImage", widget: "string" }
+          - label: "Testi UI"
+            name: "UI"
+            widget: "object"
+            collapsed: true
+            fields:
+              - label: "Navigazione"
+                name: "nav"
+                widget: "object"
+                fields:
+                  - { label: "Home", name: "home", widget: "string" }
+                  - { label: "Camere", name: "rooms", widget: "string" }
+                  - { label: "Accesso", name: "access", widget: "string" }
+                  - { label: "Contatto", name: "contact", widget: "string" }
+                  - { label: "Prenota", name: "book", widget: "string" }
+              - label: "Sezioni"
+                name: "sections"
+                widget: "object"
+                fields:
+                  - { label: "Le Nostre Camere", name: "rooms", widget: "string" }
+                  - { label: "Sottotitolo Camere", name: "roomsSubtitle", widget: "text" }
+                  - { label: "Informazioni e Accesso", name: "access", widget: "string" }
+                  - { label: "Contattaci", name: "contact", widget: "string" }
+                  - { label: "Sottotitolo Contatto", name: "contactSubtitle", widget: "text" }
+              - label: "Hero"
+                name: "hero"
+                widget: "object"
+                fields:
+                  - { label: "Scopri le Camere", name: "discoverRooms", widget: "string" }
+              - label: "Modulo"
+                name: "form"
+                widget: "object"
+                collapsed: true
+                fields:
+                  - { label: "Nome", name: "name", widget: "string" }
+                  - { label: "Etichetta Nome", name: "nameLabel", widget: "string" }
+                  - { label: "Email", name: "email", widget: "string" }
+                  - { label: "Etichetta Email", name: "emailLabel", widget: "string" }
+                  - { label: "Telefono", name: "phone", widget: "string" }
+                  - { label: "Etichetta Telefono", name: "phoneLabel", widget: "string" }
+                  - { label: "Oggetto", name: "subject", widget: "string" }
+                  - { label: "Etichetta Oggetto", name: "subjectLabel", widget: "string" }
+                  - { label: "Messaggio", name: "message", widget: "string" }
+                  - { label: "Etichetta Messaggio", name: "messageLabel", widget: "string" }
+                  - { label: "Invia", name: "send", widget: "string" }
+                  - { label: "Consenso", name: "consent", widget: "text" }
+                  - { label: "Obbligatorio", name: "required", widget: "string" }
+                  - { label: "Seleziona Oggetto", name: "selectSubject", widget: "string" }
+                  - { label: "Richiesta di Prenotazione", name: "reservation", widget: "string" }
+                  - { label: "Richiesta di Informazioni", name: "information", widget: "string" }
+                  - { label: "Organizzazione Evento", name: "event", widget: "string" }
+                  - { label: "Altro", name: "other", widget: "string" }
+              - label: "Info"
+                name: "info"
+                widget: "object"
+                fields:
+                  - { label: "Orari", name: "schedule", widget: "string" }
+                  - { label: "Check-in", name: "checkin", widget: "string" }
+                  - { label: "Check-out", name: "checkout", widget: "string" }
+                  - { label: "Parcheggio", name: "parking", widget: "string" }
+                  - { label: "Trasporto Pubblico", name: "publicTransport", widget: "string" }
+              - label: "Camera"
+                name: "room"
+                widget: "object"
+                fields:
+                  - { label: "Da", name: "from", widget: "string" }
+                  - { label: "A Notte", name: "perNight", widget: "string" }
+                  - { label: "Vedi Camera", name: "viewRoom", widget: "string" }
+              - label: "Piè di Pagina"
+                name: "footer"
+                widget: "object"
+                fields:
+                  - { label: "Link Rapidi", name: "quickLinks", widget: "string" }
+                  - { label: "Note Legali", name: "legalNotice", widget: "string" }
+                  - { label: "Privacy", name: "privacyPolicy", widget: "string" }
+                  - { label: "Cookie", name: "cookies", widget: "string" }
+
+  # 日本語 🇯🇵
+  - name: "content_ja"
+    label: "コンテンツ 日本語 🇯🇵"
+    files:
+      - name: "ja"
+        label: "日本語"
+        file: "locales/ja.json"
+        fields:
+          - { label: "ホテル名", name: "HOTEL_NAME", widget: "string" }
+          - { label: "都市", name: "CITY", widget: "string" }
+          - { label: "キャッチフレーズ", name: "TAGLINE", widget: "text" }
+          - { label: "紹介文", name: "INTRO_PARAGRAPH", widget: "text" }
+          - label: "設備"
+            name: "AMENITIES"
+            widget: "list"
+            field: { label: "設備", name: "item", widget: "string" }
+          - label: "客室タイプ"
+            name: "ROOM_TYPES"
+            widget: "list"
+            fields:
+              - { label: "客室名", name: "name", widget: "string" }
+              - { label: "簡単な説明", name: "shortDesc", widget: "text" }
+              - { label: "価格（€）", name: "priceFrom", widget: "number" }
+              - label: "ギャラリー"
+                name: "gallery"
+                widget: "list"
+                field: { label: "画像パス", name: "item", widget: "string" }
+          - { label: "チェックイン情報", name: "CHECKIN_INFO", widget: "string" }
+          - { label: "チェックアウト情報", name: "CHECKOUT_INFO", widget: "string" }
+          - { label: "駐車場情報", name: "PARKING_INFO", widget: "text" }
+          - { label: "公共交通機関情報", name: "PUBLIC_TRANSPORT_INFO", widget: "text" }
+          - { label: "住所", name: "ADDRESS", widget: "string" }
+          - { label: "Google Maps埋め込みURL", name: "GOOGLE_MAPS_EMBED_URL", widget: "string" }
+          - { label: "電話番号", name: "PHONE", widget: "string" }
+          - { label: "メールアドレス", name: "EMAIL", widget: "string" }
+          - { label: "予約URL", name: "RESERVATION_URL", widget: "string" }
+          - { label: "トゥールーズの説明", name: "TOULOUSE_DESCRIPTION", widget: "text" }
+          - label: "SEO"
+            name: "SEO"
+            widget: "object"
+            fields:
+              - { label: "SEOタイトル", name: "title", widget: "string" }
+              - { label: "SEO説明", name: "description", widget: "text" }
+              - { label: "OG画像", name: "ogImage", widget: "string" }
+          - label: "UIテキスト"
+            name: "UI"
+            widget: "object"
+            collapsed: true
+            fields:
+              - label: "ナビゲーション"
+                name: "nav"
+                widget: "object"
+                fields:
+                  - { label: "ホーム", name: "home", widget: "string" }
+                  - { label: "客室", name: "rooms", widget: "string" }
+                  - { label: "アクセス", name: "access", widget: "string" }
+                  - { label: "お問い合わせ", name: "contact", widget: "string" }
+                  - { label: "予約", name: "book", widget: "string" }
+              - label: "セクション"
+                name: "sections"
+                widget: "object"
+                fields:
+                  - { label: "客室案内", name: "rooms", widget: "string" }
+                  - { label: "客室サブタイトル", name: "roomsSubtitle", widget: "text" }
+                  - { label: "情報とアクセス", name: "access", widget: "string" }
+                  - { label: "お問い合わせ", name: "contact", widget: "string" }
+                  - { label: "お問い合わせサブタイトル", name: "contactSubtitle", widget: "text" }
+              - label: "ヒーロー"
+                name: "hero"
+                widget: "object"
+                fields:
+                  - { label: "客室を見る", name: "discoverRooms", widget: "string" }
+              - label: "フォーム"
+                name: "form"
+                widget: "object"
+                collapsed: true
+                fields:
+                  - { label: "名前", name: "name", widget: "string" }
+                  - { label: "名前ラベル", name: "nameLabel", widget: "string" }
+                  - { label: "メール", name: "email", widget: "string" }
+                  - { label: "メールラベル", name: "emailLabel", widget: "string" }
+                  - { label: "電話", name: "phone", widget: "string" }
+                  - { label: "電話ラベル", name: "phoneLabel", widget: "string" }
+                  - { label: "件名", name: "subject", widget: "string" }
+                  - { label: "件名ラベル", name: "subjectLabel", widget: "string" }
+                  - { label: "メッセージ", name: "message", widget: "string" }
+                  - { label: "メッセージラベル", name: "messageLabel", widget: "string" }
+                  - { label: "送信", name: "send", widget: "string" }
+                  - { label: "同意", name: "consent", widget: "text" }
+                  - { label: "必須", name: "required", widget: "string" }
+                  - { label: "件名を選択", name: "selectSubject", widget: "string" }
+                  - { label: "予約リクエスト", name: "reservation", widget: "string" }
+                  - { label: "情報リクエスト", name: "information", widget: "string" }
+                  - { label: "イベント開催", name: "event", widget: "string" }
+                  - { label: "その他", name: "other", widget: "string" }
+              - label: "情報"
+                name: "info"
+                widget: "object"
+                fields:
+                  - { label: "スケジュール", name: "schedule", widget: "string" }
+                  - { label: "チェックイン", name: "checkin", widget: "string" }
+                  - { label: "チェックアウト", name: "checkout", widget: "string" }
+                  - { label: "駐車場", name: "parking", widget: "string" }
+                  - { label: "公共交通機関", name: "publicTransport", widget: "string" }
+              - label: "客室"
+                name: "room"
+                widget: "object"
+                fields:
+                  - { label: "から", name: "from", widget: "string" }
+                  - { label: "1泊", name: "perNight", widget: "string" }
+                  - { label: "客室を見る", name: "viewRoom", widget: "string" }
+              - label: "フッター"
+                name: "footer"
+                widget: "object"
+                fields:
+                  - { label: "クイックリンク", name: "quickLinks", widget: "string" }
+                  - { label: "法的通知", name: "legalNotice", widget: "string" }
+                  - { label: "プライバシーポリシー", name: "privacyPolicy", widget: "string" }
+                  - { label: "クッキー", name: "cookies", widget: "string" }
+
+  # Nederlands 🇳🇱
+  - name: "content_nl"
+    label: "Inhoud Nederlands 🇳🇱"
+    files:
+      - name: "nl"
+        label: "Nederlands"
+        file: "locales/nl.json"
+        fields:
+          - { label: "Hotelnaam", name: "HOTEL_NAME", widget: "string" }
+          - { label: "Stad", name: "CITY", widget: "string" }
+          - { label: "Slogan", name: "TAGLINE", widget: "text" }
+          - { label: "Introductie", name: "INTRO_PARAGRAPH", widget: "text" }
+          - label: "Voorzieningen"
+            name: "AMENITIES"
+            widget: "list"
+            field: { label: "Voorziening", name: "item", widget: "string" }
+          - label: "Kamertypes"
+            name: "ROOM_TYPES"
+            widget: "list"
+            fields:
+              - { label: "Kamernaam", name: "name", widget: "string" }
+              - { label: "Korte Beschrijving", name: "shortDesc", widget: "text" }
+              - { label: "Prijs vanaf (€)", name: "priceFrom", widget: "number" }
+              - label: "Galerij"
+                name: "gallery"
+                widget: "list"
+                field: { label: "Afbeeldingspad", name: "item", widget: "string" }
+          - { label: "Inchecken Info", name: "CHECKIN_INFO", widget: "string" }
+          - { label: "Uitchecken Info", name: "CHECKOUT_INFO", widget: "string" }
+          - { label: "Parkeren Info", name: "PARKING_INFO", widget: "text" }
+          - { label: "Openbaar Vervoer Info", name: "PUBLIC_TRANSPORT_INFO", widget: "text" }
+          - { label: "Adres", name: "ADDRESS", widget: "string" }
+          - { label: "Google Maps Embed URL", name: "GOOGLE_MAPS_EMBED_URL", widget: "string" }
+          - { label: "Telefoon", name: "PHONE", widget: "string" }
+          - { label: "E-mail", name: "EMAIL", widget: "string" }
+          - { label: "Reserverings URL", name: "RESERVATION_URL", widget: "string" }
+          - { label: "Toulouse Beschrijving", name: "TOULOUSE_DESCRIPTION", widget: "text" }
+          - label: "SEO"
+            name: "SEO"
+            widget: "object"
+            fields:
+              - { label: "SEO Titel", name: "title", widget: "string" }
+              - { label: "SEO Beschrijving", name: "description", widget: "text" }
+              - { label: "OG Afbeelding", name: "ogImage", widget: "string" }
+          - label: "UI Teksten"
+            name: "UI"
+            widget: "object"
+            collapsed: true
+            fields:
+              - label: "Navigatie"
+                name: "nav"
+                widget: "object"
+                fields:
+                  - { label: "Home", name: "home", widget: "string" }
+                  - { label: "Kamers", name: "rooms", widget: "string" }
+                  - { label: "Toegang", name: "access", widget: "string" }
+                  - { label: "Contact", name: "contact", widget: "string" }
+                  - { label: "Boeken", name: "book", widget: "string" }
+              - label: "Secties"
+                name: "sections"
+                widget: "object"
+                fields:
+                  - { label: "Onze Kamers", name: "rooms", widget: "string" }
+                  - { label: "Kamers Ondertitel", name: "roomsSubtitle", widget: "text" }
+                  - { label: "Informatie & Toegang", name: "access", widget: "string" }
+                  - { label: "Contacteer Ons", name: "contact", widget: "string" }
+                  - { label: "Contact Ondertitel", name: "contactSubtitle", widget: "text" }
+              - label: "Hero"
+                name: "hero"
+                widget: "object"
+                fields:
+                  - { label: "Ontdek Kamers", name: "discoverRooms", widget: "string" }
+              - label: "Formulier"
+                name: "form"
+                widget: "object"
+                collapsed: true
+                fields:
+                  - { label: "Naam", name: "name", widget: "string" }
+                  - { label: "Naam Label", name: "nameLabel", widget: "string" }
+                  - { label: "E-mail", name: "email", widget: "string" }
+                  - { label: "E-mail Label", name: "emailLabel", widget: "string" }
+                  - { label: "Telefoon", name: "phone", widget: "string" }
+                  - { label: "Telefoon Label", name: "phoneLabel", widget: "string" }
+                  - { label: "Onderwerp", name: "subject", widget: "string" }
+                  - { label: "Onderwerp Label", name: "subjectLabel", widget: "string" }
+                  - { label: "Bericht", name: "message", widget: "string" }
+                  - { label: "Bericht Label", name: "messageLabel", widget: "string" }
+                  - { label: "Verzenden", name: "send", widget: "string" }
+                  - { label: "Toestemming", name: "consent", widget: "text" }
+                  - { label: "Verplicht", name: "required", widget: "string" }
+                  - { label: "Selecteer Onderwerp", name: "selectSubject", widget: "string" }
+                  - { label: "Reserveringsverzoek", name: "reservation", widget: "string" }
+                  - { label: "Informatieverzoek", name: "information", widget: "string" }
+                  - { label: "Evenement Organisatie", name: "event", widget: "string" }
+                  - { label: "Andere", name: "other", widget: "string" }
+              - label: "Info"
+                name: "info"
+                widget: "object"
+                fields:
+                  - { label: "Schema", name: "schedule", widget: "string" }
+                  - { label: "Inchecken", name: "checkin", widget: "string" }
+                  - { label: "Uitchecken", name: "checkout", widget: "string" }
+                  - { label: "Parkeren", name: "parking", widget: "string" }
+                  - { label: "Openbaar Vervoer", name: "publicTransport", widget: "string" }
+              - label: "Kamer"
+                name: "room"
+                widget: "object"
+                fields:
+                  - { label: "Vanaf", name: "from", widget: "string" }
+                  - { label: "Per Nacht", name: "perNight", widget: "string" }
+                  - { label: "Bekijk Kamer", name: "viewRoom", widget: "string" }
+              - label: "Voettekst"
+                name: "footer"
+                widget: "object"
+                fields:
+                  - { label: "Snelle Links", name: "quickLinks", widget: "string" }
+                  - { label: "Juridische Mededeling", name: "legalNotice", widget: "string" }
+                  - { label: "Privacybeleid", name: "privacyPolicy", widget: "string" }
+                  - { label: "Cookies", name: "cookies", widget: "string" }
+
+  # Português 🇵🇹
+  - name: "content_pt"
+    label: "Conteúdo Português 🇵🇹"
+    files:
+      - name: "pt"
+        label: "Português"
+        file: "locales/pt.json"
+        fields:
+          - { label: "Nome do Hotel", name: "HOTEL_NAME", widget: "string" }
+          - { label: "Cidade", name: "CITY", widget: "string" }
+          - { label: "Slogan", name: "TAGLINE", widget: "text" }
+          - { label: "Parágrafo Introdutório", name: "INTRO_PARAGRAPH", widget: "text" }
+          - label: "Comodidades"
+            name: "AMENITIES"
+            widget: "list"
+            field: { label: "Comodidade", name: "item", widget: "string" }
+          - label: "Tipos de Quartos"
+            name: "ROOM_TYPES"
+            widget: "list"
+            fields:
+              - { label: "Nome do Quarto", name: "name", widget: "string" }
+              - { label: "Descrição Curta", name: "shortDesc", widget: "text" }
+              - { label: "Preço a partir de (€)", name: "priceFrom", widget: "number" }
+              - label: "Galeria"
+                name: "gallery"
+                widget: "list"
+                field: { label: "Caminho da Imagem", name: "item", widget: "string" }
+          - { label: "Info Check-in", name: "CHECKIN_INFO", widget: "string" }
+          - { label: "Info Check-out", name: "CHECKOUT_INFO", widget: "string" }
+          - { label: "Info Estacionamento", name: "PARKING_INFO", widget: "text" }
+          - { label: "Info Transporte Público", name: "PUBLIC_TRANSPORT_INFO", widget: "text" }
+          - { label: "Endereço", name: "ADDRESS", widget: "string" }
+          - { label: "URL Google Maps Embed", name: "GOOGLE_MAPS_EMBED_URL", widget: "string" }
+          - { label: "Telefone", name: "PHONE", widget: "string" }
+          - { label: "E-mail", name: "EMAIL", widget: "string" }
+          - { label: "URL de Reserva", name: "RESERVATION_URL", widget: "string" }
+          - { label: "Descrição de Toulouse", name: "TOULOUSE_DESCRIPTION", widget: "text" }
+          - label: "SEO"
+            name: "SEO"
+            widget: "object"
+            fields:
+              - { label: "Título SEO", name: "title", widget: "string" }
+              - { label: "Descrição SEO", name: "description", widget: "text" }
+              - { label: "Imagem OG", name: "ogImage", widget: "string" }
+          - label: "Textos UI"
+            name: "UI"
+            widget: "object"
+            collapsed: true
+            fields:
+              - label: "Navegação"
+                name: "nav"
+                widget: "object"
+                fields:
+                  - { label: "Início", name: "home", widget: "string" }
+                  - { label: "Quartos", name: "rooms", widget: "string" }
+                  - { label: "Acesso", name: "access", widget: "string" }
+                  - { label: "Contato", name: "contact", widget: "string" }
+                  - { label: "Reservar", name: "book", widget: "string" }
+              - label: "Seções"
+                name: "sections"
+                widget: "object"
+                fields:
+                  - { label: "Nossos Quartos", name: "rooms", widget: "string" }
+                  - { label: "Subtítulo Quartos", name: "roomsSubtitle", widget: "text" }
+                  - { label: "Informações e Acesso", name: "access", widget: "string" }
+                  - { label: "Entre em Contato", name: "contact", widget: "string" }
+                  - { label: "Subtítulo Contato", name: "contactSubtitle", widget: "text" }
+              - label: "Hero"
+                name: "hero"
+                widget: "object"
+                fields:
+                  - { label: "Descobrir Quartos", name: "discoverRooms", widget: "string" }
+              - label: "Formulário"
+                name: "form"
+                widget: "object"
+                collapsed: true
+                fields:
+                  - { label: "Nome", name: "name", widget: "string" }
+                  - { label: "Rótulo Nome", name: "nameLabel", widget: "string" }
+                  - { label: "E-mail", name: "email", widget: "string" }
+                  - { label: "Rótulo E-mail", name: "emailLabel", widget: "string" }
+                  - { label: "Telefone", name: "phone", widget: "string" }
+                  - { label: "Rótulo Telefone", name: "phoneLabel", widget: "string" }
+                  - { label: "Assunto", name: "subject", widget: "string" }
+                  - { label: "Rótulo Assunto", name: "subjectLabel", widget: "string" }
+                  - { label: "Mensagem", name: "message", widget: "string" }
+                  - { label: "Rótulo Mensagem", name: "messageLabel", widget: "string" }
+                  - { label: "Enviar", name: "send", widget: "string" }
+                  - { label: "Consentimento", name: "consent", widget: "text" }
+                  - { label: "Obrigatório", name: "required", widget: "string" }
+                  - { label: "Selecionar Assunto", name: "selectSubject", widget: "string" }
+                  - { label: "Pedido de Reserva", name: "reservation", widget: "string" }
+                  - { label: "Pedido de Informação", name: "information", widget: "string" }
+                  - { label: "Organização de Evento", name: "event", widget: "string" }
+                  - { label: "Outro", name: "other", widget: "string" }
+              - label: "Info"
+                name: "info"
+                widget: "object"
+                fields:
+                  - { label: "Horário", name: "schedule", widget: "string" }
+                  - { label: "Check-in", name: "checkin", widget: "string" }
+                  - { label: "Check-out", name: "checkout", widget: "string" }
+                  - { label: "Estacionamento", name: "parking", widget: "string" }
+                  - { label: "Transporte Público", name: "publicTransport", widget: "string" }
+              - label: "Quarto"
+                name: "room"
+                widget: "object"
+                fields:
+                  - { label: "A partir de", name: "from", widget: "string" }
+                  - { label: "Por Noite", name: "perNight", widget: "string" }
+                  - { label: "Ver Quarto", name: "viewRoom", widget: "string" }
+              - label: "Rodapé"
+                name: "footer"
+                widget: "object"
+                fields:
+                  - { label: "Links Rápidos", name: "quickLinks", widget: "string" }
+                  - { label: "Aviso Legal", name: "legalNotice", widget: "string" }
+                  - { label: "Política de Privacidade", name: "privacyPolicy", widget: "string" }
+                  - { label: "Cookies", name: "cookies", widget: "string" }
+
+  # 中文 🇨🇳
+  - name: "content_zh"
+    label: "内容 中文 🇨🇳"
+    files:
+      - name: "zh"
+        label: "中文"
+        file: "locales/zh.json"
+        fields:
+          - { label: "酒店名称", name: "HOTEL_NAME", widget: "string" }
+          - { label: "城市", name: "CITY", widget: "string" }
+          - { label: "标语", name: "TAGLINE", widget: "text" }
+          - { label: "介绍段落", name: "INTRO_PARAGRAPH", widget: "text" }
+          - label: "设施"
+            name: "AMENITIES"
+            widget: "list"
+            field: { label: "设施", name: "item", widget: "string" }
+          - label: "房型"
+            name: "ROOM_TYPES"
+            widget: "list"
+            fields:
+              - { label: "房间名称", name: "name", widget: "string" }
+              - { label: "简短描述", name: "shortDesc", widget: "text" }
+              - { label: "起价（€）", name: "priceFrom", widget: "number" }
+              - label: "图库"
+                name: "gallery"
+                widget: "list"
+                field: { label: "图片路径", name: "item", widget: "string" }
+          - { label: "入住信息", name: "CHECKIN_INFO", widget: "string" }
+          - { label: "退房信息", name: "CHECKOUT_INFO", widget: "string" }
+          - { label: "停车信息", name: "PARKING_INFO", widget: "text" }
+          - { label: "公共交通信息", name: "PUBLIC_TRANSPORT_INFO", widget: "text" }
+          - { label: "地址", name: "ADDRESS", widget: "string" }
+          - { label: "Google Maps嵌入URL", name: "GOOGLE_MAPS_EMBED_URL", widget: "string" }
+          - { label: "电话", name: "PHONE", widget: "string" }
+          - { label: "电子邮件", name: "EMAIL", widget: "string" }
+          - { label: "预订URL", name: "RESERVATION_URL", widget: "string" }
+          - { label: "图卢兹描述", name: "TOULOUSE_DESCRIPTION", widget: "text" }
+          - label: "SEO"
+            name: "SEO"
+            widget: "object"
+            fields:
+              - { label: "SEO标题", name: "title", widget: "string" }
+              - { label: "SEO描述", name: "description", widget: "text" }
+              - { label: "OG图片", name: "ogImage", widget: "string" }
+          - label: "UI文本"
+            name: "UI"
+            widget: "object"
+            collapsed: true
+            fields:
+              - label: "导航"
+                name: "nav"
+                widget: "object"
+                fields:
+                  - { label: "首页", name: "home", widget: "string" }
+                  - { label: "客房", name: "rooms", widget: "string" }
+                  - { label: "访问", name: "access", widget: "string" }
+                  - { label: "联系", name: "contact", widget: "string" }
+                  - { label: "预订", name: "book", widget: "string" }
+              - label: "部分"
+                name: "sections"
+                widget: "object"
+                fields:
+                  - { label: "我们的客房", name: "rooms", widget: "string" }
+                  - { label: "客房副标题", name: "roomsSubtitle", widget: "text" }
+                  - { label: "信息与访问", name: "access", widget: "string" }
+                  - { label: "联系我们", name: "contact", widget: "string" }
+                  - { label: "联系副标题", name: "contactSubtitle", widget: "text" }
+              - label: "英雄"
+                name: "hero"
+                widget: "object"
+                fields:
+                  - { label: "探索客房", name: "discoverRooms", widget: "string" }
+              - label: "表单"
+                name: "form"
+                widget: "object"
+                collapsed: true
+                fields:
+                  - { label: "姓名", name: "name", widget: "string" }
+                  - { label: "姓名标签", name: "nameLabel", widget: "string" }
+                  - { label: "电子邮件", name: "email", widget: "string" }
+                  - { label: "电子邮件标签", name: "emailLabel", widget: "string" }
+                  - { label: "电话", name: "phone", widget: "string" }
+                  - { label: "电话标签", name: "phoneLabel", widget: "string" }
+                  - { label: "主题", name: "subject", widget: "string" }
+                  - { label: "主题标签", name: "subjectLabel", widget: "string" }
+                  - { label: "消息", name: "message", widget: "string" }
+                  - { label: "消息标签", name: "messageLabel", widget: "string" }
+                  - { label: "发送", name: "send", widget: "string" }
+                  - { label: "同意", name: "consent", widget: "text" }
+                  - { label: "必需", name: "required", widget: "string" }
+                  - { label: "选择主题", name: "selectSubject", widget: "string" }
+                  - { label: "预订请求", name: "reservation", widget: "string" }
+                  - { label: "信息请求", name: "information", widget: "string" }
+                  - { label: "活动组织", name: "event", widget: "string" }
+                  - { label: "其他", name: "other", widget: "string" }
+              - label: "信息"
+                name: "info"
+                widget: "object"
+                fields:
+                  - { label: "时间表", name: "schedule", widget: "string" }
+                  - { label: "入住", name: "checkin", widget: "string" }
+                  - { label: "退房", name: "checkout", widget: "string" }
+                  - { label: "停车", name: "parking", widget: "string" }
+                  - { label: "公共交通", name: "publicTransport", widget: "string" }
+              - label: "房间"
+                name: "room"
+                widget: "object"
+                fields:
+                  - { label: "从", name: "from", widget: "string" }
+                  - { label: "每晚", name: "perNight", widget: "string" }
+                  - { label: "查看房间", name: "viewRoom", widget: "string" }
+              - label: "页脚"
+                name: "footer"
+                widget: "object"
+                fields:
+                  - { label: "快速链接", name: "quickLinks", widget: "string" }
+                  - { label: "法律声明", name: "legalNotice", widget: "string" }
+                  - { label: "隐私政策", name: "privacyPolicy", widget: "string" }
+                  - { label: "Cookies", name: "cookies", widget: "string" }
+
+  # العربية 🇸🇦
+  - name: "content_ar"
+    label: "المحتوى العربية 🇸🇦"
+    files:
+      - name: "ar"
+        label: "العربية"
+        file: "locales/ar.json"
+        fields:
+          - { label: "اسم الفندق", name: "HOTEL_NAME", widget: "string" }
+          - { label: "المدينة", name: "CITY", widget: "string" }
+          - { label: "الشعار", name: "TAGLINE", widget: "text" }
+          - { label: "فقرة المقدمة", name: "INTRO_PARAGRAPH", widget: "text" }
+          - label: "المرافق"
+            name: "AMENITIES"
+            widget: "list"
+            field: { label: "المرفق", name: "item", widget: "string" }
+          - label: "أنواع الغرف"
+            name: "ROOM_TYPES"
+            widget: "list"
+            fields:
+              - { label: "اسم الغرفة", name: "name", widget: "string" }
+              - { label: "وصف مختصر", name: "shortDesc", widget: "text" }
+              - { label: "السعر من (€)", name: "priceFrom", widget: "number" }
+              - label: "المعرض"
+                name: "gallery"
+                widget: "list"
+                field: { label: "مسار الصورة", name: "item", widget: "string" }
+          - { label: "معلومات تسجيل الوصول", name: "CHECKIN_INFO", widget: "string" }
+          - { label: "معلومات تسجيل المغادرة", name: "CHECKOUT_INFO", widget: "string" }
+          - { label: "معلومات وقوف السيارات", name: "PARKING_INFO", widget: "text" }
+          - { label: "معلومات النقل العام", name: "PUBLIC_TRANSPORT_INFO", widget: "text" }
+          - { label: "العنوان", name: "ADDRESS", widget: "string" }
+          - { label: "رابط Google Maps المضمن", name: "GOOGLE_MAPS_EMBED_URL", widget: "string" }
+          - { label: "الهاتف", name: "PHONE", widget: "string" }
+          - { label: "البريد الإلكتروني", name: "EMAIL", widget: "string" }
+          - { label: "رابط الحجز", name: "RESERVATION_URL", widget: "string" }
+          - { label: "وصف تولوز", name: "TOULOUSE_DESCRIPTION", widget: "text" }
+          - label: "SEO"
+            name: "SEO"
+            widget: "object"
+            fields:
+              - { label: "عنوان SEO", name: "title", widget: "string" }
+              - { label: "وصف SEO", name: "description", widget: "text" }
+              - { label: "صورة OG", name: "ogImage", widget: "string" }
+          - label: "نصوص واجهة المستخدم"
+            name: "UI"
+            widget: "object"
+            collapsed: true
+            fields:
+              - label: "التنقل"
+                name: "nav"
+                widget: "object"
+                fields:
+                  - { label: "الرئيسية", name: "home", widget: "string" }
+                  - { label: "الغرف", name: "rooms", widget: "string" }
+                  - { label: "الوصول", name: "access", widget: "string" }
+                  - { label: "اتصال", name: "contact", widget: "string" }
+                  - { label: "احجز", name: "book", widget: "string" }
+              - label: "الأقسام"
+                name: "sections"
+                widget: "object"
+                fields:
+                  - { label: "غرفنا", name: "rooms", widget: "string" }
+                  - { label: "عنوان فرعي للغرف", name: "roomsSubtitle", widget: "text" }
+                  - { label: "المعلومات والوصول", name: "access", widget: "string" }
+                  - { label: "اتصل بنا", name: "contact", widget: "string" }
+                  - { label: "عنوان فرعي للاتصال", name: "contactSubtitle", widget: "text" }
+              - label: "البطل"
+                name: "hero"
+                widget: "object"
+                fields:
+                  - { label: "اكتشف الغرف", name: "discoverRooms", widget: "string" }
+              - label: "النموذج"
+                name: "form"
+                widget: "object"
+                collapsed: true
+                fields:
+                  - { label: "الاسم", name: "name", widget: "string" }
+                  - { label: "تسمية الاسم", name: "nameLabel", widget: "string" }
+                  - { label: "البريد الإلكتروني", name: "email", widget: "string" }
+                  - { label: "تسمية البريد الإلكتروني", name: "emailLabel", widget: "string" }
+                  - { label: "الهاتف", name: "phone", widget: "string" }
+                  - { label: "تسمية الهاتف", name: "phoneLabel", widget: "string" }
+                  - { label: "الموضوع", name: "subject", widget: "string" }
+                  - { label: "تسمية الموضوع", name: "subjectLabel", widget: "string" }
+                  - { label: "الرسالة", name: "message", widget: "string" }
+                  - { label: "تسمية الرسالة", name: "messageLabel", widget: "string" }
+                  - { label: "إرسال", name: "send", widget: "string" }
+                  - { label: "الموافقة", name: "consent", widget: "text" }
+                  - { label: "مطلوب", name: "required", widget: "string" }
+                  - { label: "اختر الموضوع", name: "selectSubject", widget: "string" }
+                  - { label: "طلب حجز", name: "reservation", widget: "string" }
+                  - { label: "طلب معلومات", name: "information", widget: "string" }
+                  - { label: "تنظيم الحدث", name: "event", widget: "string" }
+                  - { label: "آخر", name: "other", widget: "string" }
+              - label: "معلومات"
+                name: "info"
+                widget: "object"
+                fields:
+                  - { label: "الجدول", name: "schedule", widget: "string" }
+                  - { label: "تسجيل الوصول", name: "checkin", widget: "string" }
+                  - { label: "تسجيل المغادرة", name: "checkout", widget: "string" }
+                  - { label: "وقوف السيارات", name: "parking", widget: "string" }
+                  - { label: "النقل العام", name: "publicTransport", widget: "string" }
+              - label: "الغرفة"
+                name: "room"
+                widget: "object"
+                fields:
+                  - { label: "من", name: "from", widget: "string" }
+                  - { label: "في الليلة", name: "perNight", widget: "string" }
+                  - { label: "عرض الغرفة", name: "viewRoom", widget: "string" }
+              - label: "التذييل"
+                name: "footer"
+                widget: "object"
+                fields:
+                  - { label: "روابط سريعة", name: "quickLinks", widget: "string" }
+                  - { label: "إشعار قانوني", name: "legalNotice", widget: "string" }
+                  - { label: "سياسة الخصوصية", name: "privacyPolicy", widget: "string" }
+                  - { label: "الكوكيز", name: "cookies", widget: "string" }
+
+  # Русский 🇷🇺
+  - name: "content_ru"
+    label: "Содержание Русский 🇷🇺"
+    files:
+      - name: "ru"
+        label: "Русский"
+        file: "locales/ru.json"
+        fields:
+          - { label: "Название отеля", name: "HOTEL_NAME", widget: "string" }
+          - { label: "Город", name: "CITY", widget: "string" }
+          - { label: "Слоган", name: "TAGLINE", widget: "text" }
+          - { label: "Вступительный абзац", name: "INTRO_PARAGRAPH", widget: "text" }
+          - label: "Удобства"
+            name: "AMENITIES"
+            widget: "list"
+            field: { label: "Удобство", name: "item", widget: "string" }
+          - label: "Типы номеров"
+            name: "ROOM_TYPES"
+            widget: "list"
+            fields:
+              - { label: "Название номера", name: "name", widget: "string" }
+              - { label: "Краткое описание", name: "shortDesc", widget: "text" }
+              - { label: "Цена от (€)", name: "priceFrom", widget: "number" }
+              - label: "Галерея"
+                name: "gallery"
+                widget: "list"
+                field: { label: "Путь к изображению", name: "item", widget: "string" }
+          - { label: "Информация о заезде", name: "CHECKIN_INFO", widget: "string" }
+          - { label: "Информация о выезде", name: "CHECKOUT_INFO", widget: "string" }
+          - { label: "Информация о парковке", name: "PARKING_INFO", widget: "text" }
+          - { label: "Информация об общественном транспорте", name: "PUBLIC_TRANSPORT_INFO", widget: "text" }
+          - { label: "Адрес", name: "ADDRESS", widget: "string" }
+          - { label: "URL встраивания Google Maps", name: "GOOGLE_MAPS_EMBED_URL", widget: "string" }
+          - { label: "Телефон", name: "PHONE", widget: "string" }
+          - { label: "Электронная почта", name: "EMAIL", widget: "string" }
+          - { label: "URL бронирования", name: "RESERVATION_URL", widget: "string" }
+          - { label: "Описание Тулузы", name: "TOULOUSE_DESCRIPTION", widget: "text" }
+          - label: "SEO"
+            name: "SEO"
+            widget: "object"
+            fields:
+              - { label: "SEO заголовок", name: "title", widget: "string" }
+              - { label: "SEO описание", name: "description", widget: "text" }
+              - { label: "OG изображение", name: "ogImage", widget: "string" }
+          - label: "Тексты UI"
+            name: "UI"
+            widget: "object"
+            collapsed: true
+            fields:
+              - label: "Навигация"
+                name: "nav"
+                widget: "object"
+                fields:
+                  - { label: "Главная", name: "home", widget: "string" }
+                  - { label: "Номера", name: "rooms", widget: "string" }
+                  - { label: "Доступ", name: "access", widget: "string" }
+                  - { label: "Контакт", name: "contact", widget: "string" }
+                  - { label: "Забронировать", name: "book", widget: "string" }
+              - label: "Разделы"
+                name: "sections"
+                widget: "object"
+                fields:
+                  - { label: "Наши номера", name: "rooms", widget: "string" }
+                  - { label: "Подзаголовок номеров", name: "roomsSubtitle", widget: "text" }
+                  - { label: "Информация и доступ", name: "access", widget: "string" }
+                  - { label: "Свяжитесь с нами", name: "contact", widget: "string" }
+                  - { label: "Подзаголовок контакта", name: "contactSubtitle", widget: "text" }
+              - label: "Герой"
+                name: "hero"
+                widget: "object"
+                fields:
+                  - { label: "Открыть номера", name: "discoverRooms", widget: "string" }
+              - label: "Форма"
+                name: "form"
+                widget: "object"
+                collapsed: true
+                fields:
+                  - { label: "Имя", name: "name", widget: "string" }
+                  - { label: "Метка имени", name: "nameLabel", widget: "string" }
+                  - { label: "Электронная почта", name: "email", widget: "string" }
+                  - { label: "Метка электронной почты", name: "emailLabel", widget: "string" }
+                  - { label: "Телефон", name: "phone", widget: "string" }
+                  - { label: "Метка телефона", name: "phoneLabel", widget: "string" }
+                  - { label: "Тема", name: "subject", widget: "string" }
+                  - { label: "Метка темы", name: "subjectLabel", widget: "string" }
+                  - { label: "Сообщение", name: "message", widget: "string" }
+                  - { label: "Метка сообщения", name: "messageLabel", widget: "string" }
+                  - { label: "Отправить", name: "send", widget: "string" }
+                  - { label: "Согласие", name: "consent", widget: "text" }
+                  - { label: "Обязательно", name: "required", widget: "string" }
+                  - { label: "Выберите тему", name: "selectSubject", widget: "string" }
+                  - { label: "Запрос на бронирование", name: "reservation", widget: "string" }
+                  - { label: "Запрос информации", name: "information", widget: "string" }
+                  - { label: "Организация мероприятия", name: "event", widget: "string" }
+                  - { label: "Другое", name: "other", widget: "string" }
+              - label: "Информация"
+                name: "info"
+                widget: "object"
+                fields:
+                  - { label: "Расписание", name: "schedule", widget: "string" }
+                  - { label: "Заезд", name: "checkin", widget: "string" }
+                  - { label: "Выезд", name: "checkout", widget: "string" }
+                  - { label: "Парковка", name: "parking", widget: "string" }
+                  - { label: "Общественный транспорт", name: "publicTransport", widget: "string" }
+              - label: "Номер"
+                name: "room"
+                widget: "object"
+                fields:
+                  - { label: "От", name: "from", widget: "string" }
+                  - { label: "За ночь", name: "perNight", widget: "string" }
+                  - { label: "Посмотреть номер", name: "viewRoom", widget: "string" }
+              - label: "Нижний колонтитул"
+                name: "footer"
+                widget: "object"
+                fields:
+                  - { label: "Быстрые ссылки", name: "quickLinks", widget: "string" }
+                  - { label: "Юридическое уведомление", name: "legalNotice", widget: "string" }
+                  - { label: "Политика конфиденциальности", name: "privacyPolicy", widget: "string" }
+                  - { label: "Файлы cookie", name: "cookies", widget: "string" }
