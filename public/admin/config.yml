@@ -26,21 +26,23 @@ collections:
             widget: "list"
             label_singular: "un équipement"
             field: { label: "Équipement", name: "item", widget: "string" }
-          - label: "🛏️ Chambres"
+          - label: "🛏️ Chambres — Cliquez sur une chambre pour la modifier"
             name: "ROOM_TYPES"
             widget: "list"
             label_singular: "une chambre"
-            summary: "{{fields.name}} - {{fields.priceFrom}}€"
+            summary: "{{fields.name}} — {{fields.priceFrom}}€/nuit"
             collapsed: true
+            add_to_top: true
+            hint: "Pour modifier une chambre : cliquez dessus. Pour en ajouter : bouton 'Ajouter une chambre'. N'oubliez pas de cliquer PUBLIER en haut pour sauvegarder."
             fields:
-              - { label: "Nom de la chambre", name: "name", widget: "string" }
-              - { label: "Description", name: "shortDesc", widget: "text" }
-              - { label: "Prix à partir de (€)", name: "priceFrom", widget: "number", value_type: "int" }
-              - label: "Photos de la chambre"
+              - { label: "Nom de la chambre", name: "name", widget: "string", hint: "Ex: Chambre Double Supérieure" }
+              - { label: "Description courte", name: "shortDesc", widget: "text", hint: "Texte affiché sous le nom de la chambre sur le site" }
+              - { label: "Prix à partir de (€)", name: "priceFrom", widget: "number", value_type: "int", hint: "Prix minimum par nuit en euros" }
+              - label: "📷 Photos de la chambre"
                 name: "gallery"
                 widget: "list"
                 label_singular: "une photo"
-                summary: "{{fields.image}}"
+                hint: "Cliquez sur une photo pour la remplacer. Utilisez + pour en ajouter. Glissez pour réordonner."
                 field: { label: "Photo", name: "image", widget: "image" }
           - { label: "Horaire d'arrivée (check-in)", name: "CHECKIN_INFO", widget: "string" }
           - { label: "Horaire de départ (check-out)", name: "CHECKOUT_INFO", widget: "string" }
@@ -153,20 +155,23 @@ collections:
             widget: "list"
             label_singular: "an amenity"
             field: { label: "Amenity", name: "item", widget: "string" }
-          - label: "🛏️ Rooms"
+          - label: "🛏️ Rooms — Click a room to edit"
             name: "ROOM_TYPES"
             widget: "list"
             label_singular: "a room"
-            summary: "{{fields.name}} - {{fields.priceFrom}}€"
+            summary: "{{fields.name}} — {{fields.priceFrom}}€/night"
             collapsed: true
+            add_to_top: true
+            hint: "To edit a room: click on it. To add: click 'Add a room'. Don't forget to click PUBLISH at the top to save."
             fields:
-              - { label: "Room Name", name: "name", widget: "string" }
-              - { label: "Description", name: "shortDesc", widget: "text" }
-              - { label: "Price From (€)", name: "priceFrom", widget: "number", value_type: "int" }
-              - label: "Room Photos"
+              - { label: "Room Name", name: "name", widget: "string", hint: "Ex: Superior Double Room" }
+              - { label: "Short Description", name: "shortDesc", widget: "text", hint: "Text displayed under the room name on the website" }
+              - { label: "Price From (€)", name: "priceFrom", widget: "number", value_type: "int", hint: "Minimum price per night in euros" }
+              - label: "📷 Room Photos"
                 name: "gallery"
                 widget: "list"
                 label_singular: "a photo"
+                hint: "Click a photo to replace it. Use + to add more. Drag to reorder."
                 field: { label: "Photo", name: "image", widget: "image" }
           - { label: "Check-in Info", name: "CHECKIN_INFO", widget: "string" }
           - { label: "Check-out Info", name: "CHECKOUT_INFO", widget: "string" }
@@ -283,16 +288,19 @@ collections:
             name: "ROOM_TYPES"
             widget: "list"
             label_singular: "a room"
-            summary: "{{fields.name}} - {{fields.priceFrom}}€"
+            summary: "{{fields.name}} — {{fields.priceFrom}}€/night"
             collapsed: true
+            add_to_top: true
+            hint: "Click a room to edit. Click 'Add a room' to create. Click PUBLISH to save."
             fields:
               - { label: "Room Name", name: "name", widget: "string" }
               - { label: "Description", name: "shortDesc", widget: "text" }
               - { label: "Price From (€)", name: "priceFrom", widget: "number", value_type: "int" }
-              - label: "Photos"
+              - label: "📷 Photos"
                 name: "gallery"
                 widget: "list"
                 label_singular: "a photo"
+                hint: "Click a photo to replace. Use + to add. Drag to reorder."
                 field: { label: "Photo", name: "image", widget: "image" }
           - { label: "Check-in", name: "CHECKIN_INFO", widget: "string" }
           - { label: "Check-out", name: "CHECKOUT_INFO", widget: "string" }
