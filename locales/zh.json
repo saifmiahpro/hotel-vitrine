@@ -1,11 +1,6 @@
 {
   "HOTEL_NAME": "Hôtel Anatole France",
   "CITY": "Toulouse",
-  "ADDRESS": "46 place Anatole France, 31000 Toulouse",
-  "PHONE": "0561231996",
-  "EMAIL": "hotelanatolefrance@orange.fr",
-  "RESERVATION_URL": "#contact",
-  "GOOGLE_MAPS_EMBED_URL": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2889.4848!2d1.4437!3d43.6045!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12aebb6fec7552ff%3A0x406f69c2f411030!2s46%20place%20Anatole%20France%2C%2031000%20Toulouse!5e0!3m2!1szh-CN!2sfr!4v1234567890",
   "TAGLINE": "图卢兹市中心，距标志性的国会广场仅数步之遥",
   "INTRO_PARAGRAPH": "无论是旅游、商务还是留学，我们的酒店都坐落于图卢兹的黄金地段，步行5分钟即可到达国会广场。酒店于2025年1月全面翻新，提供18间客房，将现代舒适与私密氛围完美融合。周边餐厅、商店和文化景点林立，如圣雷蒙博物馆、圣瑟宁大教堂，以及多所知名高校，出行便利。",
   "AMENITIES": [
@@ -18,49 +13,23 @@
   "ROOM_TYPES": [
     {
       "name": "高级大床房",
-      "shortDesc": "特大号床与宽敞空间。配备带淋浴的宽大独立卫浴，以及电视、书桌与衣柜。",
-      "priceFrom": 89,
-      "gallery": [
-        "/images/chambre-superieure-1.jpg",
-        "/images/chambre-superieure-2.jpg",
-        "/images/chambre-superieure-3.jpg"
-      ]
+      "shortDesc": "特大号床与宽敞空间。配备带淋浴的宽大独立卫浴，以及电视、书桌与衣柜。"
     },
     {
       "name": "标准大床房",
-      "shortDesc": "特大号床。更为紧凑的独立卫浴（淋浴）。客房同时配有电视与书桌。",
-      "priceFrom": 79,
-      "gallery": [
-        "/images/chambre-standard-1.jpg",
-        "/images/chambre-standard-2.jpg",
-        "/images/chambre-standard-3.jpg",
-        "/images/chambre-standard-4.jpg"
-      ]
+      "shortDesc": "特大号床。更为紧凑的独立卫浴（淋浴）。客房同时配有电视与书桌。"
     },
     {
       "name": "双床房（专用外部卫生间）",
-      "shortDesc": "两张单人床。配有电视与书桌。卫生间位于客房外，但为本房专用。",
-      "priceFrom": 69,
-      "gallery": [
-        "/images/chambre-jumeaux-prives-1.jpg"
-      ]
+      "shortDesc": "两张单人床。配有电视与书桌。卫生间位于客房外，但为本房专用。"
     },
     {
       "name": "双床房（共享外部卫生间）",
-      "shortDesc": "两张单人床。配有电视与书桌。卫生间位于客房外，为公共共享。",
-      "priceFrom": 59,
-      "gallery": [
-        "/images/chambre-jumeaux-communs-1.jpg"
-      ]
+      "shortDesc": "两张单人床。配有电视与书桌。卫生间位于客房外，为公共共享。"
     },
     {
       "name": "大床房（共享卫生间）",
-      "shortDesc": "特大号床。配备电视、书桌与衣柜。卫生间位于客房外，为公共共享。",
-      "priceFrom": 59,
-      "gallery": [
-        "/images/chambre-double-communes-1.jpg",
-        "/images/chambre-double-communes-2.jpg"
-      ]
+      "shortDesc": "特大号床。配备电视、书桌与衣柜。卫生间位于客房外，为公共共享。"
     }
   ],
   "CHECKIN_INFO": "入住时间：15:00–22:30",

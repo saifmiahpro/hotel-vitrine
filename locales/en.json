@@ -13,44 +13,29 @@
   "ROOM_TYPES": [
     {
       "name": "Superior Double Room",
-      "shortDesc": "King-size bed and generous space. This room features a spacious private bathroom with shower, as well as a television, desk, and wardrobe.",
-      "priceFrom": 89,
-      "gallery": ["/images/chambre-superieure-1.jpg", "/images/chambre-superieure-2.jpg", "/images/chambre-superieure-3.jpg"]
+      "shortDesc": "King-size bed and generous space. This room features a spacious private bathroom with shower, as well as a television, desk, and wardrobe."
     },
     {
       "name": "Standard Double Room",
-      "shortDesc": "King-size bed. More compact private bathroom with shower. The room also includes a television and desk.",
-      "priceFrom": 79,
-      "gallery": ["/images/chambre-standard-1.jpg", "/images/chambre-standard-2.jpg", "/images/chambre-standard-3.jpg", "/images/chambre-standard-4.jpg"]
+      "shortDesc": "King-size bed. More compact private bathroom with shower. The room also includes a television and desk."
     },
     {
       "name": "Twin Room with Private External Toilet",
-      "shortDesc": "Two single beds. The room has a television and desk. The toilet is located outside but remains private for the room.",
-      "priceFrom": 69,
-      "gallery": ["/images/chambre-jumeaux-prives-1.jpg"]
+      "shortDesc": "Two single beds. The room has a television and desk. The toilet is located outside but remains private for the room."
     },
     {
       "name": "Twin Room with Shared External Toilet",
-      "shortDesc": "Two single beds. The room has a television and desk. The toilet is located outside and shared.",
-      "priceFrom": 59,
-      "gallery": ["/images/chambre-jumeaux-communs-1.jpg"]
+      "shortDesc": "Two single beds. The room has a television and desk. The toilet is located outside and shared."
     },
     {
       "name": "Double Room with Shared Toilet",
-      "shortDesc": "King-size bed. Television, desk and wardrobe included. The toilet is located outside and shared.",
-      "priceFrom": 59,
-      "gallery": ["/images/chambre-double-communes-1.jpg", "/images/chambre-double-communes-2.jpg"]
+      "shortDesc": "King-size bed. Television, desk and wardrobe included. The toilet is located outside and shared."
     }
   ],
   "CHECKIN_INFO": "Between 3:00 PM and 10:30 PM",
   "CHECKOUT_INFO": "Until 11:00 AM",
   "PARKING_INFO": "Public parking at Capitole and Compans Cafarelli nearby.",
   "PUBLIC_TRANSPORT_INFO": "Easily accessible, the establishment is near the Capitole and Compans-Caffarelli metro stations, the train station, and only 5 km from Toulouse-Blagnac airport.",
-  "ADDRESS": "46 place Anatole France, 31000 Toulouse",
-  "GOOGLE_MAPS_EMBED_URL": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2889.484822763!2d1.4414869!3d43.6045334!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12aebb6b5b47c93f%3A0x5e8e17b8c7c6c5c7!2s46%20Pl.%20Anatole%20France%2C%2031000%20Toulouse!5e0!3m2!1sfr!2sfr!4v1699000000000!5m2!1sfr!2sfr",
-  "PHONE": "0561231996",
-  "EMAIL": "hotelanatolefrance@orange.fr",
-  "RESERVATION_URL": "#contact",
   "TOULOUSE_DESCRIPTION": "The landscape of Toulouse's old town is characterized by the domes and turrets of its churches, towers and impressive townhouses. Cross the impressive Place du Capitole and wander through warm-toned streets with buildings featuring numerous balconies.",
   "SEO": {
     "title": "Hôtel Anatole France – Toulouse | Hotel in the Heart of Capitole",

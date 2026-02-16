@@ -1,11 +1,6 @@
 {
   "HOTEL_NAME": "Hôtel Anatole France",
   "CITY": "Toulouse",
-  "ADDRESS": "46 place Anatole France, 31000 Toulouse",
-  "PHONE": "0561231996",
-  "EMAIL": "hotelanatolefrance@orange.fr",
-  "RESERVATION_URL": "#contact",
-  "GOOGLE_MAPS_EMBED_URL": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2889.484822763!2d1.4414869!3d43.6045334!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12aebb6b5b47c93f%3A0x5e8e17b8c7c6c5c7!2s46%20Pl.%20Anatole%20France%2C%2031000%20Toulouse!5e0!3m2!1sfr!2sfr!4v1699000000000!5m2!1sfr!2sfr",
   "TAGLINE": "Nel cuore di Tolosa, a pochi passi dall'iconica Plaza del Capitolio",
   "INTRO_PARAGRAPH": "Che tu viaggi per turismo, lavoro o studio, il nostro hotel gode di una posizione imbattibile nel centro di Tolosa, a meno di cinque minuti a piedi da Plaza del Capitolio. Completamente ristrutturato a gennaio 2025, offre 18 camere che coniugano comfort moderno e atmosfera intima. Avrai accesso diretto al vivace centro storico, ricco di ristoranti, boutique e luoghi culturali come il Museo Saint‑Raymond, la Basilica di Saint‑Sernin e le prestigiose università e grandes écoles nelle vicinanze.",
   "AMENITIES": [
@@ -18,49 +13,23 @@
   "ROOM_TYPES": [
     {
       "name": "Camera Doppia Superior",
-      "shortDesc": "Letto king‑size e ampi spazi. Bagno privato grande con doccia, oltre a TV, scrivania e armadio.",
-      "priceFrom": 89,
-      "gallery": [
-        "/images/chambre-superieure-1.jpg",
-        "/images/chambre-superieure-2.jpg",
-        "/images/chambre-superieure-3.jpg"
-      ]
+      "shortDesc": "Letto king‑size e ampi spazi. Bagno privato grande con doccia, oltre a TV, scrivania e armadio."
     },
     {
       "name": "Camera Doppia Standard",
-      "shortDesc": "Letto king‑size. Bagno privato più compatto con doccia. La camera include anche TV e scrivania.",
-      "priceFrom": 79,
-      "gallery": [
-        "/images/chambre-standard-1.jpg",
-        "/images/chambre-standard-2.jpg",
-        "/images/chambre-standard-3.jpg",
-        "/images/chambre-standard-4.jpg"
-      ]
+      "shortDesc": "Letto king‑size. Bagno privato più compatto con doccia. La camera include anche TV e scrivania."
     },
     {
       "name": "Camera Twin con Servizi Esterni Privati",
-      "shortDesc": "Due letti singoli. TV e scrivania. I servizi igienici sono esterni ma ad uso esclusivo della camera.",
-      "priceFrom": 69,
-      "gallery": [
-        "/images/chambre-jumeaux-prives-1.jpg"
-      ]
+      "shortDesc": "Due letti singoli. TV e scrivania. I servizi igienici sono esterni ma ad uso esclusivo della camera."
     },
     {
       "name": "Camera Twin con Servizi Esterni Condivisi",
-      "shortDesc": "Due letti singoli. TV e scrivania. I servizi igienici sono esterni e condivisi.",
-      "priceFrom": 59,
-      "gallery": [
-        "/images/chambre-jumeaux-communs-1.jpg"
-      ]
+      "shortDesc": "Due letti singoli. TV e scrivania. I servizi igienici sono esterni e condivisi."
     },
     {
       "name": "Camera Doppia con Servizi Condivisi",
-      "shortDesc": "Letto king‑size. TV, scrivania e armadio inclusi. I servizi igienici sono esterni e condivisi.",
-      "priceFrom": 59,
-      "gallery": [
-        "/images/chambre-double-communes-1.jpg",
-        "/images/chambre-double-communes-2.jpg"
-      ]
+      "shortDesc": "Letto king‑size. TV, scrivania e armadio inclusi. I servizi igienici sono esterni e condivisi."
     }
   ],
   "CHECKIN_INFO": "Dalle 15:00 alle 22:30",

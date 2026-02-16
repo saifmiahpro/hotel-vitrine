@@ -13,44 +13,29 @@
   "ROOM_TYPES": [
     {
       "name": "Chambre Double Supérieure",
-      "shortDesc": "Grand lit double et espace généreux. Cette chambre dispose d'une salle de bain privative spacieuse avec douche, ainsi que d'une télévision, d'un bureau et d'une armoire.",
-      "priceFrom": 89,
-      "gallery": ["/images/chambre-superieure-1.jpg", "/images/chambre-superieure-2.jpg", "/images/chambre-superieure-3.jpg"]
+      "shortDesc": "Grand lit double et espace généreux. Cette chambre dispose d'une salle de bain privative spacieuse avec douche, ainsi que d'une télévision, d'un bureau et d'une armoire."
     },
     {
       "name": "Chambre Double Standard",
-      "shortDesc": "Grand lit double. Salle de bain privative plus compacte, équipée d'une douche. La chambre comprend également une télévision et un bureau.",
-      "priceFrom": 79,
-      "gallery": ["/images/chambre-standard-1.jpg", "/images/chambre-standard-2.jpg", "/images/chambre-standard-3.jpg", "/images/chambre-standard-4.jpg"]
+      "shortDesc": "Grand lit double. Salle de bain privative plus compacte, équipée d'une douche. La chambre comprend également une télévision et un bureau."
     },
     {
       "name": "Chambre Lits Jumeaux avec Toilettes Extérieures Privées",
-      "shortDesc": "Deux lits simples. La chambre dispose d'une télévision et d'un bureau. Pour deux chambres les toilettes sont situées à l'extérieur mais restent privées pour la chambre.",
-      "priceFrom": 69,
-      "gallery": ["/images/chambre-jumeaux-prives-1.jpg"]
+      "shortDesc": "Deux lits simples. La chambre dispose d'une télévision et d'un bureau. Pour deux chambres les toilettes sont situées à l'extérieur mais restent privées pour la chambre."
     },
     {
       "name": "Chambre Lits Jumeaux avec Toilettes Extérieures Communes",
-      "shortDesc": "Deux lits simples. La chambre dispose d'une télévision et d'un bureau. Les toilettes sont situées à l'extérieur et partagées.",
-      "priceFrom": 59,
-      "gallery": ["/images/chambre-jumeaux-communs-1.jpg"]
+      "shortDesc": "Deux lits simples. La chambre dispose d'une télévision et d'un bureau. Les toilettes sont situées à l'extérieur et partagées."
     },
     {
       "name": "Chambre Double avec Toilettes Communes",
-      "shortDesc": "Grand lit double. Télévision, bureau et armoire inclus. Les toilettes sont situées à l'extérieur et partagées.",
-      "priceFrom": 59,
-      "gallery": ["/images/chambre-double-communes-1.jpg", "/images/chambre-double-communes-2.jpg"]
+      "shortDesc": "Grand lit double. Télévision, bureau et armoire inclus. Les toilettes sont situées à l'extérieur et partagées."
     }
   ],
   "CHECKIN_INFO": "Entre 15h et 22h30",
   "CHECKOUT_INFO": "Jusqu'à 11h",
   "PARKING_INFO": "Parking public du Capitole et de Compans Cafarelli à proximité.",
   "PUBLIC_TRANSPORT_INFO": "Facilement accessible, l'établissement se trouve près des stations de métro Capitole et Compans-Caffarelli, de la gare, et à seulement 5 km de l'aéroport Toulouse-Blagnac.",
-  "ADDRESS": "46 place Anatole France, 31000 Toulouse",
-  "GOOGLE_MAPS_EMBED_URL": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2889.484822763!2d1.4414869!3d43.6045334!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12aebb6b5b47c93f%3A0x5e8e17b8c7c6c5c7!2s46%20Pl.%20Anatole%20France%2C%2031000%20Toulouse!5e0!3m2!1sfr!2sfr!4v1699000000000!5m2!1sfr!2sfr",
-  "PHONE": "0561231996",
-  "EMAIL": "hotelanatolefrance@orange.fr",
-  "RESERVATION_URL": "#contact",
   "TOULOUSE_DESCRIPTION": "Le paysage de la vieille ville de Toulouse se caractérise par les dômes et les tourelles de ses églises, des tours et d'imposantes maisons de ville. Traversez l'impressionnante place du Capitole et déambulez dans des rues aux tons chauds et aux bâtiments arborant de nombreux balcons.",
   "SEO": {
     "title": "Hôtel Anatole France – Toulouse | Hôtel au cœur du Capitole",

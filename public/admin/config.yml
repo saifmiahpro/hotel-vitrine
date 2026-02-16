@@ -9,9 +9,40 @@ media_folder: "public/images"
 public_folder: "/images"
 
 collections:
+  # ===== DONNÉES PARTAGÉES (toutes langues) =====
+  - name: "shared"
+    label: "📋 Données partagées (toutes langues)"
+    description: "Photos, prix et informations de contact — partagés entre toutes les langues"
+    files:
+      - name: "shared_data"
+        label: "Photos, Prix & Contact"
+        file: "locales/shared.json"
+        fields:
+          - { label: "📞 Téléphone", name: "PHONE", widget: "string", hint: "Numéro de téléphone de l'hôtel" }
+          - { label: "📧 Email", name: "EMAIL", widget: "string", hint: "Adresse email de l'hôtel" }
+          - { label: "📍 Adresse", name: "ADDRESS", widget: "string", hint: "Adresse complète de l'hôtel" }
+          - { label: "🗺️ URL Google Maps", name: "GOOGLE_MAPS_EMBED_URL", widget: "string", hint: "URL de l'iframe Google Maps (ne pas modifier sauf changement d'adresse)" }
+          - { label: "🔗 URL de réservation", name: "RESERVATION_URL", widget: "string", hint: "Lien vers le système de réservation" }
+          - label: "🛏️ Chambres — Prix & Photos"
+            name: "ROOMS"
+            widget: "list"
+            label_singular: "une chambre"
+            summary: "Chambre {{index}} — {{fields.priceFrom}}€/nuit"
+            collapsed: true
+            hint: "⚠️ L'ORDRE des chambres doit correspondre à l'ordre dans chaque langue. Pour modifier le NOM ou la DESCRIPTION d'une chambre, allez dans la langue concernée."
+            fields:
+              - { label: "Prix à partir de (€)", name: "priceFrom", widget: "number", value_type: "int", hint: "Prix minimum par nuit en euros" }
+              - label: "📷 Photos"
+                name: "gallery"
+                widget: "list"
+                label_singular: "une photo"
+                hint: "Cliquez sur une photo pour la remplacer. + pour ajouter."
+                field: { label: "Photo", name: "image", widget: "image" }
+
   # ===== FRANÇAIS 🇫🇷 =====
   - name: "content_fr"
     label: "🇫🇷 Français"
+    description: "Textes du site en français"
     files:
       - name: "fr"
         label: "Contenu Français"
@@ -26,33 +57,20 @@ collections:
             widget: "list"
             label_singular: "un équipement"
             field: { label: "Équipement", name: "item", widget: "string" }
-          - label: "🛏️ Chambres — Cliquez sur une chambre pour la modifier"
+          - label: "🛏️ Chambres — Noms & Descriptions uniquement"
             name: "ROOM_TYPES"
             widget: "list"
             label_singular: "une chambre"
-            summary: "{{fields.name}} — {{fields.priceFrom}}€/nuit"
+            summary: "{{fields.name}}"
             collapsed: true
-            add_to_top: true
-            hint: "Pour modifier une chambre : cliquez dessus. Pour en ajouter : bouton 'Ajouter une chambre'. N'oubliez pas de cliquer PUBLIER en haut pour sauvegarder."
+            hint: "⚠️ Ici vous modifiez uniquement les TEXTES (nom, description). Pour les PHOTOS et PRIX, allez dans 'Données partagées'."
             fields:
               - { label: "Nom de la chambre", name: "name", widget: "string", hint: "Ex: Chambre Double Supérieure" }
               - { label: "Description courte", name: "shortDesc", widget: "text", hint: "Texte affiché sous le nom de la chambre sur le site" }
-              - { label: "Prix à partir de (€)", name: "priceFrom", widget: "number", value_type: "int", hint: "Prix minimum par nuit en euros" }
-              - label: "📷 Photos de la chambre"
-                name: "gallery"
-                widget: "list"
-                label_singular: "une photo"
-                hint: "Cliquez sur une photo pour la remplacer. Utilisez + pour en ajouter. Glissez pour réordonner."
-                field: { label: "Photo", name: "image", widget: "image" }
           - { label: "Horaire d'arrivée (check-in)", name: "CHECKIN_INFO", widget: "string" }
           - { label: "Horaire de départ (check-out)", name: "CHECKOUT_INFO", widget: "string" }
           - { label: "Informations parking", name: "PARKING_INFO", widget: "text" }
           - { label: "Informations transports", name: "PUBLIC_TRANSPORT_INFO", widget: "text" }
-          - { label: "Adresse", name: "ADDRESS", widget: "string" }
-          - { label: "URL Google Maps", name: "GOOGLE_MAPS_EMBED_URL", widget: "string" }
-          - { label: "Téléphone", name: "PHONE", widget: "string" }
-          - { label: "Email", name: "EMAIL", widget: "string" }
-          - { label: "URL de réservation", name: "RESERVATION_URL", widget: "string" }
           - { label: "Description de la ville", name: "TOULOUSE_DESCRIPTION", widget: "text" }
           - label: "🔍 SEO"
             name: "SEO"
@@ -121,7 +139,22 @@ collections:
                   - { label: "Arrivée", name: "checkin", widget: "string" }
                   - { label: "Départ", name: "checkout", widget: "string" }
                   - { label: "Parking", name: "parking", widget: "string" }
-                  - { label: "Transports", name: "publicTransport", widget: "string" }
+                  - { label: "Transports", name: "transport", widget: "string" }
+                  - { label: "Contact direct", name: "directContact", widget: "string" }
+                  - { label: "Téléphone", name: "phone", widget: "string" }
+                  - { label: "Email", name: "email", widget: "string" }
+                  - { label: "Suivez-nous", name: "followUs", widget: "string" }
+                  - { label: "Liens rapides", name: "quickLinks", widget: "string" }
+                  - { label: "Légal", name: "legal", widget: "string" }
+                  - { label: "Découvrir", name: "discover", widget: "string" }
+                  - { label: "Adresse", name: "address", widget: "string" }
+                  - { label: "Copier adresse", name: "copyaddress", widget: "string" }
+                  - { label: "Carte non dispo", name: "mapnotavailable", widget: "string" }
+                  - { label: "Accepter cookies carte", name: "acceptcookies", widget: "text" }
+                  - { label: "Afficher carte", name: "enablemap", widget: "string" }
+                  - { label: "Itinéraire", name: "getdirections", widget: "string" }
+                  - { label: "Réponse rapide", name: "quickResponse", widget: "string" }
+                  - { label: "Texte réponse rapide", name: "quickResponseText", widget: "text" }
               - label: "Textes chambre"
                 name: "room"
                 widget: "object"
@@ -133,14 +166,18 @@ collections:
                 name: "footer"
                 widget: "object"
                 fields:
-                  - { label: "Liens rapides", name: "quickLinks", widget: "string" }
-                  - { label: "Mentions légales", name: "legalNotice", widget: "string" }
-                  - { label: "Confidentialité", name: "privacyPolicy", widget: "string" }
-                  - { label: "Cookies", name: "cookies", widget: "string" }
+                  - { label: "Tous droits réservés", name: "rights", widget: "string" }
+                  - { label: "Politique de confidentialité", name: "privacy", widget: "string" }
+                  - { label: "Mentions légales", name: "terms", widget: "string" }
+                  - { label: "Gestion des cookies", name: "cookies", widget: "string" }
+                  - { label: "Conditions de vente", name: "salesConditions", widget: "string" }
+                  - { label: "Légal", name: "legal", widget: "string" }
+                  - { label: "Copyright", name: "copyright", widget: "string" }
 
   # ===== ENGLISH 🇬🇧 =====
   - name: "content_en"
     label: "🇬🇧 English"
+    description: "Website text in English"
     files:
       - name: "en"
         label: "English Content"
@@ -155,33 +192,20 @@ collections:
             widget: "list"
             label_singular: "an amenity"
             field: { label: "Amenity", name: "item", widget: "string" }
-          - label: "🛏️ Rooms — Click a room to edit"
+          - label: "🛏️ Rooms — Names & Descriptions only"
             name: "ROOM_TYPES"
             widget: "list"
             label_singular: "a room"
-            summary: "{{fields.name}} — {{fields.priceFrom}}€/night"
+            summary: "{{fields.name}}"
             collapsed: true
-            add_to_top: true
-            hint: "To edit a room: click on it. To add: click 'Add a room'. Don't forget to click PUBLISH at the top to save."
+            hint: "⚠️ Here you edit only TEXTS (name, description). For PHOTOS and PRICES, go to 'Données partagées'."
             fields:
-              - { label: "Room Name", name: "name", widget: "string", hint: "Ex: Superior Double Room" }
-              - { label: "Short Description", name: "shortDesc", widget: "text", hint: "Text displayed under the room name on the website" }
-              - { label: "Price From (€)", name: "priceFrom", widget: "number", value_type: "int", hint: "Minimum price per night in euros" }
-              - label: "📷 Room Photos"
-                name: "gallery"
-                widget: "list"
-                label_singular: "a photo"
-                hint: "Click a photo to replace it. Use + to add more. Drag to reorder."
-                field: { label: "Photo", name: "image", widget: "image" }
+              - { label: "Room Name", name: "name", widget: "string" }
+              - { label: "Short Description", name: "shortDesc", widget: "text" }
           - { label: "Check-in Info", name: "CHECKIN_INFO", widget: "string" }
           - { label: "Check-out Info", name: "CHECKOUT_INFO", widget: "string" }
           - { label: "Parking Info", name: "PARKING_INFO", widget: "text" }
           - { label: "Transport Info", name: "PUBLIC_TRANSPORT_INFO", widget: "text" }
-          - { label: "Address", name: "ADDRESS", widget: "string" }
-          - { label: "Google Maps URL", name: "GOOGLE_MAPS_EMBED_URL", widget: "string" }
-          - { label: "Phone", name: "PHONE", widget: "string" }
-          - { label: "Email", name: "EMAIL", widget: "string" }
-          - { label: "Reservation URL", name: "RESERVATION_URL", widget: "string" }
           - { label: "City Description", name: "TOULOUSE_DESCRIPTION", widget: "text" }
           - label: "🔍 SEO"
             name: "SEO"
@@ -205,7 +229,7 @@ collections:
                   - { label: "Access", name: "access", widget: "string" }
                   - { label: "Contact", name: "contact", widget: "string" }
                   - { label: "Book", name: "book", widget: "string" }
-              - label: "Sections"
+              - label: "Section Titles"
                 name: "sections"
                 widget: "object"
                 fields:
@@ -219,7 +243,7 @@ collections:
                 widget: "object"
                 fields:
                   - { label: "Button Text", name: "discoverRooms", widget: "string" }
-              - label: "Form"
+              - label: "Contact Form"
                 name: "form"
                 widget: "object"
                 collapsed: true
@@ -250,7 +274,22 @@ collections:
                   - { label: "Check-in", name: "checkin", widget: "string" }
                   - { label: "Check-out", name: "checkout", widget: "string" }
                   - { label: "Parking", name: "parking", widget: "string" }
-                  - { label: "Transport", name: "publicTransport", widget: "string" }
+                  - { label: "Transport", name: "transport", widget: "string" }
+                  - { label: "Direct Contact", name: "directContact", widget: "string" }
+                  - { label: "Phone", name: "phone", widget: "string" }
+                  - { label: "Email", name: "email", widget: "string" }
+                  - { label: "Follow Us", name: "followUs", widget: "string" }
+                  - { label: "Quick Links", name: "quickLinks", widget: "string" }
+                  - { label: "Legal", name: "legal", widget: "string" }
+                  - { label: "Discover", name: "discover", widget: "string" }
+                  - { label: "Address", name: "address", widget: "string" }
+                  - { label: "Copy address", name: "copyaddress", widget: "string" }
+                  - { label: "Map not available", name: "mapnotavailable", widget: "string" }
+                  - { label: "Accept cookies for map", name: "acceptcookies", widget: "text" }
+                  - { label: "Show map", name: "enablemap", widget: "string" }
+                  - { label: "Get directions", name: "getdirections", widget: "string" }
+                  - { label: "Quick response", name: "quickResponse", widget: "string" }
+                  - { label: "Quick response text", name: "quickResponseText", widget: "text" }
               - label: "Room texts"
                 name: "room"
                 widget: "object"
@@ -262,12 +301,16 @@ collections:
                 name: "footer"
                 widget: "object"
                 fields:
-                  - { label: "Quick Links", name: "quickLinks", widget: "string" }
-                  - { label: "Legal Notice", name: "legalNotice", widget: "string" }
-                  - { label: "Privacy", name: "privacyPolicy", widget: "string" }
-                  - { label: "Cookies", name: "cookies", widget: "string" }
+                  - { label: "All rights reserved", name: "rights", widget: "string" }
+                  - { label: "Privacy Policy", name: "privacy", widget: "string" }
+                  - { label: "Legal Notice", name: "terms", widget: "string" }
+                  - { label: "Cookie Settings", name: "cookies", widget: "string" }
+                  - { label: "Terms of Sale", name: "salesConditions", widget: "string" }
+                  - { label: "Legal", name: "legal", widget: "string" }
+                  - { label: "Copyright", name: "copyright", widget: "string" }
 
-  # ===== AUTRES LANGUES (structure identique) =====
+  # ===== AUTRES LANGUES =====
+  # Utilisent le même schéma de champs que l'anglais (sans les données partagées)
   - name: "content_es"
     label: "🇪🇸 Español"
     files:
@@ -284,33 +327,20 @@ collections:
             widget: "list"
             label_singular: "item"
             field: { label: "Item", name: "item", widget: "string" }
-          - label: "🛏️ Rooms"
+          - label: "🛏️ Rooms — Names & Descriptions only"
             name: "ROOM_TYPES"
             widget: "list"
             label_singular: "a room"
-            summary: "{{fields.name}} — {{fields.priceFrom}}€/night"
+            summary: "{{fields.name}}"
             collapsed: true
-            add_to_top: true
-            hint: "Click a room to edit. Click 'Add a room' to create. Click PUBLISH to save."
+            hint: "⚠️ Only TEXTS here. For PHOTOS/PRICES go to 'Données partagées'."
             fields:
               - { label: "Room Name", name: "name", widget: "string" }
               - { label: "Description", name: "shortDesc", widget: "text" }
-              - { label: "Price From (€)", name: "priceFrom", widget: "number", value_type: "int" }
-              - label: "📷 Photos"
-                name: "gallery"
-                widget: "list"
-                label_singular: "a photo"
-                hint: "Click a photo to replace. Use + to add. Drag to reorder."
-                field: { label: "Photo", name: "image", widget: "image" }
           - { label: "Check-in", name: "CHECKIN_INFO", widget: "string" }
           - { label: "Check-out", name: "CHECKOUT_INFO", widget: "string" }
           - { label: "Parking", name: "PARKING_INFO", widget: "text" }
           - { label: "Transport", name: "PUBLIC_TRANSPORT_INFO", widget: "text" }
-          - { label: "Address", name: "ADDRESS", widget: "string" }
-          - { label: "Google Maps URL", name: "GOOGLE_MAPS_EMBED_URL", widget: "string" }
-          - { label: "Phone", name: "PHONE", widget: "string" }
-          - { label: "Email", name: "EMAIL", widget: "string" }
-          - { label: "Reservation URL", name: "RESERVATION_URL", widget: "string" }
           - { label: "City Description", name: "TOULOUSE_DESCRIPTION", widget: "text" }
           - label: "🔍 SEO"
             name: "SEO"
@@ -379,7 +409,22 @@ collections:
                   - { label: "Check-in", name: "checkin", widget: "string" }
                   - { label: "Check-out", name: "checkout", widget: "string" }
                   - { label: "Parking", name: "parking", widget: "string" }
-                  - { label: "Transport", name: "publicTransport", widget: "string" }
+                  - { label: "Transport", name: "transport", widget: "string" }
+                  - { label: "Direct Contact", name: "directContact", widget: "string" }
+                  - { label: "Phone", name: "phone", widget: "string" }
+                  - { label: "Email", name: "email", widget: "string" }
+                  - { label: "Follow Us", name: "followUs", widget: "string" }
+                  - { label: "Quick Links", name: "quickLinks", widget: "string" }
+                  - { label: "Legal", name: "legal", widget: "string" }
+                  - { label: "Discover", name: "discover", widget: "string" }
+                  - { label: "Address", name: "address", widget: "string" }
+                  - { label: "Copy address", name: "copyaddress", widget: "string" }
+                  - { label: "Map not available", name: "mapnotavailable", widget: "string" }
+                  - { label: "Accept cookies", name: "acceptcookies", widget: "text" }
+                  - { label: "Show map", name: "enablemap", widget: "string" }
+                  - { label: "Get directions", name: "getdirections", widget: "string" }
+                  - { label: "Quick response", name: "quickResponse", widget: "string" }
+                  - { label: "Quick response text", name: "quickResponseText", widget: "text" }
               - label: "Room"
                 name: "room"
                 widget: "object"
@@ -391,10 +436,13 @@ collections:
                 name: "footer"
                 widget: "object"
                 fields:
-                  - { label: "Quick Links", name: "quickLinks", widget: "string" }
-                  - { label: "Legal Notice", name: "legalNotice", widget: "string" }
-                  - { label: "Privacy", name: "privacyPolicy", widget: "string" }
+                  - { label: "All rights reserved", name: "rights", widget: "string" }
+                  - { label: "Privacy", name: "privacy", widget: "string" }
+                  - { label: "Terms", name: "terms", widget: "string" }
                   - { label: "Cookies", name: "cookies", widget: "string" }
+                  - { label: "Sales Conditions", name: "salesConditions", widget: "string" }
+                  - { label: "Legal", name: "legal", widget: "string" }
+                  - { label: "Copyright", name: "copyright", widget: "string" }
 
   - name: "content_de"
     label: "🇩🇪 Deutsch"
