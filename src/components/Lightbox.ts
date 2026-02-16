@@ -3,43 +3,41 @@
  * Features: ESC key, keyboard navigation, mobile swipe support, focus trap
  */
 
-// @ts-ignore
-import localeFr from '../../locales/fr.json' assert { type: 'json' };
-// @ts-ignore
-import localeEn from '../../locales/en.json' assert { type: 'json' };
-// @ts-ignore
-import localeEs from '../../locales/es.json' assert { type: 'json' };
-// @ts-ignore
-import localeDe from '../../locales/de.json' assert { type: 'json' };
-// @ts-ignore
-import localeIt from '../../locales/it.json' assert { type: 'json' };
-// @ts-ignore
-import localeJa from '../../locales/ja.json' assert { type: 'json' };
-// @ts-ignore
-import localeNl from '../../locales/nl.json' assert { type: 'json' };
-// @ts-ignore
-import localePt from '../../locales/pt.json' assert { type: 'json' };
-// @ts-ignore
-import localeZh from '../../locales/zh.json' assert { type: 'json' };
-// @ts-ignore
-import localeAr from '../../locales/ar.json' assert { type: 'json' };
-// @ts-ignore
-import localeRu from '../../locales/ru.json' assert { type: 'json' };
+// Import individual room files
+const roomModules: Record<string, any> = import.meta.glob('../../content/rooms/*.json', { eager: true });
+
+type RoomData = {
+  sortOrder: number;
+  priceFrom: number;
+  gallery: string[];
+  [lang: string]: any;
+};
+
+// Build sorted room list
+const allRooms: RoomData[] = Object.values(roomModules)
+  .map((mod: any) => mod.default || mod)
+  .sort((a: RoomData, b: RoomData) => a.sortOrder - b.sortOrder);
 
 // Detect current language from URL
-const locales = { fr: localeFr, en: localeEn, es: localeEs, de: localeDe, it: localeIt, ja: localeJa, nl: localeNl, pt: localePt, zh: localeZh, ar: localeAr, ru: localeRu };
 const currentLang = window.location.pathname.startsWith('/ru') ? 'ru'
-                  : window.location.pathname.startsWith('/ar') ? 'ar'
-                  : window.location.pathname.startsWith('/zh') ? 'zh'
-                  : window.location.pathname.startsWith('/pt') ? 'pt'
-                  : window.location.pathname.startsWith('/nl') ? 'nl'
-                  : window.location.pathname.startsWith('/ja') ? 'ja'
-                  : window.location.pathname.startsWith('/it') ? 'it'
-                  : window.location.pathname.startsWith('/de') ? 'de'
-                  : window.location.pathname.startsWith('/es') ? 'es'
+  : window.location.pathname.startsWith('/ar') ? 'ar'
+    : window.location.pathname.startsWith('/zh') ? 'zh'
+      : window.location.pathname.startsWith('/pt') ? 'pt'
+        : window.location.pathname.startsWith('/nl') ? 'nl'
+          : window.location.pathname.startsWith('/ja') ? 'ja'
+            : window.location.pathname.startsWith('/it') ? 'it'
+              : window.location.pathname.startsWith('/de') ? 'de'
+                : window.location.pathname.startsWith('/es') ? 'es'
                   : window.location.pathname.startsWith('/en') ? 'en'
-                  : 'fr';
-const siteData = locales[currentLang];
+                    : 'fr';
+
+// Build ROOM_TYPES for the lightbox (same format as before)
+const roomTypes = allRooms.map((room) => ({
+  name: room[currentLang]?.name ?? room.fr?.name ?? '',
+  shortDesc: room[currentLang]?.shortDesc ?? room.fr?.shortDesc ?? '',
+  priceFrom: room.priceFrom,
+  gallery: room.gallery,
+}));
 
 interface LightboxState {
   isOpen: boolean;
@@ -130,7 +128,7 @@ function createLightbox(): void {
   `;
 
   document.body.appendChild(lightbox);
-  
+
   // Cache DOM elements
   lightboxElement = lightbox;
   lightboxImage = lightbox.querySelector('#lightbox-image');
@@ -142,7 +140,7 @@ function createLightbox(): void {
   lightbox.querySelector('#lightbox-close')?.addEventListener('click', closeLightbox);
   lightbox.querySelector('#lightbox-prev')?.addEventListener('click', showPrevImage);
   lightbox.querySelector('#lightbox-next')?.addEventListener('click', showNextImage);
-  
+
   // Close on backdrop click
   lightbox.addEventListener('click', (e) => {
     if (e.target === lightbox) closeLightbox();
@@ -160,20 +158,20 @@ function createLightbox(): void {
  * Open lightbox with specific room and image
  */
 export function openLightbox(roomIndex: number, imageIndex: number = 0): void {
-  if (roomIndex < 0 || roomIndex >= siteData.ROOM_TYPES.length) return;
+  if (roomIndex < 0 || roomIndex >= roomTypes.length) return;
 
   createLightbox();
-  
+
   state.currentRoomIndex = roomIndex;
   state.currentImageIndex = imageIndex;
   state.isOpen = true;
 
   updateLightboxContent();
-  
+
   if (lightboxElement) {
     lightboxElement.classList.remove('hidden');
     document.body.style.overflow = 'hidden';
-    
+
     // Focus trap
     setTimeout(() => {
       lightboxElement?.querySelector<HTMLButtonElement>('#lightbox-close')?.focus();
@@ -186,7 +184,7 @@ export function openLightbox(roomIndex: number, imageIndex: number = 0): void {
  */
 function closeLightbox(): void {
   if (!lightboxElement) return;
-  
+
   lightboxElement.classList.add('hidden');
   document.body.style.overflow = '';
   state.isOpen = false;
@@ -196,7 +194,7 @@ function closeLightbox(): void {
  * Show previous image
  */
 function showPrevImage(): void {
-  const room = siteData.ROOM_TYPES[state.currentRoomIndex];
+  const room = roomTypes[state.currentRoomIndex];
   state.currentImageIndex = (state.currentImageIndex - 1 + room.gallery.length) % room.gallery.length;
   updateLightboxContent();
 }
@@ -205,7 +203,7 @@ function showPrevImage(): void {
  * Show next image
  */
 function showNextImage(): void {
-  const room = siteData.ROOM_TYPES[state.currentRoomIndex];
+  const room = roomTypes[state.currentRoomIndex];
   state.currentImageIndex = (state.currentImageIndex + 1) % room.gallery.length;
   updateLightboxContent();
 }
@@ -214,31 +212,30 @@ function showNextImage(): void {
  * Update lightbox content (image, title, counter, thumbnails)
  */
 function updateLightboxContent(): void {
-  const room = siteData.ROOM_TYPES[state.currentRoomIndex];
+  const room = roomTypes[state.currentRoomIndex];
   const imagePath = room.gallery[state.currentImageIndex];
-  
+
   if (lightboxImage) {
     lightboxImage.src = imagePath;
     lightboxImage.alt = `${room.name} - Image ${state.currentImageIndex + 1}`;
   }
-  
+
   if (lightboxTitle) {
     lightboxTitle.textContent = room.name;
   }
-  
+
   if (lightboxCounter) {
     lightboxCounter.textContent = `${state.currentImageIndex + 1} / ${room.gallery.length}`;
   }
-  
+
   // Generate thumbnails
   if (lightboxThumbnails && room.gallery.length > 1) {
-    lightboxThumbnails.innerHTML = room.gallery.map((img, index) => {
+    lightboxThumbnails.innerHTML = room.gallery.map((img: string, index: number) => {
       const isActive = index === state.currentImageIndex;
       return `
         <button 
-          class="thumbnail-btn flex-shrink-0 w-16 h-16 sm:w-20 sm:h-20 rounded-md overflow-hidden border-2 transition-all ${
-            isActive ? 'border-[#C2A983] opacity-100' : 'border-white/30 opacity-60 hover:opacity-100'
-          }"
+          class="thumbnail-btn flex-shrink-0 w-16 h-16 sm:w-20 sm:h-20 rounded-md overflow-hidden border-2 transition-all ${isActive ? 'border-[#C2A983] opacity-100' : 'border-white/30 opacity-60 hover:opacity-100'
+        }"
           data-index="${index}"
           aria-label="Voir image ${index + 1}"
         >
@@ -250,7 +247,7 @@ function updateLightboxContent(): void {
         </button>
       `;
     }).join('');
-    
+
     // Attach click handlers to thumbnails
     lightboxThumbnails.querySelectorAll('.thumbnail-btn').forEach(btn => {
       btn.addEventListener('click', (e) => {
@@ -267,7 +264,7 @@ function updateLightboxContent(): void {
  */
 function handleKeyPress(e: KeyboardEvent): void {
   if (!state.isOpen) return;
-  
+
   switch (e.key) {
     case 'Escape':
       closeLightbox();
@@ -294,7 +291,7 @@ function handleTouchStart(e: TouchEvent): void {
 function handleTouchEnd(e: TouchEvent): void {
   const endX = e.changedTouches[0].clientX;
   const diff = startX - endX;
-  
+
   // Swipe threshold: 50px
   if (Math.abs(diff) > 50) {
     if (diff > 0) {

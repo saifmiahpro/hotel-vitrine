@@ -2,10 +2,10 @@
   "sortOrder": 2,
   "priceFrom": 79,
   "gallery": [
-    "/images/chambre-standard/1.jpg",
-    "/images/chambre-standard/2.jpg",
-    "/images/chambre-standard/3.jpg",
-    "/images/chambre-standard/4.jpg"
+    "/images/chambre-standard-1.jpg",
+    "/images/chambre-standard-2.jpg",
+    "/images/chambre-standard-3.jpg",
+    "/images/chambre-standard-4.jpg"
   ],
   "fr": {
     "name": "Chambre Double Standard",
