@@ -1,6 +1,6 @@
 ---
-import '../styles/global.css';
-import { getSiteData, getCurrentLang } from '../utils/i18n';
+import "../styles/global.css";
+import { getSiteData, getCurrentLang } from "../utils/i18n";
 const siteData = getSiteData(Astro.url);
 const currentLang = getCurrentLang(Astro.url);
 
@@ -10,10 +10,10 @@ interface Props {
   ogImage?: string;
 }
 
-const { 
-  title = siteData.SEO.title, 
+const {
+  title = siteData.SEO.title,
   description = siteData.SEO.description,
-  ogImage = siteData.SEO.ogImage
+  ogImage = siteData.SEO.ogImage,
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -21,84 +21,104 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 <!DOCTYPE html>
 <html lang={currentLang} class="scroll-smooth">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
-  <link rel="canonical" href={canonicalURL} />
-  
-  <!-- SEO Meta Tags -->
-  <title>{title}</title>
-  <meta name="description" content={description} />
-  <meta name="generator" content={Astro.generator} />
-  
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content={canonicalURL} />
-  <meta property="og:title" content={title} />
-  <meta property="og:description" content={description} />
-  <meta property="og:image" content={new URL(ogImage, Astro.site)} />
-  
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:url" content={canonicalURL} />
-  <meta name="twitter:title" content={title} />
-  <meta name="twitter:description" content={description} />
-  <meta name="twitter:image" content={new URL(ogImage, Astro.site)} />
-  
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  
-  <!-- Structured Data (Schema.org) for SEO -->
-  <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "Hotel",
-    "name": siteData.HOTEL_NAME,
-    "image": new URL(ogImage, Astro.site).toString(),
-    "description": siteData.INTRO_PARAGRAPH,
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": siteData.ADDRESS.split(',')[0],
-      "addressLocality": siteData.CITY,
-      "postalCode": "31000",
-      "addressCountry": "FR"
-    },
-    "telephone": siteData.PHONE,
-    "email": siteData.EMAIL,
-    "checkinTime": "15:00",
-    "checkoutTime": "11:00",
-    "priceRange": "€€",
-    "starRating": {
-      "@type": "Rating",
-      "ratingValue": "3"
-    },
-    "amenityFeature": siteData.AMENITIES.map(amenity => ({
-      "@type": "LocationFeatureSpecification",
-      "name": amenity
-    })),
-    "url": Astro.site,
-    "sameAs": []
-  })} />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
+    <link rel="canonical" href={canonicalURL} />
 
-  <!-- Netlify Identity Widget pour l'authentification CMS -->
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-</head>
-<body class="bg-[#FAF8F5] text-[#1C1C1C] font-inter antialiased">
-  <slot />
+    <!-- SEO Meta Tags -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
 
-  <!-- Script Netlify Identity pour gérer la redirection après connexion -->
-  <script is:inline>
-    if (window.netlifyIdentity) {
-      window.netlifyIdentity.on("init", user => {
-        if (!user) {
-          window.netlifyIdentity.on("login", () => {
-            document.location.href = "/admin/";
-          });
-        }
-      });
-    }
-  </script>
-</body>
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL(ogImage, Astro.site)} />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={canonicalURL} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={new URL(ogImage, Astro.site)} />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Structured Data (Schema.org) for SEO -->
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Hotel",
+        name: siteData.HOTEL_NAME,
+        image: new URL(ogImage, Astro.site).toString(),
+        description: siteData.INTRO_PARAGRAPH,
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: siteData.ADDRESS.split(",")[0],
+          addressLocality: siteData.CITY,
+          postalCode: "31000",
+          addressCountry: "FR",
+        },
+        telephone: siteData.PHONE,
+        email: siteData.EMAIL,
+        checkinTime: "15:00",
+        checkoutTime: "11:00",
+        priceRange: "€€",
+        starRating: {
+          "@type": "Rating",
+          ratingValue: "3",
+        },
+        amenityFeature: siteData.AMENITIES.map((amenity) => ({
+          "@type": "LocationFeatureSpecification",
+          name: amenity,
+        })),
+        url: Astro.site,
+        sameAs: [],
+      })}
+    ></script>
+
+    <!-- Netlify Identity Widget pour l'authentification CMS -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"
+    ></script>
+  </head>
+  <body class="bg-[#FAF8F5] text-[#1C1C1C] font-inter antialiased">
+    <slot />
+
+    <!-- Script Netlify Identity pour gérer l'invitation et la redirection -->
+    <script is:inline>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", (user) => {
+          if (!user) {
+            // Rediriger vers /admin/ après login
+            window.netlifyIdentity.on("login", () => {
+              document.location.href = "/admin/";
+            });
+
+            // Ouvrir automatiquement le widget si un token est présent dans l'URL
+            // (invite_token, recovery_token, confirmation_token)
+            var hash = window.location.hash;
+            if (
+              hash &&
+              (hash.includes("invite_token") ||
+                hash.includes("recovery_token") ||
+                hash.includes("confirmation_token"))
+            ) {
+              window.netlifyIdentity.open();
+            }
+          }
+        });
+      }
+    </script>
+  </body>
 </html>
