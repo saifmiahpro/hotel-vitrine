@@ -42,8 +42,18 @@
 
   <script>
     console.log('Admin page loaded');
-    console.log('Netlify Identity:', window.netlifyIdentity ? 'Loaded' : 'NOT loaded');
-    console.log('Decap CMS:', window.DecapCMS ? 'Loaded' : window.CMS ? 'Loaded (as CMS)' : 'NOT loaded');
+
+    // Cacher le message de chargement une fois que tout est chargé
+    window.addEventListener('load', () => {
+      console.log('Window loaded');
+      setTimeout(() => {
+        const loading = document.getElementById('loading');
+        if (loading) {
+          loading.style.display = 'none';
+          console.log('Loading message hidden');
+        }
+      }, 1000);
+    });
 
     // Gestion de l'authentification Netlify Identity
     if (window.netlifyIdentity) {
@@ -56,20 +66,7 @@
           });
         }
       });
-    } else {
-      console.error('Netlify Identity widget not loaded!');
     }
-
-    // Vérifier que Decap CMS s'initialise
-    window.addEventListener('load', () => {
-      console.log('Window loaded');
-      setTimeout(() => {
-        const loading = document.getElementById('loading');
-        if (loading && loading.style.display !== 'none') {
-          console.error('CMS did not initialize after 2 seconds');
-        }
-      }, 2000);
-    });
   </script>
 </body>
 </html>
