@@ -2,8 +2,12 @@ backend:
   name: git-gateway
   branch: main
 
-# Configuration locale pour le développement
-local_backend: true
+# URL du site pour les aperçus d'images et de contenu
+site_url: https://hotel-anatole-france.netlify.app
+display_url: https://hotel-anatole-france.netlify.app
+
+# Configuration locale pour le développement (décommenter pour le dev local)
+# local_backend: true
 
 # Dossier des médias (images)
 media_folder: "public/images"
