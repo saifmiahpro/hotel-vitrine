@@ -98,30 +98,22 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <!-- Script Netlify Identity -->
     <script is:inline>
       (function() {
-        // Attendre que le widget soit chargé
-        function handleIdentity() {
-          if (!window.netlifyIdentity) return;
+        var tries = 0;
+        function waitForIdentity() {
+          if (window.netlifyIdentity) {
+            // Forcer l'initialisation du widget (détection auto des tokens)
+            window.netlifyIdentity.init();
 
-          // Rediriger vers /admin/ après login
-          window.netlifyIdentity.on("login", function() {
-            document.location.href = "/admin/";
-          });
-
-          // Détecter les tokens dans l'URL (invitation, recovery, confirmation)
-          var hash = window.location.hash || "";
-          if (hash.indexOf("invite_token") !== -1 ||
-              hash.indexOf("recovery_token") !== -1 ||
-              hash.indexOf("confirmation_token") !== -1) {
-            window.netlifyIdentity.open();
+            // Rediriger vers /admin/ après login
+            window.netlifyIdentity.on("login", function() {
+              document.location.href = "/admin/";
+            });
+          } else if (tries < 50) {
+            tries++;
+            setTimeout(waitForIdentity, 100);
           }
         }
-
-        // Lancer dès que possible
-        if (document.readyState === "loading") {
-          document.addEventListener("DOMContentLoaded", handleIdentity);
-        } else {
-          handleIdentity();
-        }
+        waitForIdentity();
       })();
     </script>
   </body>

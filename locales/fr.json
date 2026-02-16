@@ -15,31 +15,31 @@
       "name": "Chambre Double Supérieure",
       "shortDesc": "Grand lit double et espace généreux. Cette chambre dispose d'une salle de bain privative spacieuse avec douche, ainsi que d'une télévision, d'un bureau et d'une armoire.",
       "priceFrom": 89,
-      "gallery": ["/images/chambre-superieure/1.jpg", "/images/chambre-superieure/2.jpg", "/images/chambre-superieure/3.jpg"]
+      "gallery": ["/images/chambre-superieure-1.jpg", "/images/chambre-superieure-2.jpg", "/images/chambre-superieure-3.jpg"]
     },
     {
       "name": "Chambre Double Standard",
       "shortDesc": "Grand lit double. Salle de bain privative plus compacte, équipée d'une douche. La chambre comprend également une télévision et un bureau.",
       "priceFrom": 79,
-      "gallery": ["/images/chambre-standard/1.jpg", "/images/chambre-standard/2.jpg", "/images/chambre-standard/3.jpg", "/images/chambre-standard/4.jpg"]
+      "gallery": ["/images/chambre-standard-1.jpg", "/images/chambre-standard-2.jpg", "/images/chambre-standard-3.jpg", "/images/chambre-standard-4.jpg"]
     },
     {
       "name": "Chambre Lits Jumeaux avec Toilettes Extérieures Privées",
       "shortDesc": "Deux lits simples. La chambre dispose d'une télévision et d'un bureau. Pour deux chambres les toilettes sont situées à l'extérieur mais restent privées pour la chambre.",
       "priceFrom": 69,
-      "gallery": ["/images/chambre-jumeaux-prives/1.jpg"]
+      "gallery": ["/images/chambre-jumeaux-prives-1.jpg"]
     },
     {
       "name": "Chambre Lits Jumeaux avec Toilettes Extérieures Communes",
       "shortDesc": "Deux lits simples. La chambre dispose d'une télévision et d'un bureau. Les toilettes sont situées à l'extérieur et partagées.",
       "priceFrom": 59,
-      "gallery": ["/images/chambre-jumeaux-communs/1.jpg"]
+      "gallery": ["/images/chambre-jumeaux-communs-1.jpg"]
     },
     {
       "name": "Chambre Double avec Toilettes Communes",
       "shortDesc": "Grand lit double. Télévision, bureau et armoire inclus. Les toilettes sont situées à l'extérieur et partagées.",
       "priceFrom": 59,
-      "gallery": ["/images/chambre-double-communes/1.jpg", "/images/chambre-double-communes/2.jpg"]
+      "gallery": ["/images/chambre-double-communes-1.jpg", "/images/chambre-double-communes-2.jpg"]
     }
   ],
   "CHECKIN_INFO": "Entre 15h et 22h30",

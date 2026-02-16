@@ -21,9 +21,9 @@
       "shortDesc": "特大号床与宽敞空间。配备带淋浴的宽大独立卫浴，以及电视、书桌与衣柜。",
       "priceFrom": 89,
       "gallery": [
-        "/images/chambre-superieure/1.jpg",
-        "/images/chambre-superieure/2.jpg",
-        "/images/chambre-superieure/3.jpg"
+        "/images/chambre-superieure-1.jpg",
+        "/images/chambre-superieure-2.jpg",
+        "/images/chambre-superieure-3.jpg"
       ]
     },
     {
@@ -31,10 +31,10 @@
       "shortDesc": "特大号床。更为紧凑的独立卫浴（淋浴）。客房同时配有电视与书桌。",
       "priceFrom": 79,
       "gallery": [
-        "/images/chambre-standard/1.jpg",
-        "/images/chambre-standard/2.jpg",
-        "/images/chambre-standard/3.jpg",
-        "/images/chambre-standard/4.jpg"
+        "/images/chambre-standard-1.jpg",
+        "/images/chambre-standard-2.jpg",
+        "/images/chambre-standard-3.jpg",
+        "/images/chambre-standard-4.jpg"
       ]
     },
     {
@@ -42,7 +42,7 @@
       "shortDesc": "两张单人床。配有电视与书桌。卫生间位于客房外，但为本房专用。",
       "priceFrom": 69,
       "gallery": [
-        "/images/chambre-jumeaux-prives/1.jpg"
+        "/images/chambre-jumeaux-prives-1.jpg"
       ]
     },
     {
@@ -50,7 +50,7 @@
       "shortDesc": "两张单人床。配有电视与书桌。卫生间位于客房外，为公共共享。",
       "priceFrom": 59,
       "gallery": [
-        "/images/chambre-jumeaux-communs/1.jpg"
+        "/images/chambre-jumeaux-communs-1.jpg"
       ]
     },
     {
@@ -58,8 +58,8 @@
       "shortDesc": "特大号床。配备电视、书桌与衣柜。卫生间位于客房外，为公共共享。",
       "priceFrom": 59,
       "gallery": [
-        "/images/chambre-double-communes/1.jpg",
-        "/images/chambre-double-communes/2.jpg"
+        "/images/chambre-double-communes-1.jpg",
+        "/images/chambre-double-communes-2.jpg"
       ]
     }
   ],

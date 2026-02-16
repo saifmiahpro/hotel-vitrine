@@ -21,9 +21,9 @@
       "shortDesc": "Letto king‑size e ampi spazi. Bagno privato grande con doccia, oltre a TV, scrivania e armadio.",
       "priceFrom": 89,
       "gallery": [
-        "/images/chambre-superieure/1.jpg",
-        "/images/chambre-superieure/2.jpg",
-        "/images/chambre-superieure/3.jpg"
+        "/images/chambre-superieure-1.jpg",
+        "/images/chambre-superieure-2.jpg",
+        "/images/chambre-superieure-3.jpg"
       ]
     },
     {
@@ -31,10 +31,10 @@
       "shortDesc": "Letto king‑size. Bagno privato più compatto con doccia. La camera include anche TV e scrivania.",
       "priceFrom": 79,
       "gallery": [
-        "/images/chambre-standard/1.jpg",
-        "/images/chambre-standard/2.jpg",
-        "/images/chambre-standard/3.jpg",
-        "/images/chambre-standard/4.jpg"
+        "/images/chambre-standard-1.jpg",
+        "/images/chambre-standard-2.jpg",
+        "/images/chambre-standard-3.jpg",
+        "/images/chambre-standard-4.jpg"
       ]
     },
     {
@@ -42,7 +42,7 @@
       "shortDesc": "Due letti singoli. TV e scrivania. I servizi igienici sono esterni ma ad uso esclusivo della camera.",
       "priceFrom": 69,
       "gallery": [
-        "/images/chambre-jumeaux-prives/1.jpg"
+        "/images/chambre-jumeaux-prives-1.jpg"
       ]
     },
     {
@@ -50,7 +50,7 @@
       "shortDesc": "Due letti singoli. TV e scrivania. I servizi igienici sono esterni e condivisi.",
       "priceFrom": 59,
       "gallery": [
-        "/images/chambre-jumeaux-communs/1.jpg"
+        "/images/chambre-jumeaux-communs-1.jpg"
       ]
     },
     {
@@ -58,8 +58,8 @@
       "shortDesc": "Letto king‑size. TV, scrivania e armadio inclusi. I servizi igienici sono esterni e condivisi.",
       "priceFrom": 59,
       "gallery": [
-        "/images/chambre-double-communes/1.jpg",
-        "/images/chambre-double-communes/2.jpg"
+        "/images/chambre-double-communes-1.jpg",
+        "/images/chambre-double-communes-2.jpg"
       ]
     }
   ],

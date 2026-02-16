@@ -15,31 +15,31 @@
       "name": "Superior Double Room",
       "shortDesc": "King-size bed and generous space. This room features a spacious private bathroom with shower, as well as a television, desk, and wardrobe.",
       "priceFrom": 89,
-      "gallery": ["/images/chambre-superieure/1.jpg", "/images/chambre-superieure/2.jpg", "/images/chambre-superieure/3.jpg"]
+      "gallery": ["/images/chambre-superieure-1.jpg", "/images/chambre-superieure-2.jpg", "/images/chambre-superieure-3.jpg"]
     },
     {
       "name": "Standard Double Room",
       "shortDesc": "King-size bed. More compact private bathroom with shower. The room also includes a television and desk.",
       "priceFrom": 79,
-      "gallery": ["/images/chambre-standard/1.jpg", "/images/chambre-standard/2.jpg", "/images/chambre-standard/3.jpg", "/images/chambre-standard/4.jpg"]
+      "gallery": ["/images/chambre-standard-1.jpg", "/images/chambre-standard-2.jpg", "/images/chambre-standard-3.jpg", "/images/chambre-standard-4.jpg"]
     },
     {
       "name": "Twin Room with Private External Toilet",
       "shortDesc": "Two single beds. The room has a television and desk. The toilet is located outside but remains private for the room.",
       "priceFrom": 69,
-      "gallery": ["/images/chambre-jumeaux-prives/1.jpg"]
+      "gallery": ["/images/chambre-jumeaux-prives-1.jpg"]
     },
     {
       "name": "Twin Room with Shared External Toilet",
       "shortDesc": "Two single beds. The room has a television and desk. The toilet is located outside and shared.",
       "priceFrom": 59,
-      "gallery": ["/images/chambre-jumeaux-communs/1.jpg"]
+      "gallery": ["/images/chambre-jumeaux-communs-1.jpg"]
     },
     {
       "name": "Double Room with Shared Toilet",
       "shortDesc": "King-size bed. Television, desk and wardrobe included. The toilet is located outside and shared.",
       "priceFrom": 59,
-      "gallery": ["/images/chambre-double-communes/1.jpg", "/images/chambre-double-communes/2.jpg"]
+      "gallery": ["/images/chambre-double-communes-1.jpg", "/images/chambre-double-communes-2.jpg"]
     }
   ],
   "CHECKIN_INFO": "Between 3:00 PM and 10:30 PM",

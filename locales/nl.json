@@ -21,9 +21,9 @@
       "shortDesc": "King‑size bed en royale ruimte. Ruime privébadkamer met douche, plus tv, bureau en kledingkast.",
       "priceFrom": 89,
       "gallery": [
-        "/images/chambre-superieure/1.jpg",
-        "/images/chambre-superieure/2.jpg",
-        "/images/chambre-superieure/3.jpg"
+        "/images/chambre-superieure-1.jpg",
+        "/images/chambre-superieure-2.jpg",
+        "/images/chambre-superieure-3.jpg"
       ]
     },
     {
@@ -31,10 +31,10 @@
       "shortDesc": "King‑size bed. Compactere privébadkamer met douche. De kamer heeft ook tv en bureau.",
       "priceFrom": 79,
       "gallery": [
-        "/images/chambre-standard/1.jpg",
-        "/images/chambre-standard/2.jpg",
-        "/images/chambre-standard/3.jpg",
-        "/images/chambre-standard/4.jpg"
+        "/images/chambre-standard-1.jpg",
+        "/images/chambre-standard-2.jpg",
+        "/images/chambre-standard-3.jpg",
+        "/images/chambre-standard-4.jpg"
       ]
     },
     {
@@ -42,7 +42,7 @@
       "shortDesc": "Twee eenpersoonsbedden. De kamer heeft een tv en een bureau. Het toilet bevindt zich buiten de kamer, maar is uitsluitend voor dit kamertype bestemd.",
       "priceFrom": 69,
       "gallery": [
-        "/images/chambre-jumeaux-prives/1.jpg"
+        "/images/chambre-jumeaux-prives-1.jpg"
       ]
     },
     {
@@ -50,7 +50,7 @@
       "shortDesc": "Twee eenpersoonsbedden. De kamer heeft een tv en een bureau. Het toilet bevindt zich buiten de kamer en wordt gedeeld.",
       "priceFrom": 59,
       "gallery": [
-        "/images/chambre-jumeaux-communs/1.jpg"
+        "/images/chambre-jumeaux-communs-1.jpg"
       ]
     },
     {
@@ -58,8 +58,8 @@
       "shortDesc": "King‑size bed. Inclusief tv, bureau en kledingkast. Het toilet bevindt zich buiten de kamer en wordt gedeeld.",
       "priceFrom": 59,
       "gallery": [
-        "/images/chambre-double-communes/1.jpg",
-        "/images/chambre-double-communes/2.jpg"
+        "/images/chambre-double-communes-1.jpg",
+        "/images/chambre-double-communes-2.jpg"
       ]
     }
   ],
