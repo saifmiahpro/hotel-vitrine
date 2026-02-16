@@ -12,7 +12,22 @@ import localeAr from '../../locales/ar.json';
 import localeRu from '../../locales/ru.json';
 import shared from '../../locales/shared.json';
 
-const locales = {
+// Import individual room files
+const roomModules = import.meta.glob('../../content/rooms/*.json', { eager: true });
+
+// Build sorted room list from individual files
+type RoomData = {
+  sortOrder: number;
+  priceFrom: number;
+  gallery: string[];
+  [lang: string]: any;
+};
+
+const allRooms: RoomData[] = Object.values(roomModules)
+  .map((mod: any) => mod.default || mod)
+  .sort((a: RoomData, b: RoomData) => a.sortOrder - b.sortOrder);
+
+const locales: Record<string, any> = {
   fr: localeFr,
   en: localeEn,
   es: localeEs,
@@ -44,20 +59,25 @@ export function getCurrentLang(url: URL): 'fr' | 'en' | 'es' | 'de' | 'it' | 'ja
 export function getSiteData(url: URL) {
   const lang = getCurrentLang(url);
   const locale = locales[lang];
+
+  // Build room types from individual room files + current language translations
+  const ROOM_TYPES = allRooms.map((room) => ({
+    name: room[lang]?.name ?? room.fr?.name ?? '',
+    shortDesc: room[lang]?.shortDesc ?? room.fr?.shortDesc ?? '',
+    priceFrom: room.priceFrom,
+    gallery: room.gallery,
+  }));
+
   return {
     ...locale,
-    // Shared data overrides locale data (photos, prices, contact info)
+    // Shared contact data
     PHONE: shared.PHONE,
     EMAIL: shared.EMAIL,
     ADDRESS: shared.ADDRESS,
     GOOGLE_MAPS_EMBED_URL: shared.GOOGLE_MAPS_EMBED_URL,
     RESERVATION_URL: shared.RESERVATION_URL,
-    // Merge rooms: translated text from locale + photos/price from shared
-    ROOM_TYPES: locale.ROOM_TYPES.map((room: any, i: number) => ({
-      ...room,
-      priceFrom: shared.ROOMS[i]?.priceFrom ?? room.priceFrom,
-      gallery: shared.ROOMS[i]?.gallery ?? room.gallery ?? [],
-    })),
+    // Room types built from individual files
+    ROOM_TYPES,
   };
 }
 

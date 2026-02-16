@@ -10,28 +10,6 @@
     "Secretária",
     "Televisão"
   ],
-  "ROOM_TYPES": [
-    {
-      "name": "Quarto Duplo Superior",
-      "shortDesc": "Cama king‑size e espaço generoso. Casa de banho privativa ampla com duche, além de televisão, secretária e guarda‑roupa."
-    },
-    {
-      "name": "Quarto Duplo Standard",
-      "shortDesc": "Cama king‑size. Casa de banho privativa mais compacta com duche. O quarto inclui também televisão e secretária."
-    },
-    {
-      "name": "Quarto Twin com WC Externo Privado",
-      "shortDesc": "Duas camas individuais. O quarto dispõe de televisão e secretária. O WC situa‑se no exterior, mas é de uso exclusivo do quarto."
-    },
-    {
-      "name": "Quarto Twin com WC Externo Partilhado",
-      "shortDesc": "Duas camas individuais. O quarto dispõe de televisão e secretária. O WC situa‑se no exterior e é partilhado."
-    },
-    {
-      "name": "Quarto Duplo com WC Partilhado",
-      "shortDesc": "Cama king‑size. Inclui televisão, secretária e guarda‑roupa. O WC situa‑se no exterior e é partilhado."
-    }
-  ],
   "CHECKIN_INFO": "Entre as 15:00 e as 22:30",
   "CHECKOUT_INFO": "Até às 11:00",
   "PARKING_INFO": "Estacionamentos públicos Capitole e Compans Cafarelli nas proximidades.",

@@ -1,0 +1,51 @@
+{
+  "sortOrder": 4,
+  "priceFrom": 59,
+  "gallery": [
+    "/images/chambre-jumeaux-communs/3-1.JPG"
+  ],
+  "fr": {
+    "name": "Chambre Lits Jumeaux avec Toilettes Extérieures Communes",
+    "shortDesc": "Deux lits simples. La chambre dispose d'une télévision et d'un bureau. Les toilettes sont situées à l'extérieur et partagées."
+  },
+  "en": {
+    "name": "Twin Room with Shared External Toilet",
+    "shortDesc": "Two single beds. The room has a television and desk. The toilet is located outside and shared."
+  },
+  "es": {
+    "name": "Habitación Twin con Aseo Exterior Compartido",
+    "shortDesc": "Dos camas individuales. La habitación cuenta con televisión y escritorio. El aseo está situado en el exterior y es compartido."
+  },
+  "de": {
+    "name": "Zweibettzimmer mit externem, gemeinsamem WC",
+    "shortDesc": "Zwei Einzelbetten. Fernseher und Schreibtisch. Das WC befindet sich außerhalb und wird geteilt."
+  },
+  "it": {
+    "name": "Camera Twin con Servizi Esterni Condivisi",
+    "shortDesc": "Due letti singoli. TV e scrivania. I servizi igienici sono esterni e condivisi."
+  },
+  "ja": {
+    "name": "ツインルーム（共用外部トイレ）",
+    "shortDesc": "シングルベッド2台。テレビとデスクを備えています。トイレは客室外にあり、共用となります。"
+  },
+  "nl": {
+    "name": "Tweepersoonskamer met Twee Bedden en Gedeeld Extern Toilet",
+    "shortDesc": "Twee eenpersoonsbedden. De kamer heeft een tv en een bureau. Het toilet bevindt zich buiten de kamer en wordt gedeeld."
+  },
+  "pt": {
+    "name": "Quarto Twin com WC Externo Partilhado",
+    "shortDesc": "Duas camas individuais. O quarto dispõe de televisão e secretária. O WC situa‑se no exterior e é partilhado."
+  },
+  "zh": {
+    "name": "双床房（共享外部卫生间）",
+    "shortDesc": "两张单人床。配有电视与书桌。卫生间位于客房外，为公共共享。"
+  },
+  "ar": {
+    "name": "غرفة توأم بدورة مياه خارجية مشتركة",
+    "shortDesc": "سريران منفصلان. تحتوي الغرفة على تلفاز ومكتب. دورة المياه خارج الغرفة ومشتركة."
+  },
+  "ru": {
+    "name": "Двухместный TWIN с внешним общим туалетом",
+    "shortDesc": "Две односпальные кровати. В номере телевизор и письменный стол. Туалет находится вне номера и является общим."
+  }
+}

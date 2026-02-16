@@ -9,40 +9,124 @@ media_folder: "public/images"
 public_folder: "/images"
 
 collections:
-  # ===== DONNÉES PARTAGÉES (toutes langues) =====
+  # ===== CHAMBRES =====
+  - name: "rooms"
+    label: "🛏️ Chambres"
+    label_singular: "Chambre"
+    description: "Gérer les chambres : photos, prix et traductions"
+    folder: "content/rooms"
+    create: true
+    delete: true
+    extension: "json"
+    format: "json"
+    identifier_field: "fr.name"
+    summary: "{{fr.name}} — {{priceFrom}}€/nuit"
+    sortable_fields: ["sortOrder", "priceFrom"]
+    fields:
+      - { label: "Ordre d'affichage", name: "sortOrder", widget: "number", value_type: "int", hint: "1 = première chambre affichée, 2 = deuxième, etc." }
+      - { label: "💰 Prix à partir de (€/nuit)", name: "priceFrom", widget: "number", value_type: "int", hint: "Prix minimum par nuit" }
+      - label: "📷 Photos de la chambre"
+        name: "gallery"
+        widget: "list"
+        label_singular: "une photo"
+        hint: "Cliquez sur une photo pour la remplacer. + pour ajouter. Glissez pour réordonner."
+        field: { label: "Photo", name: "image", widget: "image" }
+      - label: "🇫🇷 Français"
+        name: "fr"
+        widget: "object"
+        fields:
+          - { label: "Nom", name: "name", widget: "string" }
+          - { label: "Description", name: "shortDesc", widget: "text" }
+      - label: "🇬🇧 English"
+        name: "en"
+        widget: "object"
+        collapsed: true
+        fields:
+          - { label: "Name", name: "name", widget: "string" }
+          - { label: "Description", name: "shortDesc", widget: "text" }
+      - label: "🇪🇸 Español"
+        name: "es"
+        widget: "object"
+        collapsed: true
+        fields:
+          - { label: "Nombre", name: "name", widget: "string" }
+          - { label: "Descripción", name: "shortDesc", widget: "text" }
+      - label: "🇩🇪 Deutsch"
+        name: "de"
+        widget: "object"
+        collapsed: true
+        fields:
+          - { label: "Name", name: "name", widget: "string" }
+          - { label: "Beschreibung", name: "shortDesc", widget: "text" }
+      - label: "🇮🇹 Italiano"
+        name: "it"
+        widget: "object"
+        collapsed: true
+        fields:
+          - { label: "Nome", name: "name", widget: "string" }
+          - { label: "Descrizione", name: "shortDesc", widget: "text" }
+      - label: "🇯🇵 日本語"
+        name: "ja"
+        widget: "object"
+        collapsed: true
+        fields:
+          - { label: "名前", name: "name", widget: "string" }
+          - { label: "説明", name: "shortDesc", widget: "text" }
+      - label: "🇳🇱 Nederlands"
+        name: "nl"
+        widget: "object"
+        collapsed: true
+        fields:
+          - { label: "Naam", name: "name", widget: "string" }
+          - { label: "Beschrijving", name: "shortDesc", widget: "text" }
+      - label: "🇵🇹 Português"
+        name: "pt"
+        widget: "object"
+        collapsed: true
+        fields:
+          - { label: "Nome", name: "name", widget: "string" }
+          - { label: "Descrição", name: "shortDesc", widget: "text" }
+      - label: "🇨🇳 中文"
+        name: "zh"
+        widget: "object"
+        collapsed: true
+        fields:
+          - { label: "名称", name: "name", widget: "string" }
+          - { label: "描述", name: "shortDesc", widget: "text" }
+      - label: "🇸🇦 العربية"
+        name: "ar"
+        widget: "object"
+        collapsed: true
+        fields:
+          - { label: "الاسم", name: "name", widget: "string" }
+          - { label: "الوصف", name: "shortDesc", widget: "text" }
+      - label: "🇷🇺 Русский"
+        name: "ru"
+        widget: "object"
+        collapsed: true
+        fields:
+          - { label: "Название", name: "name", widget: "string" }
+          - { label: "Описание", name: "shortDesc", widget: "text" }
+
+  # ===== CONTACT & INFOS =====
   - name: "shared"
-    label: "📋 Données partagées (toutes langues)"
-    description: "Photos, prix et informations de contact — partagés entre toutes les langues"
+    label: "📞 Contact & Infos"
+    description: "Téléphone, email, adresse (partagés entre toutes les langues)"
     files:
       - name: "shared_data"
-        label: "Photos, Prix & Contact"
+        label: "Informations de contact"
         file: "locales/shared.json"
         fields:
-          - { label: "📞 Téléphone", name: "PHONE", widget: "string", hint: "Numéro de téléphone de l'hôtel" }
-          - { label: "📧 Email", name: "EMAIL", widget: "string", hint: "Adresse email de l'hôtel" }
-          - { label: "📍 Adresse", name: "ADDRESS", widget: "string", hint: "Adresse complète de l'hôtel" }
-          - { label: "🗺️ URL Google Maps", name: "GOOGLE_MAPS_EMBED_URL", widget: "string", hint: "URL de l'iframe Google Maps (ne pas modifier sauf changement d'adresse)" }
-          - { label: "🔗 URL de réservation", name: "RESERVATION_URL", widget: "string", hint: "Lien vers le système de réservation" }
-          - label: "🛏️ Chambres — Prix & Photos"
-            name: "ROOMS"
-            widget: "list"
-            label_singular: "une chambre"
-            summary: "Chambre {{index}} — {{fields.priceFrom}}€/nuit"
-            collapsed: true
-            hint: "⚠️ L'ORDRE des chambres doit correspondre à l'ordre dans chaque langue. Pour modifier le NOM ou la DESCRIPTION d'une chambre, allez dans la langue concernée."
-            fields:
-              - { label: "Prix à partir de (€)", name: "priceFrom", widget: "number", value_type: "int", hint: "Prix minimum par nuit en euros" }
-              - label: "📷 Photos"
-                name: "gallery"
-                widget: "list"
-                label_singular: "une photo"
-                hint: "Cliquez sur une photo pour la remplacer. + pour ajouter."
-                field: { label: "Photo", name: "image", widget: "image" }
+          - { label: "📞 Téléphone", name: "PHONE", widget: "string" }
+          - { label: "📧 Email", name: "EMAIL", widget: "string" }
+          - { label: "📍 Adresse", name: "ADDRESS", widget: "string" }
+          - { label: "🗺️ URL Google Maps", name: "GOOGLE_MAPS_EMBED_URL", widget: "string", hint: "URL iframe Google Maps — ne modifier qu'en cas de changement d'adresse" }
+          - { label: "🔗 URL de réservation", name: "RESERVATION_URL", widget: "string" }
 
   # ===== FRANÇAIS 🇫🇷 =====
   - name: "content_fr"
-    label: "🇫🇷 Français"
-    description: "Textes du site en français"
+    label: "🇫🇷 Textes Français"
+    description: "Textes du site en français (hors chambres)"
     files:
       - name: "fr"
         label: "Contenu Français"
@@ -57,21 +141,11 @@ collections:
             widget: "list"
             label_singular: "un équipement"
             field: { label: "Équipement", name: "item", widget: "string" }
-          - label: "🛏️ Chambres — Noms & Descriptions uniquement"
-            name: "ROOM_TYPES"
-            widget: "list"
-            label_singular: "une chambre"
-            summary: "{{fields.name}}"
-            collapsed: true
-            hint: "⚠️ Ici vous modifiez uniquement les TEXTES (nom, description). Pour les PHOTOS et PRIX, allez dans 'Données partagées'."
-            fields:
-              - { label: "Nom de la chambre", name: "name", widget: "string", hint: "Ex: Chambre Double Supérieure" }
-              - { label: "Description courte", name: "shortDesc", widget: "text", hint: "Texte affiché sous le nom de la chambre sur le site" }
-          - { label: "Horaire d'arrivée (check-in)", name: "CHECKIN_INFO", widget: "string" }
-          - { label: "Horaire de départ (check-out)", name: "CHECKOUT_INFO", widget: "string" }
+          - { label: "Horaire d'arrivée", name: "CHECKIN_INFO", widget: "string" }
+          - { label: "Horaire de départ", name: "CHECKOUT_INFO", widget: "string" }
           - { label: "Informations parking", name: "PARKING_INFO", widget: "text" }
           - { label: "Informations transports", name: "PUBLIC_TRANSPORT_INFO", widget: "text" }
-          - { label: "Description de la ville", name: "TOULOUSE_DESCRIPTION", widget: "text" }
+          - { label: "Description de Toulouse", name: "TOULOUSE_DESCRIPTION", widget: "text" }
           - label: "🔍 SEO"
             name: "SEO"
             widget: "object"
@@ -80,7 +154,7 @@ collections:
               - { label: "Titre SEO", name: "title", widget: "string" }
               - { label: "Description SEO", name: "description", widget: "text" }
               - { label: "Image de partage", name: "ogImage", widget: "string" }
-          - label: "⚙️ Textes de l'interface"
+          - label: "⚙️ Interface"
             name: "UI"
             widget: "object"
             collapsed: true
@@ -94,7 +168,7 @@ collections:
                   - { label: "Accès", name: "access", widget: "string" }
                   - { label: "Contact", name: "contact", widget: "string" }
                   - { label: "Réserver", name: "book", widget: "string" }
-              - label: "Titres des sections"
+              - label: "Sections"
                 name: "sections"
                 widget: "object"
                 fields:
@@ -103,35 +177,35 @@ collections:
                   - { label: "Titre Accès", name: "access", widget: "string" }
                   - { label: "Titre Contact", name: "contact", widget: "string" }
                   - { label: "Sous-titre Contact", name: "contactSubtitle", widget: "text" }
-              - label: "Bouton Hero"
+              - label: "Hero"
                 name: "hero"
                 widget: "object"
                 fields:
-                  - { label: "Texte du bouton", name: "discoverRooms", widget: "string" }
-              - label: "Formulaire de contact"
+                  - { label: "Texte bouton", name: "discoverRooms", widget: "string" }
+              - label: "Formulaire"
                 name: "form"
                 widget: "object"
                 collapsed: true
                 fields:
-                  - { label: "Placeholder nom", name: "name", widget: "string" }
-                  - { label: "Label nom", name: "nameLabel", widget: "string" }
-                  - { label: "Placeholder email", name: "email", widget: "string" }
-                  - { label: "Label email", name: "emailLabel", widget: "string" }
-                  - { label: "Placeholder téléphone", name: "phone", widget: "string" }
-                  - { label: "Label téléphone", name: "phoneLabel", widget: "string" }
-                  - { label: "Placeholder objet", name: "subject", widget: "string" }
-                  - { label: "Label objet", name: "subjectLabel", widget: "string" }
-                  - { label: "Placeholder message", name: "message", widget: "string" }
-                  - { label: "Label message", name: "messageLabel", widget: "string" }
+                  - { label: "Nom placeholder", name: "name", widget: "string" }
+                  - { label: "Nom label", name: "nameLabel", widget: "string" }
+                  - { label: "Email placeholder", name: "email", widget: "string" }
+                  - { label: "Email label", name: "emailLabel", widget: "string" }
+                  - { label: "Téléphone placeholder", name: "phone", widget: "string" }
+                  - { label: "Téléphone label", name: "phoneLabel", widget: "string" }
+                  - { label: "Objet placeholder", name: "subject", widget: "string" }
+                  - { label: "Objet label", name: "subjectLabel", widget: "string" }
+                  - { label: "Message placeholder", name: "message", widget: "string" }
+                  - { label: "Message label", name: "messageLabel", widget: "string" }
                   - { label: "Bouton envoyer", name: "send", widget: "string" }
-                  - { label: "Texte consentement", name: "consent", widget: "text" }
+                  - { label: "Consentement", name: "consent", widget: "text" }
                   - { label: "Symbole requis", name: "required", widget: "string" }
                   - { label: "Sélectionner objet", name: "selectSubject", widget: "string" }
-                  - { label: "Option réservation", name: "reservation", widget: "string" }
-                  - { label: "Option information", name: "information", widget: "string" }
-                  - { label: "Option événement", name: "event", widget: "string" }
-                  - { label: "Option autre", name: "other", widget: "string" }
-              - label: "Informations pratiques"
+                  - { label: "Réservation", name: "reservation", widget: "string" }
+                  - { label: "Information", name: "information", widget: "string" }
+                  - { label: "Événement", name: "event", widget: "string" }
+                  - { label: "Autre", name: "other", widget: "string" }
+              - label: "Infos pratiques"
                 name: "info"
                 widget: "object"
                 fields:
@@ -155,7 +229,7 @@ collections:
                   - { label: "Itinéraire", name: "getdirections", widget: "string" }
                   - { label: "Réponse rapide", name: "quickResponse", widget: "string" }
                   - { label: "Texte réponse rapide", name: "quickResponseText", widget: "text" }
-              - label: "Textes chambre"
+              - label: "Chambre"
                 name: "room"
                 widget: "object"
                 fields:
@@ -166,18 +240,18 @@ collections:
                 name: "footer"
                 widget: "object"
                 fields:
-                  - { label: "Tous droits réservés", name: "rights", widget: "string" }
-                  - { label: "Politique de confidentialité", name: "privacy", widget: "string" }
+                  - { label: "Droits réservés", name: "rights", widget: "string" }
+                  - { label: "Confidentialité", name: "privacy", widget: "string" }
                   - { label: "Mentions légales", name: "terms", widget: "string" }
-                  - { label: "Gestion des cookies", name: "cookies", widget: "string" }
-                  - { label: "Conditions de vente", name: "salesConditions", widget: "string" }
+                  - { label: "Cookies", name: "cookies", widget: "string" }
+                  - { label: "CGV", name: "salesConditions", widget: "string" }
                   - { label: "Légal", name: "legal", widget: "string" }
                   - { label: "Copyright", name: "copyright", widget: "string" }
 
   # ===== ENGLISH 🇬🇧 =====
   - name: "content_en"
-    label: "🇬🇧 English"
-    description: "Website text in English"
+    label: "🇬🇧 English Texts"
+    description: "Website text in English (rooms managed separately)"
     files:
       - name: "en"
         label: "English Content"
@@ -192,151 +266,6 @@ collections:
             widget: "list"
             label_singular: "an amenity"
             field: { label: "Amenity", name: "item", widget: "string" }
-          - label: "🛏️ Rooms — Names & Descriptions only"
-            name: "ROOM_TYPES"
-            widget: "list"
-            label_singular: "a room"
-            summary: "{{fields.name}}"
-            collapsed: true
-            hint: "⚠️ Here you edit only TEXTS (name, description). For PHOTOS and PRICES, go to 'Données partagées'."
-            fields:
-              - { label: "Room Name", name: "name", widget: "string" }
-              - { label: "Short Description", name: "shortDesc", widget: "text" }
-          - { label: "Check-in Info", name: "CHECKIN_INFO", widget: "string" }
-          - { label: "Check-out Info", name: "CHECKOUT_INFO", widget: "string" }
-          - { label: "Parking Info", name: "PARKING_INFO", widget: "text" }
-          - { label: "Transport Info", name: "PUBLIC_TRANSPORT_INFO", widget: "text" }
-          - { label: "City Description", name: "TOULOUSE_DESCRIPTION", widget: "text" }
-          - label: "🔍 SEO"
-            name: "SEO"
-            widget: "object"
-            collapsed: true
-            fields:
-              - { label: "SEO Title", name: "title", widget: "string" }
-              - { label: "SEO Description", name: "description", widget: "text" }
-              - { label: "Share Image", name: "ogImage", widget: "string" }
-          - label: "⚙️ Interface Texts"
-            name: "UI"
-            widget: "object"
-            collapsed: true
-            fields:
-              - label: "Navigation"
-                name: "nav"
-                widget: "object"
-                fields:
-                  - { label: "Home", name: "home", widget: "string" }
-                  - { label: "Rooms", name: "rooms", widget: "string" }
-                  - { label: "Access", name: "access", widget: "string" }
-                  - { label: "Contact", name: "contact", widget: "string" }
-                  - { label: "Book", name: "book", widget: "string" }
-              - label: "Section Titles"
-                name: "sections"
-                widget: "object"
-                fields:
-                  - { label: "Rooms Title", name: "rooms", widget: "string" }
-                  - { label: "Rooms Subtitle", name: "roomsSubtitle", widget: "text" }
-                  - { label: "Access Title", name: "access", widget: "string" }
-                  - { label: "Contact Title", name: "contact", widget: "string" }
-                  - { label: "Contact Subtitle", name: "contactSubtitle", widget: "text" }
-              - label: "Hero"
-                name: "hero"
-                widget: "object"
-                fields:
-                  - { label: "Button Text", name: "discoverRooms", widget: "string" }
-              - label: "Contact Form"
-                name: "form"
-                widget: "object"
-                collapsed: true
-                fields:
-                  - { label: "Name placeholder", name: "name", widget: "string" }
-                  - { label: "Name label", name: "nameLabel", widget: "string" }
-                  - { label: "Email placeholder", name: "email", widget: "string" }
-                  - { label: "Email label", name: "emailLabel", widget: "string" }
-                  - { label: "Phone placeholder", name: "phone", widget: "string" }
-                  - { label: "Phone label", name: "phoneLabel", widget: "string" }
-                  - { label: "Subject placeholder", name: "subject", widget: "string" }
-                  - { label: "Subject label", name: "subjectLabel", widget: "string" }
-                  - { label: "Message placeholder", name: "message", widget: "string" }
-                  - { label: "Message label", name: "messageLabel", widget: "string" }
-                  - { label: "Send button", name: "send", widget: "string" }
-                  - { label: "Consent text", name: "consent", widget: "text" }
-                  - { label: "Required symbol", name: "required", widget: "string" }
-                  - { label: "Select subject", name: "selectSubject", widget: "string" }
-                  - { label: "Reservation option", name: "reservation", widget: "string" }
-                  - { label: "Information option", name: "information", widget: "string" }
-                  - { label: "Event option", name: "event", widget: "string" }
-                  - { label: "Other option", name: "other", widget: "string" }
-              - label: "Info"
-                name: "info"
-                widget: "object"
-                fields:
-                  - { label: "Schedule", name: "schedule", widget: "string" }
-                  - { label: "Check-in", name: "checkin", widget: "string" }
-                  - { label: "Check-out", name: "checkout", widget: "string" }
-                  - { label: "Parking", name: "parking", widget: "string" }
-                  - { label: "Transport", name: "transport", widget: "string" }
-                  - { label: "Direct Contact", name: "directContact", widget: "string" }
-                  - { label: "Phone", name: "phone", widget: "string" }
-                  - { label: "Email", name: "email", widget: "string" }
-                  - { label: "Follow Us", name: "followUs", widget: "string" }
-                  - { label: "Quick Links", name: "quickLinks", widget: "string" }
-                  - { label: "Legal", name: "legal", widget: "string" }
-                  - { label: "Discover", name: "discover", widget: "string" }
-                  - { label: "Address", name: "address", widget: "string" }
-                  - { label: "Copy address", name: "copyaddress", widget: "string" }
-                  - { label: "Map not available", name: "mapnotavailable", widget: "string" }
-                  - { label: "Accept cookies for map", name: "acceptcookies", widget: "text" }
-                  - { label: "Show map", name: "enablemap", widget: "string" }
-                  - { label: "Get directions", name: "getdirections", widget: "string" }
-                  - { label: "Quick response", name: "quickResponse", widget: "string" }
-                  - { label: "Quick response text", name: "quickResponseText", widget: "text" }
-              - label: "Room texts"
-                name: "room"
-                widget: "object"
-                fields:
-                  - { label: "From", name: "from", widget: "string" }
-                  - { label: "Per Night", name: "perNight", widget: "string" }
-                  - { label: "View Room", name: "viewRoom", widget: "string" }
-              - label: "Footer"
-                name: "footer"
-                widget: "object"
-                fields:
-                  - { label: "All rights reserved", name: "rights", widget: "string" }
-                  - { label: "Privacy Policy", name: "privacy", widget: "string" }
-                  - { label: "Legal Notice", name: "terms", widget: "string" }
-                  - { label: "Cookie Settings", name: "cookies", widget: "string" }
-                  - { label: "Terms of Sale", name: "salesConditions", widget: "string" }
-                  - { label: "Legal", name: "legal", widget: "string" }
-                  - { label: "Copyright", name: "copyright", widget: "string" }
-
-  # ===== AUTRES LANGUES =====
-  # Utilisent le même schéma de champs que l'anglais (sans les données partagées)
-  - name: "content_es"
-    label: "🇪🇸 Español"
-    files:
-      - name: "es"
-        label: "Contenido Español"
-        file: "locales/es.json"
-        fields: &common_fields
-          - { label: "Hotel Name", name: "HOTEL_NAME", widget: "string" }
-          - { label: "City", name: "CITY", widget: "string" }
-          - { label: "Tagline", name: "TAGLINE", widget: "text" }
-          - { label: "Introduction", name: "INTRO_PARAGRAPH", widget: "text" }
-          - label: "Amenities"
-            name: "AMENITIES"
-            widget: "list"
-            label_singular: "item"
-            field: { label: "Item", name: "item", widget: "string" }
-          - label: "🛏️ Rooms — Names & Descriptions only"
-            name: "ROOM_TYPES"
-            widget: "list"
-            label_singular: "a room"
-            summary: "{{fields.name}}"
-            collapsed: true
-            hint: "⚠️ Only TEXTS here. For PHOTOS/PRICES go to 'Données partagées'."
-            fields:
-              - { label: "Room Name", name: "name", widget: "string" }
-              - { label: "Description", name: "shortDesc", widget: "text" }
           - { label: "Check-in", name: "CHECKIN_INFO", widget: "string" }
           - { label: "Check-out", name: "CHECKOUT_INFO", widget: "string" }
           - { label: "Parking", name: "PARKING_INFO", widget: "text" }
@@ -350,7 +279,7 @@ collections:
               - { label: "Title", name: "title", widget: "string" }
               - { label: "Description", name: "description", widget: "text" }
               - { label: "Image", name: "ogImage", widget: "string" }
-          - label: "⚙️ UI Texts"
+          - label: "⚙️ Interface"
             name: "UI"
             widget: "object"
             collapsed: true
@@ -419,7 +348,7 @@ collections:
                   - { label: "Discover", name: "discover", widget: "string" }
                   - { label: "Address", name: "address", widget: "string" }
                   - { label: "Copy address", name: "copyaddress", widget: "string" }
-                  - { label: "Map not available", name: "mapnotavailable", widget: "string" }
+                  - { label: "Map unavailable", name: "mapnotavailable", widget: "string" }
                   - { label: "Accept cookies", name: "acceptcookies", widget: "text" }
                   - { label: "Show map", name: "enablemap", widget: "string" }
                   - { label: "Get directions", name: "getdirections", widget: "string" }
@@ -436,7 +365,131 @@ collections:
                 name: "footer"
                 widget: "object"
                 fields:
-                  - { label: "All rights reserved", name: "rights", widget: "string" }
+                  - { label: "All rights", name: "rights", widget: "string" }
+                  - { label: "Privacy", name: "privacy", widget: "string" }
+                  - { label: "Terms", name: "terms", widget: "string" }
+                  - { label: "Cookies", name: "cookies", widget: "string" }
+                  - { label: "Sales Conditions", name: "salesConditions", widget: "string" }
+                  - { label: "Legal", name: "legal", widget: "string" }
+                  - { label: "Copyright", name: "copyright", widget: "string" }
+
+  # ===== AUTRES LANGUES (textes seulement, chambres gérées dans "Chambres") =====
+  - name: "content_es"
+    label: "🇪🇸 Español"
+    files:
+      - name: "es"
+        label: "Contenido"
+        file: "locales/es.json"
+        fields: &other_lang_fields
+          - { label: "Hotel Name", name: "HOTEL_NAME", widget: "string" }
+          - { label: "City", name: "CITY", widget: "string" }
+          - { label: "Tagline", name: "TAGLINE", widget: "text" }
+          - { label: "Introduction", name: "INTRO_PARAGRAPH", widget: "text" }
+          - label: "Amenities"
+            name: "AMENITIES"
+            widget: "list"
+            label_singular: "item"
+            field: { label: "Item", name: "item", widget: "string" }
+          - { label: "Check-in", name: "CHECKIN_INFO", widget: "string" }
+          - { label: "Check-out", name: "CHECKOUT_INFO", widget: "string" }
+          - { label: "Parking", name: "PARKING_INFO", widget: "text" }
+          - { label: "Transport", name: "PUBLIC_TRANSPORT_INFO", widget: "text" }
+          - { label: "City Description", name: "TOULOUSE_DESCRIPTION", widget: "text" }
+          - label: "🔍 SEO"
+            name: "SEO"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Image", name: "ogImage", widget: "string" }
+          - label: "⚙️ UI"
+            name: "UI"
+            widget: "object"
+            collapsed: true
+            fields:
+              - label: "Navigation"
+                name: "nav"
+                widget: "object"
+                fields:
+                  - { label: "Home", name: "home", widget: "string" }
+                  - { label: "Rooms", name: "rooms", widget: "string" }
+                  - { label: "Access", name: "access", widget: "string" }
+                  - { label: "Contact", name: "contact", widget: "string" }
+                  - { label: "Book", name: "book", widget: "string" }
+              - label: "Sections"
+                name: "sections"
+                widget: "object"
+                fields:
+                  - { label: "Rooms Title", name: "rooms", widget: "string" }
+                  - { label: "Rooms Subtitle", name: "roomsSubtitle", widget: "text" }
+                  - { label: "Access Title", name: "access", widget: "string" }
+                  - { label: "Contact Title", name: "contact", widget: "string" }
+                  - { label: "Contact Subtitle", name: "contactSubtitle", widget: "text" }
+              - label: "Hero"
+                name: "hero"
+                widget: "object"
+                fields:
+                  - { label: "Button", name: "discoverRooms", widget: "string" }
+              - label: "Form"
+                name: "form"
+                widget: "object"
+                collapsed: true
+                fields:
+                  - { label: "Name", name: "name", widget: "string" }
+                  - { label: "Name Label", name: "nameLabel", widget: "string" }
+                  - { label: "Email", name: "email", widget: "string" }
+                  - { label: "Email Label", name: "emailLabel", widget: "string" }
+                  - { label: "Phone", name: "phone", widget: "string" }
+                  - { label: "Phone Label", name: "phoneLabel", widget: "string" }
+                  - { label: "Subject", name: "subject", widget: "string" }
+                  - { label: "Subject Label", name: "subjectLabel", widget: "string" }
+                  - { label: "Message", name: "message", widget: "string" }
+                  - { label: "Message Label", name: "messageLabel", widget: "string" }
+                  - { label: "Send", name: "send", widget: "string" }
+                  - { label: "Consent", name: "consent", widget: "text" }
+                  - { label: "Required", name: "required", widget: "string" }
+                  - { label: "Select Subject", name: "selectSubject", widget: "string" }
+                  - { label: "Reservation", name: "reservation", widget: "string" }
+                  - { label: "Information", name: "information", widget: "string" }
+                  - { label: "Event", name: "event", widget: "string" }
+                  - { label: "Other", name: "other", widget: "string" }
+              - label: "Info"
+                name: "info"
+                widget: "object"
+                fields:
+                  - { label: "Schedule", name: "schedule", widget: "string" }
+                  - { label: "Check-in", name: "checkin", widget: "string" }
+                  - { label: "Check-out", name: "checkout", widget: "string" }
+                  - { label: "Parking", name: "parking", widget: "string" }
+                  - { label: "Transport", name: "transport", widget: "string" }
+                  - { label: "Direct Contact", name: "directContact", widget: "string" }
+                  - { label: "Phone", name: "phone", widget: "string" }
+                  - { label: "Email", name: "email", widget: "string" }
+                  - { label: "Follow Us", name: "followUs", widget: "string" }
+                  - { label: "Quick Links", name: "quickLinks", widget: "string" }
+                  - { label: "Legal", name: "legal", widget: "string" }
+                  - { label: "Discover", name: "discover", widget: "string" }
+                  - { label: "Address", name: "address", widget: "string" }
+                  - { label: "Copy address", name: "copyaddress", widget: "string" }
+                  - { label: "Map unavailable", name: "mapnotavailable", widget: "string" }
+                  - { label: "Accept cookies", name: "acceptcookies", widget: "text" }
+                  - { label: "Show map", name: "enablemap", widget: "string" }
+                  - { label: "Get directions", name: "getdirections", widget: "string" }
+                  - { label: "Quick response", name: "quickResponse", widget: "string" }
+                  - { label: "Quick response text", name: "quickResponseText", widget: "text" }
+              - label: "Room"
+                name: "room"
+                widget: "object"
+                fields:
+                  - { label: "From", name: "from", widget: "string" }
+                  - { label: "Per Night", name: "perNight", widget: "string" }
+                  - { label: "View Room", name: "viewRoom", widget: "string" }
+              - label: "Footer"
+                name: "footer"
+                widget: "object"
+                fields:
+                  - { label: "All rights", name: "rights", widget: "string" }
                   - { label: "Privacy", name: "privacy", widget: "string" }
                   - { label: "Terms", name: "terms", widget: "string" }
                   - { label: "Cookies", name: "cookies", widget: "string" }
@@ -448,62 +501,62 @@ collections:
     label: "🇩🇪 Deutsch"
     files:
       - name: "de"
-        label: "Deutscher Inhalt"
+        label: "Inhalt"
         file: "locales/de.json"
-        fields: *common_fields
+        fields: *other_lang_fields
 
   - name: "content_it"
     label: "🇮🇹 Italiano"
     files:
       - name: "it"
-        label: "Contenuto Italiano"
+        label: "Contenuto"
         file: "locales/it.json"
-        fields: *common_fields
+        fields: *other_lang_fields
 
   - name: "content_ja"
     label: "🇯🇵 日本語"
     files:
       - name: "ja"
-        label: "日本語コンテンツ"
+        label: "コンテンツ"
         file: "locales/ja.json"
-        fields: *common_fields
+        fields: *other_lang_fields
 
   - name: "content_nl"
     label: "🇳🇱 Nederlands"
     files:
       - name: "nl"
-        label: "Nederlandse inhoud"
+        label: "Inhoud"
         file: "locales/nl.json"
-        fields: *common_fields
+        fields: *other_lang_fields
 
   - name: "content_pt"
     label: "🇵🇹 Português"
     files:
       - name: "pt"
-        label: "Conteúdo Português"
+        label: "Conteúdo"
         file: "locales/pt.json"
-        fields: *common_fields
+        fields: *other_lang_fields
 
   - name: "content_zh"
     label: "🇨🇳 中文"
     files:
       - name: "zh"
-        label: "中文内容"
+        label: "内容"
         file: "locales/zh.json"
-        fields: *common_fields
+        fields: *other_lang_fields
 
   - name: "content_ar"
     label: "🇸🇦 العربية"
     files:
       - name: "ar"
-        label: "المحتوى العربي"
+        label: "المحتوى"
         file: "locales/ar.json"
-        fields: *common_fields
+        fields: *other_lang_fields
 
   - name: "content_ru"
     label: "🇷🇺 Русский"
     files:
       - name: "ru"
-        label: "Русский контент"
+        label: "Контент"
         file: "locales/ru.json"
-        fields: *common_fields
+        fields: *other_lang_fields

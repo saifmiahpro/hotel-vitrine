@@ -1,0 +1,54 @@
+{
+  "sortOrder": 2,
+  "priceFrom": 79,
+  "gallery": [
+    "/images/chambre-standard/1.jpg",
+    "/images/chambre-standard/2.jpg",
+    "/images/chambre-standard/3.jpg",
+    "/images/chambre-standard/4.jpg"
+  ],
+  "fr": {
+    "name": "Chambre Double Standard",
+    "shortDesc": "Grand lit double. Salle de bain privative plus compacte, équipée d'une douche. La chambre comprend également une télévision et un bureau."
+  },
+  "en": {
+    "name": "Standard Double Room",
+    "shortDesc": "King-size bed. More compact private bathroom with shower. The room also includes a television and desk."
+  },
+  "es": {
+    "name": "Habitación Doble Estándar",
+    "shortDesc": "Cama king-size. Baño privado más compacto con ducha. La habitación incluye también televisión y escritorio."
+  },
+  "de": {
+    "name": "Standard Doppelzimmer",
+    "shortDesc": "King‑Size‑Bett. Kompakteres privates Bad mit Dusche. Außerdem Fernseher und Schreibtisch."
+  },
+  "it": {
+    "name": "Camera Doppia Standard",
+    "shortDesc": "Letto king‑size. Bagno privato più compatto con doccia. La camera include anche TV e scrivania."
+  },
+  "ja": {
+    "name": "スタンダード・ダブルルーム",
+    "shortDesc": "キングサイズベッド。シャワー付きのややコンパクトな専用バスルーム。テレビとデスクも備えています。"
+  },
+  "nl": {
+    "name": "Standaard Tweepersoonskamer",
+    "shortDesc": "King‑size bed. Compactere privébadkamer met douche. De kamer heeft ook tv en bureau."
+  },
+  "pt": {
+    "name": "Quarto Duplo Standard",
+    "shortDesc": "Cama king‑size. Casa de banho privativa mais compacta com duche. O quarto inclui também televisão e secretária."
+  },
+  "zh": {
+    "name": "标准大床房",
+    "shortDesc": "特大号床。更为紧凑的独立卫浴（淋浴）。客房同时配有电视与书桌。"
+  },
+  "ar": {
+    "name": "غرفة مزدوجة ستاندرد",
+    "shortDesc": "سرير كينغ. حمّام خاص أكثر إحكامًا مع دش. تتضمن الغرفة أيضًا تلفازًا ومكتبًا."
+  },
+  "ru": {
+    "name": "Стандартный двухместный номер",
+    "shortDesc": "Кровать king-size. Более компактная отдельная ванная комната с душем. В номере также есть телевизор и письменный стол."
+  }
+}

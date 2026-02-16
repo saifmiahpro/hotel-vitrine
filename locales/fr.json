@@ -10,28 +10,6 @@
     "Bureau",
     "Télévision"
   ],
-  "ROOM_TYPES": [
-    {
-      "name": "Chambre Double Supérieure",
-      "shortDesc": "Grand lit double et espace généreux. Cette chambre dispose d'une salle de bain privative spacieuse avec douche, ainsi que d'une télévision, d'un bureau et d'une armoire."
-    },
-    {
-      "name": "Chambre Double Standard",
-      "shortDesc": "Grand lit double. Salle de bain privative plus compacte, équipée d'une douche. La chambre comprend également une télévision et un bureau."
-    },
-    {
-      "name": "Chambre Lits Jumeaux avec Toilettes Extérieures Privées",
-      "shortDesc": "Deux lits simples. La chambre dispose d'une télévision et d'un bureau. Pour deux chambres les toilettes sont situées à l'extérieur mais restent privées pour la chambre."
-    },
-    {
-      "name": "Chambre Lits Jumeaux avec Toilettes Extérieures Communes",
-      "shortDesc": "Deux lits simples. La chambre dispose d'une télévision et d'un bureau. Les toilettes sont situées à l'extérieur et partagées."
-    },
-    {
-      "name": "Chambre Double avec Toilettes Communes",
-      "shortDesc": "Grand lit double. Télévision, bureau et armoire inclus. Les toilettes sont situées à l'extérieur et partagées."
-    }
-  ],
   "CHECKIN_INFO": "Entre 15h et 22h30",
   "CHECKOUT_INFO": "Jusqu'à 11h",
   "PARKING_INFO": "Parking public du Capitole et de Compans Cafarelli à proximité.",

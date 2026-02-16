@@ -10,28 +10,6 @@
     "Bureau",
     "Televisie"
   ],
-  "ROOM_TYPES": [
-    {
-      "name": "Superior Tweepersoonskamer",
-      "shortDesc": "King‑size bed en royale ruimte. Ruime privébadkamer met douche, plus tv, bureau en kledingkast."
-    },
-    {
-      "name": "Standaard Tweepersoonskamer",
-      "shortDesc": "King‑size bed. Compactere privébadkamer met douche. De kamer heeft ook tv en bureau."
-    },
-    {
-      "name": "Tweepersoonskamer met Twee Bedden en Privé Extern Toilet",
-      "shortDesc": "Twee eenpersoonsbedden. De kamer heeft een tv en een bureau. Het toilet bevindt zich buiten de kamer, maar is uitsluitend voor dit kamertype bestemd."
-    },
-    {
-      "name": "Tweepersoonskamer met Twee Bedden en Gedeeld Extern Toilet",
-      "shortDesc": "Twee eenpersoonsbedden. De kamer heeft een tv en een bureau. Het toilet bevindt zich buiten de kamer en wordt gedeeld."
-    },
-    {
-      "name": "Tweepersoonskamer met Gedeeld Toilet",
-      "shortDesc": "King‑size bed. Inclusief tv, bureau en kledingkast. Het toilet bevindt zich buiten de kamer en wordt gedeeld."
-    }
-  ],
   "CHECKIN_INFO": "Tussen 15:00 en 22:30 uur",
   "CHECKOUT_INFO": "Tot 11:00 uur",
   "PARKING_INFO": "Openbare parkeergarages Capitole en Compans Cafarelli in de buurt.",

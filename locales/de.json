@@ -10,28 +10,6 @@
     "Schreibtisch",
     "Fernseher"
   ],
-  "ROOM_TYPES": [
-    {
-      "name": "Superior Doppelzimmer",
-      "shortDesc": "King‑Size‑Bett und großzügiger Raum. Großes privates Bad mit Dusche, dazu Fernseher, Schreibtisch und Kleiderschrank."
-    },
-    {
-      "name": "Standard Doppelzimmer",
-      "shortDesc": "King‑Size‑Bett. Kompakteres privates Bad mit Dusche. Außerdem Fernseher und Schreibtisch."
-    },
-    {
-      "name": "Zweibettzimmer mit externem, privatem WC",
-      "shortDesc": "Zwei Einzelbetten. Fernseher und Schreibtisch. Das WC befindet sich außerhalb, ist jedoch ausschließlich für dieses Zimmer."
-    },
-    {
-      "name": "Zweibettzimmer mit externem, gemeinsamem WC",
-      "shortDesc": "Zwei Einzelbetten. Fernseher und Schreibtisch. Das WC befindet sich außerhalb und wird geteilt."
-    },
-    {
-      "name": "Doppelzimmer mit gemeinsamem WC",
-      "shortDesc": "King‑Size‑Bett. Fernseher, Schreibtisch und Kleiderschrank vorhanden. Das WC befindet sich außerhalb und wird geteilt."
-    }
-  ],
   "CHECKIN_INFO": "Zwischen 15:00 und 22:30 Uhr",
   "CHECKOUT_INFO": "Bis 11:00 Uhr",
   "PARKING_INFO": "Öffentliche Parkhäuser Kapitol und Compans Cafarelli in der Nähe.",

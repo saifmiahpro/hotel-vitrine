@@ -10,28 +10,6 @@
     "Scrivania",
     "Televisione"
   ],
-  "ROOM_TYPES": [
-    {
-      "name": "Camera Doppia Superior",
-      "shortDesc": "Letto king‑size e ampi spazi. Bagno privato grande con doccia, oltre a TV, scrivania e armadio."
-    },
-    {
-      "name": "Camera Doppia Standard",
-      "shortDesc": "Letto king‑size. Bagno privato più compatto con doccia. La camera include anche TV e scrivania."
-    },
-    {
-      "name": "Camera Twin con Servizi Esterni Privati",
-      "shortDesc": "Due letti singoli. TV e scrivania. I servizi igienici sono esterni ma ad uso esclusivo della camera."
-    },
-    {
-      "name": "Camera Twin con Servizi Esterni Condivisi",
-      "shortDesc": "Due letti singoli. TV e scrivania. I servizi igienici sono esterni e condivisi."
-    },
-    {
-      "name": "Camera Doppia con Servizi Condivisi",
-      "shortDesc": "Letto king‑size. TV, scrivania e armadio inclusi. I servizi igienici sono esterni e condivisi."
-    }
-  ],
   "CHECKIN_INFO": "Dalle 15:00 alle 22:30",
   "CHECKOUT_INFO": "Entro le 11:00",
   "PARKING_INFO": "Parcheggi pubblici Capitole e Compans Cafarelli nelle vicinanze.",

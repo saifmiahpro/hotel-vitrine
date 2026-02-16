@@ -1,0 +1,52 @@
+{
+  "sortOrder": 5,
+  "priceFrom": 59,
+  "gallery": [
+    "/images/chambre-double-communes/1.jpg",
+    "/images/chambre-double-communes/2.jpg"
+  ],
+  "fr": {
+    "name": "Chambre Double avec Toilettes Communes",
+    "shortDesc": "Grand lit double. Télévision, bureau et armoire inclus. Les toilettes sont situées à l'extérieur et partagées."
+  },
+  "en": {
+    "name": "Double Room with Shared Toilet",
+    "shortDesc": "King-size bed. Television, desk and wardrobe included. The toilet is located outside and shared."
+  },
+  "es": {
+    "name": "Habitación Doble con Aseo Compartido",
+    "shortDesc": "Cama king-size. Incluye televisión, escritorio y armario. El aseo está situado en el exterior y es compartido."
+  },
+  "de": {
+    "name": "Doppelzimmer mit gemeinsamem WC",
+    "shortDesc": "King‑Size‑Bett. Fernseher, Schreibtisch und Kleiderschrank vorhanden. Das WC befindet sich außerhalb und wird geteilt."
+  },
+  "it": {
+    "name": "Camera Doppia con Servizi Condivisi",
+    "shortDesc": "Letto king‑size. TV, scrivania e armadio inclusi. I servizi igienici sono esterni e condivisi."
+  },
+  "ja": {
+    "name": "ダブルルーム（共用トイレ）",
+    "shortDesc": "キングサイズベッド。テレビ、デスク、ワードローブ完備。トイレは客室外にあり共用です。"
+  },
+  "nl": {
+    "name": "Tweepersoonskamer met Gedeeld Toilet",
+    "shortDesc": "King‑size bed. Inclusief tv, bureau en kledingkast. Het toilet bevindt zich buiten de kamer en wordt gedeeld."
+  },
+  "pt": {
+    "name": "Quarto Duplo com WC Partilhado",
+    "shortDesc": "Cama king‑size. Inclui televisão, secretária e guarda‑roupa. O WC situa‑se no exterior e é partilhado."
+  },
+  "zh": {
+    "name": "大床房（共享卫生间）",
+    "shortDesc": "特大号床。配备电视、书桌与衣柜。卫生间位于客房外，为公共共享。"
+  },
+  "ar": {
+    "name": "غرفة مزدوجة بدورة مياه مشتركة",
+    "shortDesc": "سرير كينغ. تشمل تلفازًا ومكتبًا وخزانة. دورة المياه خارج الغرفة ومشتركة."
+  },
+  "ru": {
+    "name": "Двухместный номер с общим туалетом",
+    "shortDesc": "Кровать king-size. В номере телевизор, письменный стол и шкаф. Туалет находится вне номера и является общим."
+  }
+}

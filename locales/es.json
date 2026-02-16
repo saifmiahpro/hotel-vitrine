@@ -10,28 +10,6 @@
     "Escritorio",
     "Televisión"
   ],
-  "ROOM_TYPES": [
-    {
-      "name": "Habitación Doble Superior",
-      "shortDesc": "Cama king-size y espacio generoso. Dispone de un amplio baño privado con ducha, además de televisión, escritorio y armario."
-    },
-    {
-      "name": "Habitación Doble Estándar",
-      "shortDesc": "Cama king-size. Baño privado más compacto con ducha. La habitación incluye también televisión y escritorio."
-    },
-    {
-      "name": "Habitación Twin con Aseo Exterior Privado",
-      "shortDesc": "Dos camas individuales. La habitación cuenta con televisión y escritorio. El aseo está situado en el exterior, pero es de uso privado para la habitación."
-    },
-    {
-      "name": "Habitación Twin con Aseo Exterior Compartido",
-      "shortDesc": "Dos camas individuales. La habitación cuenta con televisión y escritorio. El aseo está situado en el exterior y es compartido."
-    },
-    {
-      "name": "Habitación Doble con Aseo Compartido",
-      "shortDesc": "Cama king-size. Incluye televisión, escritorio y armario. El aseo está situado en el exterior y es compartido."
-    }
-  ],
   "CHECKIN_INFO": "Entre las 15:00 y las 22:30",
   "CHECKOUT_INFO": "Hasta las 11:00",
   "PARKING_INFO": "Aparcamiento público en Capitole y Compans Cafarelli, muy cerca.",

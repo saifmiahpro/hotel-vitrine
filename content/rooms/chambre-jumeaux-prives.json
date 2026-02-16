@@ -1,0 +1,53 @@
+{
+  "sortOrder": 3,
+  "priceFrom": 69,
+  "gallery": [
+    "/images/chambre-jumeaux-communs/3-1.JPG",
+    "/images/chambre-jumeaux-communs/3-2.JPG",
+    "/images/chambre-jumeaux-communs/3-3.JPG"
+  ],
+  "fr": {
+    "name": "Chambre Lits Jumeaux avec Toilettes Extérieures Privées",
+    "shortDesc": "Deux lits simples. La chambre dispose d'une télévision et d'un bureau. Pour deux chambres les toilettes sont situées à l'extérieur mais restent privées pour la chambre."
+  },
+  "en": {
+    "name": "Twin Room with Private External Toilet",
+    "shortDesc": "Two single beds. The room has a television and desk. The toilet is located outside but remains private for the room."
+  },
+  "es": {
+    "name": "Habitación Twin con Aseo Exterior Privado",
+    "shortDesc": "Dos camas individuales. La habitación cuenta con televisión y escritorio. El aseo está situado en el exterior, pero es de uso privado para la habitación."
+  },
+  "de": {
+    "name": "Zweibettzimmer mit externem, privatem WC",
+    "shortDesc": "Zwei Einzelbetten. Fernseher und Schreibtisch. Das WC befindet sich außerhalb, ist jedoch ausschließlich für dieses Zimmer."
+  },
+  "it": {
+    "name": "Camera Twin con Servizi Esterni Privati",
+    "shortDesc": "Due letti singoli. TV e scrivania. I servizi igienici sono esterni ma ad uso esclusivo della camera."
+  },
+  "ja": {
+    "name": "ツインルーム（専用外部トイレ）",
+    "shortDesc": "シングルベッド2台。テレビとデスクを備えています。トイレは客室外にありますが、当室専用です。"
+  },
+  "nl": {
+    "name": "Tweepersoonskamer met Twee Bedden en Privé Extern Toilet",
+    "shortDesc": "Twee eenpersoonsbedden. De kamer heeft een tv en een bureau. Het toilet bevindt zich buiten de kamer, maar is uitsluitend voor dit kamertype bestemd."
+  },
+  "pt": {
+    "name": "Quarto Twin com WC Externo Privado",
+    "shortDesc": "Duas camas individuais. O quarto dispõe de televisão e secretária. O WC situa‑se no exterior, mas é de uso exclusivo do quarto."
+  },
+  "zh": {
+    "name": "双床房（专用外部卫生间）",
+    "shortDesc": "两张单人床。配有电视与书桌。卫生间位于客房外，但为本房专用。"
+  },
+  "ar": {
+    "name": "غرفة توأم بدورة مياه خارجية خاصة",
+    "shortDesc": "سريران منفصلان. تحتوي الغرفة على تلفاز ومكتب. دورة المياه خارج الغرفة ولكنها مخصّصة للاستخدام الخاص بهذه الغرفة."
+  },
+  "ru": {
+    "name": "Двухместный TWIN с внешним приватным туалетом",
+    "shortDesc": "Две односпальные кровати. В номере телевизор и письменный стол. Туалет находится вне номера, но предназначен для эксклюзивного пользования гостями этого номера."
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "sortOrder": 1,
+  "priceFrom": 89,
+  "gallery": [
+    "/images/chambre-superieure/1.jpg",
+    "/images/chambre-superieure/2.jpg",
+    "/images/chambre-superieure/3.jpg"
+  ],
+  "fr": {
+    "name": "Chambre Double Supérieure",
+    "shortDesc": "Grand lit double et espace généreux. Cette chambre dispose d'une salle de bain privative spacieuse avec douche, ainsi que d'une télévision, d'un bureau et d'une armoire."
+  },
+  "en": {
+    "name": "Superior Double Room",
+    "shortDesc": "King-size bed and generous space. This room features a spacious private bathroom with shower, as well as a television, desk, and wardrobe."
+  },
+  "es": {
+    "name": "Habitación Doble Superior",
+    "shortDesc": "Cama king-size y espacio generoso. Dispone de un amplio baño privado con ducha, además de televisión, escritorio y armario."
+  },
+  "de": {
+    "name": "Superior Doppelzimmer",
+    "shortDesc": "King‑Size‑Bett und großzügiger Raum. Großes privates Bad mit Dusche, dazu Fernseher, Schreibtisch und Kleiderschrank."
+  },
+  "it": {
+    "name": "Camera Doppia Superior",
+    "shortDesc": "Letto king‑size e ampi spazi. Bagno privato grande con doccia, oltre a TV, scrivania e armadio."
+  },
+  "ja": {
+    "name": "スーペリア・ダブルルーム",
+    "shortDesc": "キングサイズベッドとゆとりある空間。シャワー付きの広々とした専用バスルーム、テレビ、デスク、ワードローブを備えています。"
+  },
+  "nl": {
+    "name": "Superior Tweepersoonskamer",
+    "shortDesc": "King‑size bed en royale ruimte. Ruime privébadkamer met douche, plus tv, bureau en kledingkast."
+  },
+  "pt": {
+    "name": "Quarto Duplo Superior",
+    "shortDesc": "Cama king‑size e espaço generoso. Casa de banho privativa ampla com duche, além de televisão, secretária e guarda‑roupa."
+  },
+  "zh": {
+    "name": "高级大床房",
+    "shortDesc": "特大号床与宽敞空间。配备带淋浴的宽大独立卫浴，以及电视、书桌与衣柜。"
+  },
+  "ar": {
+    "name": "غرفة مزدوجة سوبيريور",
+    "shortDesc": "سرير كينغ ومساحة رحبة. حمّام خاص واسع مزوّد بدش، بالإضافة إلى تلفاز ومكتب وخزانة."
+  },
+  "ru": {
+    "name": "Улучшенный двухместный номер",
+    "shortDesc": "Кровать king-size и просторная планировка. Большая отдельная ванная комната с душем, а также телевизор, письменный стол и шкаф."
+  }
+}
