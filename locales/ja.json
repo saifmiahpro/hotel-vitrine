@@ -21,9 +21,9 @@
       "shortDesc": "キングサイズベッドとゆとりある空間。シャワー付きの広々とした専用バスルーム、テレビ、デスク、ワードローブを備えています。",
       "priceFrom": 89,
       "gallery": [
-        "chambre-superieure/1.jpg",
-        "chambre-superieure/2.jpg",
-        "chambre-superieure/3.jpg"
+        "/images/chambre-superieure/1.jpg",
+        "/images/chambre-superieure/2.jpg",
+        "/images/chambre-superieure/3.jpg"
       ]
     },
     {
@@ -31,10 +31,10 @@
       "shortDesc": "キングサイズベッド。シャワー付きのややコンパクトな専用バスルーム。テレビとデスクも備えています。",
       "priceFrom": 79,
       "gallery": [
-        "chambre-standard/1.jpg",
-        "chambre-standard/2.jpg",
-        "chambre-standard/3.jpg",
-        "chambre-standard/4.jpg"
+        "/images/chambre-standard/1.jpg",
+        "/images/chambre-standard/2.jpg",
+        "/images/chambre-standard/3.jpg",
+        "/images/chambre-standard/4.jpg"
       ]
     },
     {
@@ -42,7 +42,7 @@
       "shortDesc": "シングルベッド2台。テレビとデスクを備えています。トイレは客室外にありますが、当室専用です。",
       "priceFrom": 69,
       "gallery": [
-        "chambre-jumeaux-prives/1.jpg"
+        "/images/chambre-jumeaux-prives/1.jpg"
       ]
     },
     {
@@ -50,7 +50,7 @@
       "shortDesc": "シングルベッド2台。テレビとデスクを備えています。トイレは客室外にあり、共用となります。",
       "priceFrom": 59,
       "gallery": [
-        "chambre-jumeaux-communs/1.jpg"
+        "/images/chambre-jumeaux-communs/1.jpg"
       ]
     },
     {
@@ -58,8 +58,8 @@
       "shortDesc": "キングサイズベッド。テレビ、デスク、ワードローブ完備。トイレは客室外にあり共用です。",
       "priceFrom": 59,
       "gallery": [
-        "chambre-double-communes/1.jpg",
-        "chambre-double-communes/2.jpg"
+        "/images/chambre-double-communes/1.jpg",
+        "/images/chambre-double-communes/2.jpg"
       ]
     }
   ],

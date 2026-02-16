@@ -95,30 +95,34 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   <body class="bg-[#FAF8F5] text-[#1C1C1C] font-inter antialiased">
     <slot />
 
-    <!-- Script Netlify Identity pour gérer l'invitation et la redirection -->
+    <!-- Script Netlify Identity -->
     <script is:inline>
-      if (window.netlifyIdentity) {
-        window.netlifyIdentity.on("init", (user) => {
-          if (!user) {
-            // Rediriger vers /admin/ après login
-            window.netlifyIdentity.on("login", () => {
-              document.location.href = "/admin/";
-            });
+      (function() {
+        // Attendre que le widget soit chargé
+        function handleIdentity() {
+          if (!window.netlifyIdentity) return;
 
-            // Ouvrir automatiquement le widget si un token est présent dans l'URL
-            // (invite_token, recovery_token, confirmation_token)
-            var hash = window.location.hash;
-            if (
-              hash &&
-              (hash.includes("invite_token") ||
-                hash.includes("recovery_token") ||
-                hash.includes("confirmation_token"))
-            ) {
-              window.netlifyIdentity.open();
-            }
+          // Rediriger vers /admin/ après login
+          window.netlifyIdentity.on("login", function() {
+            document.location.href = "/admin/";
+          });
+
+          // Détecter les tokens dans l'URL (invitation, recovery, confirmation)
+          var hash = window.location.hash || "";
+          if (hash.indexOf("invite_token") !== -1 ||
+              hash.indexOf("recovery_token") !== -1 ||
+              hash.indexOf("confirmation_token") !== -1) {
+            window.netlifyIdentity.open();
           }
-        });
-      }
+        }
+
+        // Lancer dès que possible
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", handleIdentity);
+        } else {
+          handleIdentity();
+        }
+      })();
     </script>
   </body>
 </html>

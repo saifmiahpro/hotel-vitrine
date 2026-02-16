@@ -21,9 +21,9 @@
       "shortDesc": "Кровать king-size и просторная планировка. Большая отдельная ванная комната с душем, а также телевизор, письменный стол и шкаф.",
       "priceFrom": 89,
       "gallery": [
-        "chambre-superieure/1.jpg",
-        "chambre-superieure/2.jpg",
-        "chambre-superieure/3.jpg"
+        "/images/chambre-superieure/1.jpg",
+        "/images/chambre-superieure/2.jpg",
+        "/images/chambre-superieure/3.jpg"
       ]
     },
     {
@@ -31,10 +31,10 @@
       "shortDesc": "Кровать king-size. Более компактная отдельная ванная комната с душем. В номере также есть телевизор и письменный стол.",
       "priceFrom": 79,
       "gallery": [
-        "chambre-standard/1.jpg",
-        "chambre-standard/2.jpg",
-        "chambre-standard/3.jpg",
-        "chambre-standard/4.jpg"
+        "/images/chambre-standard/1.jpg",
+        "/images/chambre-standard/2.jpg",
+        "/images/chambre-standard/3.jpg",
+        "/images/chambre-standard/4.jpg"
       ]
     },
     {
@@ -42,7 +42,7 @@
       "shortDesc": "Две односпальные кровати. В номере телевизор и письменный стол. Туалет находится вне номера, но предназначен для эксклюзивного пользования гостями этого номера.",
       "priceFrom": 69,
       "gallery": [
-        "chambre-jumeaux-prives/1.jpg"
+        "/images/chambre-jumeaux-prives/1.jpg"
       ]
     },
     {
@@ -50,7 +50,7 @@
       "shortDesc": "Две односпальные кровати. В номере телевизор и письменный стол. Туалет находится вне номера и является общим.",
       "priceFrom": 59,
       "gallery": [
-        "chambre-jumeaux-communs/1.jpg"
+        "/images/chambre-jumeaux-communs/1.jpg"
       ]
     },
     {
@@ -58,8 +58,8 @@
       "shortDesc": "Кровать king-size. В номере телевизор, письменный стол и шкаф. Туалет находится вне номера и является общим.",
       "priceFrom": 59,
       "gallery": [
-        "chambre-double-communes/1.jpg",
-        "chambre-double-communes/2.jpg"
+        "/images/chambre-double-communes/1.jpg",
+        "/images/chambre-double-communes/2.jpg"
       ]
     }
   ],

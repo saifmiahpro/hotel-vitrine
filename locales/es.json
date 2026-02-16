@@ -16,9 +16,9 @@
       "shortDesc": "Cama king-size y espacio generoso. Dispone de un amplio baño privado con ducha, además de televisión, escritorio y armario.",
       "priceFrom": 89,
       "gallery": [
-        "chambre-superieure/1.jpg",
-        "chambre-superieure/2.jpg",
-        "chambre-superieure/3.jpg"
+        "/images/chambre-superieure/1.jpg",
+        "/images/chambre-superieure/2.jpg",
+        "/images/chambre-superieure/3.jpg"
       ]
     },
     {
@@ -26,10 +26,10 @@
       "shortDesc": "Cama king-size. Baño privado más compacto con ducha. La habitación incluye también televisión y escritorio.",
       "priceFrom": 79,
       "gallery": [
-        "chambre-standard/1.jpg",
-        "chambre-standard/2.jpg",
-        "chambre-standard/3.jpg",
-        "chambre-standard/4.jpg"
+        "/images/chambre-standard/1.jpg",
+        "/images/chambre-standard/2.jpg",
+        "/images/chambre-standard/3.jpg",
+        "/images/chambre-standard/4.jpg"
       ]
     },
     {
@@ -37,7 +37,7 @@
       "shortDesc": "Dos camas individuales. La habitación cuenta con televisión y escritorio. El aseo está situado en el exterior, pero es de uso privado para la habitación.",
       "priceFrom": 69,
       "gallery": [
-        "chambre-jumeaux-prives/1.jpg"
+        "/images/chambre-jumeaux-prives/1.jpg"
       ]
     },
     {
@@ -45,7 +45,7 @@
       "shortDesc": "Dos camas individuales. La habitación cuenta con televisión y escritorio. El aseo está situado en el exterior y es compartido.",
       "priceFrom": 59,
       "gallery": [
-        "chambre-jumeaux-communs/1.jpg"
+        "/images/chambre-jumeaux-communs/1.jpg"
       ]
     },
     {
@@ -53,8 +53,8 @@
       "shortDesc": "Cama king-size. Incluye televisión, escritorio y armario. El aseo está situado en el exterior y es compartido.",
       "priceFrom": 59,
       "gallery": [
-        "chambre-double-communes/1.jpg",
-        "chambre-double-communes/2.jpg"
+        "/images/chambre-double-communes/1.jpg",
+        "/images/chambre-double-communes/2.jpg"
       ]
     }
   ],

@@ -27,7 +27,7 @@ const t = getT(Astro.url);
             data-room-index={index}
           >
             <img 
-              src={`/images/${room.gallery[0]}`}
+              src={room.gallery[0]}
               alt={`Chambre ${room.name} - ${siteData.HOTEL_NAME}`}
               class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
               loading="lazy"

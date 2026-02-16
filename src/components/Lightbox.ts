@@ -215,7 +215,7 @@ function showNextImage(): void {
  */
 function updateLightboxContent(): void {
   const room = siteData.ROOM_TYPES[state.currentRoomIndex];
-  const imagePath = `/images/${room.gallery[state.currentImageIndex]}`;
+  const imagePath = room.gallery[state.currentImageIndex];
   
   if (lightboxImage) {
     lightboxImage.src = imagePath;
@@ -243,7 +243,7 @@ function updateLightboxContent(): void {
           aria-label="Voir image ${index + 1}"
         >
           <img 
-            src="/images/${img}" 
+            src="${img}" 
             alt="Thumbnail ${index + 1}" 
             class="w-full h-full object-cover"
           />
